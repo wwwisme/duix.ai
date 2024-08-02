@@ -6,6 +6,9 @@
 
  📖 Documentation  [[android]](./duix-android/dh_aigc_android/README.md)&nbsp;&nbsp;[[ios]](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK.md)&nbsp;&nbsp;&nbsp;&nbsp;📑 [FAQ](https://jexopm4t2a.feishu.cn/wiki/Ef1VwGHtRiUIQIkQl1hco2ISnFc)  <br><br> 
 
+## [Duix.Snap](https://www.producthunt.com/posts/duix-snap) (New Product)
+Turn photos into hilarious videos & emojis<br><br> 
+
 ## Support
 Join our wechat or Discord community for support and discussions. Follow Twitter,to watch the latest digital human videos created based on the open-source capabilities of DUIX.<br>
 💬 [Join our WeChat (微信)](https://github.com/GuijiAI/duix.ai/blob/main/res/%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg)<br>
