@@ -1,96 +1,121 @@
-# Duix - 硅基数字人SDK 🌐🤖 [[English]](./README_EN.md)   
+# Duix - Silicon-Based Digital Human SDK 🌐🤖   [[Chinese]](./README_ZH.md)   
 
 <div style="width: 100%; text-align: center;">
-  <img src="res/logo.jpg" style="width: 100%; height: auto;"/>
+  <img src="res/logo_en.jpg" style="width: 100%; height: auto;"/>
 </div>
 
-## 简介 Introduction   
-DUIX全称为"Dialogue User Interface System"，是硅基智能打造的数字人智能交互平台，已将硅基数字人SDK进行开源，开发者能够在Android和iOS等设备上一键部署，为用户提供即时的虚拟人互动体验。内置的两个形象使得用户可以轻松上手，直接体验数字人的魅力。
-该SDK不仅提供了直观的效果展示，还支持用户进行二次开发。可以根据提供的开放文档轻松开发出定制化的虚拟人应用。硅基数字人SDK是完全开源的，底层推理引擎以及上层的商业化应用逻辑都开放了源代码。开发者可以深入了解其工作原理，并进行进一步的优化和创新。  <br><br> 
+ 📖 Documentation  [[android]](./duix-android/dh_aigc_android/README.md)&nbsp;&nbsp;[[ios]](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK.md)&nbsp;&nbsp;&nbsp;&nbsp;📑 [FAQ](https://jexopm4t2a.feishu.cn/wiki/Ef1VwGHtRiUIQIkQl1hco2ISnFc)  <br><br> 
 
-### 适用场景 Applicable Scenarios
-- 部署成本低: 无需客户提供技术团队进行配合，支持低成本快速部署在多种终端及大屏。
-- 网络依赖小: 适合地铁、银行、政务等多种场景的虚拟助理自助服务。
-- 功能多样化: 可根据客户需求满足视频、媒体、客服、金融、广电等多个行业的多样化需求。<br><br>
+## [Duix App](https://apps.apple.com/app/id6451088879)
+Welcome to the Duix App. Feel free to download it and experience the advanced digital human interaction features we offer.<br><br> 
 
-### 核心功能 Core Features
-- 部署成本低: 无需客户提供技术团队进行配合，支持低成本快速部署在多种终端及大屏。
-- 网络依赖小: 适合地铁、银行、政务等多种场景的虚拟助理自助服务。
-- 功能多样化: 可根据客户需求满足视频、媒体、客服、金融、广电等多个行业的多样化需求。<br><br>
+## Support
+Join our wechat or Discord community for support and discussions. Follow Twitter,to watch the latest digital human videos created based on the open-source capabilities of DUIX.<br>
+💬 [Join our WeChat (微信)](https://github.com/GuijiAI/duix.ai/blob/main/res/%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg)<br>
+😄 [Join our Discord](https://discord.gg/8jh28PVsMU)<br>
+✨ [Follow us on Twitter](https://twitter.com/HuapengSima)<br><br> 
 
-### 源码目录说明 Directory Structure  
+## Introduction
+
+DUIX, short for “Dialogue User Interface System”, is an AI-powered digital human interaction platform created by Silicon-based Intelligence. By open-sourcing the capabilities of digital human interaction, developers can easily integrate large-scale models, automatic speech recognition (ASR), and text-to-speech (TTS) capabilities, enabling real-time interaction with digital humans. It supports one-click deployment on multiple platforms including Android and iOS, allowing each developer to effortlessly create intelligent and personalized digital human agents, and apply them in various industries.<br><br>
+
+
+## Project features
+
+- Low deployment cost: No need for customers to provide technical teams for cooperation, supports low-cost rapid deployment on various terminals and large screens.
+- Low network dependence: Suitable for virtual assistant self-service in scenarios such as subways, banks, and government affairs.
+- Diverse functions: Can meet the diverse needs of video, media, customer service, finance, radio, and television in multiple industries according to customer requirements.<br><br>
+
+## Source Code Directory Description
+
 ```
 duix-android: android demo       
-duix-ios: ios demo  
-```     
+duix-ios: ios demo 
+```
+<br>
 
-### 开放文档入口 Open Documentation Portal
+## Open Documentation Entry
 
-android参考 [简体中文](./duix-android/dh_aigc_android/README.md) <br>
-ios参考 [简体中文](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK.md)  <br><br>
+For android, refer to [README_en.md](./duix-android/dh_aigc_android/README_en.md)
+For ios, refer to [GJLocalDigitalSDK_en.md](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK_en.md)<br><br>
 
-### 数字人本地模型下载 Download Digital Human Local Model
-我们提供了一些数字人模型，可供下载和使用。我们将不定期更新本地模型包，以便您可以下载和使用最新的模型。以下是当前可用的本地模型包列表：
+## How to deploy
+This document provides a detailed description of the integration process for developers working on this project. It is important to note that each developer may encounter different stages of the process during integration. This document is intended for developers to use as a reference.<br>
+[Interface Reference Handbook_ZH](./Interface%20Reference%20Handbook_ZH.pdf) <br>
+[Interface Reference Handbook_EN](./Interface%20Reference%20Handbook_EN.pdf) <br><br>
 
-#### 男性
-|  <img src="https://github.com/maoliyan/DUIX-image/assets/170152837/afcd510c-e4e1-42dc-bb2d-40fe488e5670" width="200"> | <img src="https://github.com/maoliyan/DUIX-image/assets/170152837/788dfce8-0ca6-41c1-93f8-628999915a8d" width="200">| <img src="https://github.com/GuijiAI/duix.ai/raw/main/res/%E7%94%B7.jpg" width="200">|
+## Download Digital Human Local Model
+We offer a selection of digital human models for download and use. We will update the local model packages from time to time so that you can download and utilize the latest models. Below is the list of currently available local model packages:
+#### male
+|  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E8%89%BE%E7%91%9E%E5%85%8B.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E5%AD%90%E8%BD%A9.png" width="200">| <img src="https://github.com/GuijiAI/duix.ai/raw/main/res/%E7%94%B7.jpg" width="200">|
 |:-------:|:-------:|:-------:|
-| **艾瑞克** [下载](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1716888516200/airuike_20240528.zip) | **子轩** [下载](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1716890628522/zixuan_20240529.zip) | **明轩** [下载](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1716034688/bendi3_20240518.zip) |
+| **Eric**<br>[Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719193748558/airuike_20240409.zip) | **Zi Xuan**<br>[Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719194036608/zixuan_20240411v2.zip) | **Ming Xuan**<br>[Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719194633518/mingxuan_20240624.zip) |
 
-#### 女性
-| <img src="https://github.com/maoliyan/DUIX-image/assets/170152837/09d0b60a-3eef-4889-a5da-b880feaa395a" width="200"> | <img src="https://github.com/maoliyan/DUIX-image/assets/170152837/390cca82-2202-43e7-add6-a2693847cffd" width="200"> | <img src="https://github.com/maoliyan/DUIX-image/assets/170152837/aeca6d5e-f706-462e-b8be-708358ffdabe" width="200"> | <img src="https://github.com/maoliyan/DUIX-image/assets/170152837/080fea1b-2168-48d6-a68f-803e94c565b8" width="200"> | <img src="https://github.com/maoliyan/DUIX-image/assets/170152837/50b1cd05-9a6c-48bd-abbf-72a18e89b503" width="200"> |
+#### female
+| <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E8%8B%8F%E8%8F%B2.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E6%85%95%E5%AE%B9%E6%99%93.png" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E5%86%B7%E7%84%B1.png" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/Amelia.png" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E8%B5%B5%E9%9B%85.png" width="200"> |
 |:-------:|:-------:|:-------:|:-------:|:-------:|
-| **苏菲** [下载](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1716888936579/sufei_20240528.zip) | **慕容晓** [下载](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1716888801385/murongxiao_20240528.zip) | **冷焱** [下载](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1716888754222/lengyan_20240528.zip) | **Amelia** [下载](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1716888645375/amelia_20240528.zip) | **赵雅 [下载](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1716891345706/zhaoya_20240529.zip)** |
+| **Sophie**<br>[Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719193425133/sufei_20240409.zip) | **Mu Rong Xiao**<br>[Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719193516102/murongxiao_20240410.zip) | **Cold Flame**<br>[Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719193451931/lengyan_20240407.zip) | **Amelia**<br>[Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719193625986/amelia_20240411.zip) | **Zhao Ya<br>[Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719194234727/zhaoya_20240411.zip)** |
 
-| <img src="https://github.com/maoliyan/DUIX-image/assets/170152837/2e884df8-6175-4fdf-bdc1-e2e511a35590" width="200"> | <img src="https://github.com/maoliyan/DUIX-image/assets/170152837/15ac4a1e-83a1-4551-85be-a5736fb9e7dd" width="200"> | <img src="https://github.com/maoliyan/DUIX-image/assets/170152837/064bc60f-287b-4f1b-8859-25f056c07cbd" width="200"> | <img src="https://github.com/maoliyan/DUIX-image/assets/170152837/c15a20c4-5c1e-402f-86ac-5b5e773c81be" width="200"> | <img src="https://github.com/maoliyan/DUIX-image/assets/170152837/dbf1cd35-6c8b-4157-80bd-0a9c585d3f80" width="200"> |
+| <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E5%BF%86%E7%91%B6.png" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E5%BF%83%E5%A6%8D.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E6%99%93%E8%90%B1.png" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E6%80%9D%E7%91%B6.png" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E8%AF%97%E9%9B%85.png" width="200"> |
 |:-------:|:-------:|:-------:|:-------:|:-------:|
-| **忆瑶 [下载](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1716891579303/yiyao_20240529.zip)** | **心妍 [下载](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1716891699212/xinyan_20240529.zip)** | **晓萱 [下载](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1716891894722/xiaoxuan_20240529.zip)** | **思瑶 [下载](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1716892228368/siyao_20240529.zip)** | **诗雅 [下载](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1716892436557/shiya_20240529.zip)** |
+| **Yi Yao<br>[Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719194263441/yiyao_20240418.zip)** | **Xin Yan<br>[Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719194373660/xinyan_20240411.zip)** | **Xiao Xuan<br>[Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719194313414/xiaoxuan_20240418.zip)** | **Si Yao<br>[Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719194450521/siyao_20240418.zip)** | **Shi Ya<br>[Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719194516880/shiya_20240409.zip)** |
 
 | <img src="https://github.com/GuijiAI/duix.ai/raw/main/res/%E5%A5%B3.jpg" width="200"> 
 |:-------:|
-| **知心姐姐 [下载](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1716034688/bendi1_0329.zip)** |
+| **Dear Sister<br> [Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719194007931/bendi1_0329.zip)** |
 
-请根据您的需求下载相应的模型文件。我们建议您在下载后仔细阅读随附的文档，以确保正确安装和使用模型。<br><br>
+Please download the model files according to your needs. We recommend that you carefully read the accompanying documentation after downloading to ensure the correct installation and use of the models.<br><br>
 
-### 商业案例展示 Business case presentation
+## Business case presentation
 https://apps.apple.com/us/app/duix-your-ai-companion/id6451088879
-![image](https://github.com/GuijiAI/duix.ai/assets/36072872/a0b987e2-0b35-42e5-bbc6-3dae2f701ac3)<br><br>
+![image](https://github.com/GuijiAI/duix.ai/blob/main/res/chatgirl.png)<br><br>
 
-### 常见问题解答
-#### 1.可以支持数字人定制吗？是基于照片还是视频？<br>
-答：可以支持数字人定制，我们是基于视频进行数字人定制。您可以定制专属的数字人用于SDK中。但定制的数字人属于付费服务，您可以联系客服邮箱。<br>
+## Frequently Asked Questions
+#### 1. Are free avatar models available for commercial use? Do they support digital human customization? Are they based on photos or videos?<br>
+Answer: The free avatar models are not available for commercial use! If needed, we can support digital human customization. Our digital human customization is based on videos. You can customize a unique digital human for use in the SDK. However, the customized digital human service is a paid service. You can contact us by scanning the QR code on WeChat.<br>
+<img src="https://github.com/GuijiAI/duix.ai/blob/main/res/ssx.png" width="200">
 
-#### 2.如何定制形象？<br>
-答：定制硅基数字人需要拍摄一段 3-5 分钟的真人出镜口播视频，具体出镜姿势、口播内容，可以根据最终的真实使用场景来确定。比如用来制作法律咨询相关视频，即可选择正装出镜，口播法律相关内容，这样整体情景比较一致。 <br>
+#### 2. How to customize a digital avatar?<br>
+Answer: To customize a silicon-based digital human, you need to shoot a 3-5 minute video featuring a real person speaking directly to the camera. The specific posture and content of the speech can be determined according to the actual usage scenario. For example, if the video is for legal consultation purposes, you can choose to appear in formal attire and speak about legal-related content, ensuring consistency with the overall context. <br>
 
-#### 3.定制形象如何收费？<br>
-答：我们提供与SDK开源接口配套的数字人定制，定制价格为9800元/套，包括形象+声音，若有更多定制需求，可以联系客服邮箱。<br>
+#### 3. How is the customization of digital avatars charged?<br>
+Answer: We provide digital human customization that includes the avatar's appearance and voice, compatible with our SDK open-source interface. For additional customization needs, you can contact our customer service via email.<br>
 
-#### 4.数字人形象怎么更新？<br>
-答：目前开源的主要提供公共模特，有需求可以定制<br>
+#### 4. How can the digital avatar be updated?<br>
+Answer: Currently, the open-source version mainly provides public models. Customization is available upon request.<br>
 
-#### 5.形象克隆有API接口么？<br>
-答：训练服务目前只支持部署在我们的内部服务器进行调用<br>
+#### 5. Is there an API interface for avatar cloning<br>
+Answer: The training service currently only supports deployment on our internal servers for invocation.<br>
 
-#### 6.播报的wav文件，支持流式数据吗？<br>
-答：流式驱动正在做改造优化，暂时还不支持；<br>
+#### 6. Does the broadcasted wav file support streaming data?<br>
+Answer: Streaming support is currently under modification and optimization, and it is not supported at the moment.<br>
 
-#### 7.播报开始结束有没有相关回调方法？<br>
-答：播报开始结束的回调方法详见sdk文档 <br>
+#### 7. Are there callback methods for the start and end of the broadcast?<br>
+Answer:  Callback methods for the start and end of the broadcast are detailed in the SDK documentation. <br>
 
-#### 8.数字人动作有没有相关api控制？<br>
-答：数字人动作API，暂时还不支持<br>
+#### 8. Are there any API controls for the digital human's actions?<br>
+Answer: The API for controlling digital human actions is not supported at the moment.<br>
 
-#### 9.下载的文件如何替换？<br>
-答：下载文件的替换详见代码<br><br>
+#### 9. How to replace downloaded files?<br>
+Answer: The replacement of downloaded files is detailed in the code.<br><br>
 
-### 版本记录 Changelog
+···For more FAQs, please refer to 📑 [FAQ](https://jexopm4t2a.feishu.cn/wiki/Ef1VwGHtRiUIQIkQl1hco2ISnFc)  <br><br> 
 
-- **3.0.4**: 修复部分设备gl默认float低精度导致无法正常显示形象问题。
-- **3.0.3**: 优化本地渲染<br><br>
+## Version Record
 
-### 致谢 Acknowledgments
--音频特征我们借鉴了 [wenet](https://github.com/wenet-e2e/wenet)  <br><br>
+- **3.0.4**: Fixed an issue where some devices’ default gl float low precision caused the avatar to not display properly.
+- **3.0.3**: Optimized local rendering<br><br>
 
-### 联系我们 contact us
-    maoliyan@guiji.ai
+## Acknowledgments
+
+- We have drawn on [wenet](https://github.com/wenet-e2e/wenet) for audio features.<br><br>
+
+## Contact Us
+
+```
+maoliyan@guiji.ai
+```
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=GuijiAI/duix.ai&type=Date)](https://star-history.com/#GuijiAI/duix.ai&Date)
