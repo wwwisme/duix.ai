@@ -42,8 +42,11 @@ class CallActivity : BaseActivity() {
         Log.e("123", "baseDir: $baseDir")
         Log.e("123", "modelDir: $modelDir")
 
-        binding.btnPlay.setOnClickListener {
-            playWav()
+        binding.btnPlayEN.setOnClickListener {
+            playWav("intro.wav")
+        }
+        binding.btnPlayZH.setOnClickListener {
+            playWav("help.wav")
         }
 
         Glide.with(mContext).load("file:///android_asset/bg/bg1.png").into(binding.ivBg)
@@ -101,7 +104,8 @@ class CallActivity : BaseActivity() {
     private fun initOk() {
         Log.e(TAG, "init ok")
         runOnUiThread {
-            binding.btnPlay.visibility = View.VISIBLE
+            binding.btnPlayEN.visibility = View.VISIBLE
+            binding.btnPlayZH.visibility = View.VISIBLE
         }
     }
 
@@ -115,8 +119,7 @@ class CallActivity : BaseActivity() {
     /**
      * 播放16k采样率单通道16位深的wav本地文件
      */
-    private fun playWav() {
-        val wavName = "help.wav"
+    private fun playWav(wavName: String) {
         val wavDir = File(mContext.getExternalFilesDir("duix"), "wav")
         if (!wavDir.exists()) {
             wavDir.mkdirs()
