@@ -15,6 +15,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <ImageView
+        android:id="@+id/ivDebugImage"
+        android:layout_width="108dp"
+        android:layout_height="192dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
     <Button
         android:id="@+id/btnPlayEN"
         android:layout_width="match_parent"
