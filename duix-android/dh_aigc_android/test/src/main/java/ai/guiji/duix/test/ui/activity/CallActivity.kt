@@ -186,10 +186,18 @@ class CallActivity : BaseActivity() {
                 input.close()
                 out.close()
                 File("${wavFile.absolutePath}.tmp").renameTo(wavFile)
-                duix?.playAudio(wavFile.absolutePath)
+                playAudioWithMotion(wavFile.absolutePath)
             }
         } else {
-            duix?.playAudio(wavFile.absolutePath)
+            playAudioWithMotion(wavFile.absolutePath)
+        }
+    }
+
+    private fun playAudioWithMotion(path: String){
+        runOnUiThread {
+            duix?.playAudio(path)
+            // 如果模型支持动作区间会播放动作区间
+            duix?.motion()
         }
     }
 
