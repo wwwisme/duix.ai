@@ -42,13 +42,14 @@ public class DUIX {
         }
         mRenderThread = new RenderThread(mContext, baseDir, modelDir, renderSink, new RenderThread.RenderCallback() {
             @Override
-            public void onInitResult(int code, int subCode, String message) {
-                isReady = true;
-                if (mCallback != null){
-                    if (code == 0){
+            public void onInitResult(int code, String message) {
+                if (code == 0){
+                    if (mCallback != null){
                         mCallback.onEvent(Constant.CALLBACK_EVENT_INIT_READY, "init ok", null);
-                    } else {
-                        mCallback.onEvent(Constant.CALLBACK_EVENT_INIT_ERROR, "init error code: " + subCode + " msg: " + message, null);
+                    }
+                } else {
+                    if (mCallback != null){
+                        mCallback.onEvent(Constant.CALLBACK_EVENT_INIT_ERROR, message, null);
                     }
                 }
             }

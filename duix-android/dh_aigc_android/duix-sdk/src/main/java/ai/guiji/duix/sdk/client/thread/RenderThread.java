@@ -170,16 +170,16 @@ public class RenderThread extends Thread {
                 }
                 Logger.d("模型初始化完成");
                 if (callback != null) {
-                    callback.onInitResult(0, 0, mModelInfo.toString());
+                    callback.onInitResult(0, mModelInfo.toString());
                 }
             } catch (Exception e){
                 if (callback != null) {
-                    callback.onInitResult(-1003, -1002, "模型加载异常: " + e);
+                    callback.onInitResult(-1, "模型加载异常: " + e);
                 }
             }
         } else {
             if (callback != null) {
-                callback.onInitResult(-1003, -1001, "模型配置读取异常");
+                callback.onInitResult(-2, "模型配置读取异常");
             }
         }
 
@@ -513,7 +513,7 @@ public class RenderThread extends Thread {
     }
 
     public interface RenderCallback {
-        void onInitResult(int code, int subCode, String message);
+        void onInitResult(int code, String message);
 
         void onPlayStart();
 
