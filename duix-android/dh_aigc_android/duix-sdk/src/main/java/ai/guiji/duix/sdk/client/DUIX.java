@@ -44,6 +44,7 @@ public class DUIX {
             @Override
             public void onInitResult(int code, String message) {
                 if (code == 0){
+                    isReady = true;
                     if (mCallback != null){
                         mCallback.onEvent(Constant.CALLBACK_EVENT_INIT_READY, "init ok", null);
                     }
