@@ -15,7 +15,7 @@
 
 
 ## 简介 Introduction   
-DUIX（Dialogue User Interface System）是硅基智能打造的AI数字人智能交互平台。通过将数字人交互能力开源，开发者可自行接入多方大模型、语音识别（ASR）、语音合成（TTS）能力，实现数字人实时交互，并在Android和iOS多终端一键部署，让每个开发者可轻松创建智能化、个性化的数字人Agent，并应用到各行各业。 <br> <br> 我们也为您提供了一站式全套数字人多模态实时交互 SDK集成方案——DUIX交互数字人SDK。该SDK产品基于语音识别（ASR）、语音合成（TTS）、自然语言理解（NLP），AIGC，大模型等技术，实现“能听、能看、会说、懂你”式的智能人机交互体验，适用于智能客服、智慧大屏等多个企业应用场景。
+DUIX（Dialogue User Interface System）是硅基智能打造的AI数字人智能交互平台。通过将数字人交互能力开源，开发者可自行接入多方大模型、语音识别（ASR）、语音合成（TTS）能力，实现数字人实时交互，并在Android和iOS多终端一键部署，让每个开发者可轻松创建智能化、个性化的数字人Agent，并应用到各行各业。 <br> <br> 我们也为您提供了一站式全套数字人多模态实时交互SDK集成方案——DUIX交互数字人SDK。该SDK产品基于语音识别（ASR）、语音合成（TTS）、自然语言理解（NLP），AIGC，大模型等技术，实现“能听、能看、会说、懂你”式的智能人机交互体验，适用于智能客服、智慧大屏等多个企业应用场景。
 查看详情： <br><br>
 😄 [快速搭建DUIX数字人会话](https://app.guiji.cn/session/create)<br>
 😄 [DUIX SDK版本及价格](https://app.guiji.cn/platform)<br>
