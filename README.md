@@ -119,8 +119,6 @@ Answer: The replacement of downloaded files is detailed in the code.<br><br>
 
 ```
 maoliyan@guiji.ai
-```
-```
 liujie@guiji.ai
 ```
 
