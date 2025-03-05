@@ -65,9 +65,6 @@ ios参考 [简体中文](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK.md)  <b
 
 请根据您的需求下载相应的模型文件。我们建议您在下载后仔细阅读随附的文档，以确保正确安装和使用模型。<br><br>
 
-### 商业案例展示 Business case presentation
-https://apps.apple.com/us/app/duix-your-ai-companion/id6451088879
-![image](https://github.com/GuijiAI/duix.ai/blob/main/res/chatgirl.png)<br><br>
 
 ### 常见问题解答
 #### 1.免费形象模型是否可以商用？可以支持数字人定制吗？是基于照片还是视频？<br>

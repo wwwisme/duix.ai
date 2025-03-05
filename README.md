@@ -74,9 +74,6 @@ We offer a selection of digital human models for download and use. We will updat
 
 Please download the model files according to your needs. We recommend that you carefully read the accompanying documentation after downloading to ensure the correct installation and use of the models.<br><br>
 
-## Business case presentation
-https://apps.apple.com/us/app/duix-your-ai-companion/id6451088879
-![image](https://github.com/GuijiAI/duix.ai/blob/main/res/chatgirl.png)<br><br>
 
 ## Frequently Asked Questions
 #### 1. Are free avatar models available for commercial use? Do they support digital human customization? Are they based on photos or videos?<br>
