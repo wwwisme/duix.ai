@@ -106,8 +106,13 @@ ios参考 [简体中文](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK.md)  <b
 -音频特征我们借鉴了 [wenet](https://github.com/wenet-e2e/wenet)  <br><br>
 
 ### 联系我们 contact us
-    maoliyan@guiji.ai
-    liujie@guiji.ai
+```
+maoliyan@guiji.ai
+```
+
+```
+liujie@guiji.ai
+```
 
 ## Star History
 
