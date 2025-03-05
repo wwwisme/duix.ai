@@ -109,7 +109,6 @@ ios参考 [简体中文](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK.md)  <b
 ```
 maoliyan@guiji.ai
 ```
-
 ```
 liujie@guiji.ai
 ```
