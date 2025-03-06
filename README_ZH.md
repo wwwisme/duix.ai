@@ -9,7 +9,7 @@
 
 ## 支持 Support
 加入我们的微信或 Discord 社区以获得支持和讨论。关注Twitter，观看基于DUIX开源能力制作的最新数字人视频。<br>
-💬 [加入 WeChat (微信)](https://github.com/GuijiAI/duix.ai/blob/main/res/res/18群二维码.jpg)<br>
+💬 [加入 WeChat (微信)](https://github.com/GuijiAI/duix.ai/blob/main/res/18群二维码.jpg)<br>
 😄 [加入 Discord](https://discord.gg/8jh28PVsMU)<br>
 ✨ [关注 Twitter](https://twitter.com/HuapengSima)<br><br> 
 
