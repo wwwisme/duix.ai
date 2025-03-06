@@ -122,11 +122,9 @@ Answer: Please visit https://app.guiji.cn/platform to experience more features.<
 ## Contact Us
 
 ```
-maoliyan@guiji.ai
+end_sub@hotmail.com
 ```
-```
-liujie@guiji.ai
-```
+
 
 ## Star History
 
