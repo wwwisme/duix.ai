@@ -70,6 +70,9 @@ ios参考 [简体中文](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK.md)  <b
 |:-------:|:-------:|:-------:|:-------:|
 | **数字律师 [下载](https://github.com/GuijiAI/duix.ai/blob/main/res/540p/lvshi/lvshi.mp4)** | **数字医生 [下载](https://github.com/GuijiAI/duix.ai/blob/main/res/540p/yisheng/yisheng.mp4)** | **虚拟陪伴 [下载](https://github.com/GuijiAI/duix.ai/blob/main/res/540p/peiban/peiban.mp4)** | **口语老师 [下载](https://github.com/GuijiAI/duix.ai/blob/main/res/540p/laoshi/laoshi.mp4)** |
 
+<iframe width="560" height="315" src="https://github.com/GuijiAI/duix.ai/blob/main/res/540p/laoshi/laoshi.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 
 ### 常见问题解答
 #### 1.免费形象模型是否可以商用？可以支持数字人定制吗？是基于照片还是视频？<br>
