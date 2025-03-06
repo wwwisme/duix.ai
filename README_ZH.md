@@ -68,7 +68,7 @@ ios参考 [简体中文](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK.md)  <b
 ### 商业案例展示 Business case presentation
 | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/540p/lvshi/lvshi-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/540p/yisheng/yisheng-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/540p/peiban/peiban-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/540p/laoshi/laoshi-bg.jpg" width="200"> |
 |:-------:|:-------:|:-------:|:-------:|
-| **数字律师 [下载](https://github.com/GuijiAI/duix.ai/blob/main/res/540p/lvshi/lvshi.mp4)** | **数字医生 [下载](https://github.com/GuijiAI/duix.ai/blob/main/res/540p/yisheng/yisheng.mp4)** | **虚拟陪伴 [下载](https://github.com/GuijiAI/duix.ai/blob/main/res/540p/peiban/peiban.mp4)** | **口语老师 [下载](https://github.com/GuijiAI/duix.ai/blob/main/res/540p/laoshi/laoshi.mp4)** |
+| **数字律师 [下载视频](https://github.com/GuijiAI/duix.ai/blob/main/res/540p/lvshi/lvshi.mp4)** | **数字医生 [下载视频](https://github.com/GuijiAI/duix.ai/blob/main/res/540p/yisheng/yisheng.mp4)** | **虚拟陪伴 [下载视频](https://github.com/GuijiAI/duix.ai/blob/main/res/540p/peiban/peiban.mp4)** | **口语老师 [下载视频](https://github.com/GuijiAI/duix.ai/blob/main/res/540p/laoshi/laoshi.mp4)** |
 
 <video width="640" height="360" controls>
   <source src="https://github.com/GuijiAI/duix.ai/blob/main/res/540p/laoshi/laoshi.mp4" type="video/mp4">
