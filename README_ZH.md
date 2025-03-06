@@ -66,7 +66,6 @@ ios参考 [简体中文](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK.md)  <b
 请根据您的需求下载相应的模型文件。我们建议您在下载后仔细阅读随附的文档，以确保正确安装和使用模型。<br><br>
 
 ### 商业案例展示 Business case presentation
-<video src="https://github.com/GuijiAI/duix.ai/blob/main/res/laoshi/laoshi.mp4" width="200"></video>
 ![image](https://github.com/GuijiAI/duix.ai/blob/main/res/laoshi/laoshi-bg.jpg)<br><br>
 
 
