@@ -1,12 +1,12 @@
 ## Silicon Basic Edition DUIX SDK Usage Document (1.0.3)
 
- ### 1. 支持的系统和硬件版本
+ ### 1. Supported Systems and Hardware Versions
 
 | Item     | Description                                                               |
 |--------|------------------------------------------------------------------|
 | System     | iOS 12 and above |
 | Hardware   | Requires a device with a quad-core CPU or higher, 4GB of RAM or more. Available storage space of 500MB or more.|
-| 网络     | Supports Wi-Fi and mobile networks. If using cloud-based Q&A libraries, the device bandwidth (actual bandwidth for the digital human) is expected to be 10mbps or higher.  |
+| Network     | Supports Wi-Fi and mobile networks. If using cloud-based Q&A libraries, the device bandwidth (actual bandwidth for the digital human) is expected to be 10mbps or higher.  |
 | Memory   | Memory available for the digital human >= 400MB                                            |
 
 
