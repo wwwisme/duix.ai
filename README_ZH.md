@@ -66,6 +66,7 @@ ios参考 [简体中文](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK.md)  <b
 请根据您的需求下载相应的模型文件。我们建议您在下载后仔细阅读随附的文档，以确保正确安装和使用模型。<br><br>
 
 ### 商业案例展示 Business case presentation
+### 手机及普通终端屏案例
 | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/540p/lvshi/lvshi-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/540p/yisheng/yisheng-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/540p/peiban/peiban-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/540p/laoshi/laoshi-bg.jpg" width="200"> |
 |:-------:|:-------:|:-------:|:-------:|
 | **数字律师 [下载视频](https://github.com/GuijiAI/duix.ai/blob/main/res/540p/lvshi/lvshi.mp4)** | **数字医生 [下载视频](https://github.com/GuijiAI/duix.ai/blob/main/res/540p/yisheng/yisheng.mp4)** | **虚拟陪伴 [下载视频](https://github.com/GuijiAI/duix.ai/blob/main/res/540p/peiban/peiban.mp4)** | **口语老师 [下载视频](https://github.com/GuijiAI/duix.ai/blob/main/res/540p/laoshi/laoshi.mp4)** |
