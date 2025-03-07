@@ -80,6 +80,11 @@ ios参考 [简体中文](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK.md)  <b
 |:-------:|:-------:|:-------:|:-------:|
 | **数字律师 [下载视频](https://github.com/GuijiAI/duix.ai/blob/main/res/540p/lvshi/lvshi.mp4)** | **数字医生 [下载视频](https://github.com/GuijiAI/duix.ai/blob/main/res/540p/yisheng/yisheng.mp4)** | **虚拟陪伴 [下载视频](https://github.com/GuijiAI/duix.ai/blob/main/res/540p/peiban/peiban.mp4)** | **口语老师 [下载视频](https://github.com/GuijiAI/duix.ai/blob/main/res/540p/laoshi/laoshi.mp4)** |
 
+### 低配终端屏案例
+| <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/270p/caishen/caishen-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/270p/guanyin/guanyin-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/270p/sushi/sushi-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/270p/nvyou/nvyou-bg.jpg" width="200"> |
+|:-------:|:-------:|:-------:|:-------:|
+| **财神爷 [下载视频](https://github.com/GuijiAI/duix.ai/blob/main/res/270p/caishen/caishen.mp4)** | **观音菩萨 [下载视频](https://github.com/GuijiAI/duix.ai/blob/main/res/270p/guanyin/guanyin.mp4)** | **苏轼 [下载视频](https://github.com/GuijiAI/duix.ai/blob/main/res/270p/sushi/sushi.mp4)** | **虚拟女友 [下载视频](https://github.com/GuijiAI/duix.ai/blob/main/res/270p/nvyou/nvyou.mp4)** |
+
 
 
 ### 常见问题解答
