@@ -112,7 +112,7 @@ ios参考 [简体中文](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK.md)  <b
 答：下载文件的替换详见代码<br><br>
 
 #### 10、想要了解一体化方案或者更多高级版本？<br>
-答：请访问https://app.guiji.cn/platform，体验更多功能<br><br>
+答：请访问https://app.guiji.cn/platform<br><br>体验更多功能
 
 更多FAQ，请参阅📑 [FAQ](https://jexopm4t2a.feishu.cn/wiki/Ef1VwGHtRiUIQIkQl1hco2ISnFc)  <br><br> 
 
