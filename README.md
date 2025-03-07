@@ -55,9 +55,13 @@ This document provides a detailed description of the integration process for dev
 ## Download Digital Human Local Model
 We offer a selection of digital human models for download and use. We will update the local model packages from time to time so that you can download and utilize the latest models. Below is the list of currently available local model packages:
 #### male
-|  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E8%89%BE%E7%91%9E%E5%85%8B.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E5%AD%90%E8%BD%A9.png" width="200">| <img src="https://github.com/GuijiAI/duix.ai/raw/main/res/%E7%94%B7.jpg" width="200">|
-|:-------:|:-------:|:-------:|
-| **Eric**<br>[Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719193748558/airuike_20240409.zip) | **Zi Xuan**<br>[Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719194036608/zixuan_20240411v2.zip) | **Ming Xuan**<br>[Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719194633518/mingxuan_20240624.zip) |
+|  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/andrew.jpg" width="200"> |  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/MoneyGod.jpg" width="200"> |  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/SuShi.jpg" width="200"> |  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E8%89%BE%E7%91%9E%E5%85%8B.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E5%AD%90%E8%BD%A9.png" width="200">|
+|:-------:|:-------:|:-------:|:-------:|:-------:|
+| **安德鲁** [下载](https://digital-public.obs.cn-east-3.myhuaweicloud.com/dhp-tools/dhp-tools/651705983152197/61025/651705983152197_ccf3256b2449c76e77f94276dffcb293.zip) | **财神** [下载](https://digital-public.obs.cn-east-3.myhuaweicloud.com/dhp-tools/dhp-tools/651644573884485/61002/651644573884485_2387469906049706416017f105e5340f.zip) |  **苏轼** [下载](https://digital-public.obs.cn-east-3.myhuaweicloud.com/dhp-tools/dhp-tools/651660515688517/61011/651660515688517_825de648c30be80a89110dd0e63ecb3b.zip) | **Eric**<br>[Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719193748558/airuike_20240409.zip) | **Zi Xuan**<br>[Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719194036608/zixuan_20240411v2.zip) | 
+
+|<img src="https://github.com/GuijiAI/duix.ai/raw/main/res/%E7%94%B7.jpg" width="200">|
+|:-------:|
+**Ming Xuan**<br>[Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719194633518/mingxuan_20240624.zip) 
 
 #### female
 | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E8%8B%8F%E8%8F%B2.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E6%85%95%E5%AE%B9%E6%99%93.png" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E5%86%B7%E7%84%B1.png" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/Amelia.png" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E8%B5%B5%E9%9B%85.png" width="200"> |
