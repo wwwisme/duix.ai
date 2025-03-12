@@ -120,7 +120,7 @@ Answer: The API for controlling digital human actions is not supported at the mo
 Answer: The replacement of downloaded files is detailed in the code.<br><br>
 
 #### 10、Would you like to learn about the integrated solution or more advanced versions?<br>
-Answer: Please visit https://guiji.cn/duix-light-document/introduce/ to experience more features.<br><br>
+Answer: Please visit https://guiji.cn/duix-light-document/en/introduce/ to experience more features.<br><br>
 
 
 ···For more FAQs, please refer to 📑 [FAQ](https://jexopm4t2a.feishu.cn/wiki/Ef1VwGHtRiUIQIkQl1hco2ISnFc)  <br><br> 
