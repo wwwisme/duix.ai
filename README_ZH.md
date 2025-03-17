@@ -1,11 +1,12 @@
-# Duix - 硅基数字人SDK 🌐🤖 [[English]](./README.md)   
+# Duix - 硅基数字人实时交互SDK 🌐🤖 [[English]](./README.md)   
 
 <div style="width: 100%; text-align: center;">
   <img src="res/logo.jpg" style="width: 100%; height: auto;"/>
 </div>
 
 
- 📖 Documentation  [[android]](./duix-android/dh_aigc_android/README.md)&nbsp;&nbsp;[[ios]](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK.md)&nbsp;&nbsp;&nbsp;&nbsp;📑 [FAQ](https://jexopm4t2a.feishu.cn/wiki/Ef1VwGHtRiUIQIkQl1hco2ISnFc)  <br><br> 
+ 📖 Documentation <br> [android](./duix-android/dh_aigc_android/README.md)<br>[ios](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK.md)<br>
+ 📑 [FAQ](https://jexopm4t2a.feishu.cn/wiki/Ef1VwGHtRiUIQIkQl1hco2ISnFc)  <br><br> 
 
 ## 支持 Support
 加入我们的微信或 Discord 社区以获得支持和讨论。关注Twitter，观看基于DUIX开源能力制作的最新数字人视频。<br>
