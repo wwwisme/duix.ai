@@ -5,8 +5,8 @@
 </div>
 
 
- ## 📖 Documentation 
-   <br>[android](./duix-android/dh_aigc_android/README.md)<br>
+ ## 📖 Documentation <br>
+   [android](./duix-android/dh_aigc_android/README.md)<br>
    [ios](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK.md)<br>
    📑 [FAQ](https://jexopm4t2a.feishu.cn/wiki/Ef1VwGHtRiUIQIkQl1hco2ISnFc)  <br><br> 
 
