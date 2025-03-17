@@ -92,7 +92,7 @@ Please download the model files according to your needs. We recommend that you c
 
 ## Frequently Asked Questions
 #### 1. Are free avatar models available for commercial use? Do they support digital human customization? Are they based on photos or videos?<br>
-Answer: The free avatar models are not available for commercial use! If needed, we can support digital human customization. Our digital human customization is based on videos. You can customize a unique digital human for use in the SDK. However, the customized digital human service is a paid service. You can contact us by scanning the QR code on WeChat.<br>
+Answer: The freely provided avatar models are available for commercial use worldwide at no cost (Enterprises with more than 100,000 users or annual revenue exceeding $10 million are required to sign a commercial license agreement). If needed, we can support digital human customization. Our digital human customization is based on videos. You can customize a unique digital human for use in the SDK. However, the customized digital human service is a paid service. You can contact us by scanning the QR code on WeChat.<br>
 <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/ssx.png" width="200">
 
 #### 2. How to customize a digital avatar?<br>
