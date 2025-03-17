@@ -6,10 +6,10 @@
 
 
  ## 📖 文档 Documentation <br>
- 😄 [实时交互SDK：android](./duix-android/dh_aigc_android/README.md)<br>
- 😄 [实时交互SDK：ios](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK.md)<br>
- 😄 [常见问题：FAQ](https://jexopm4t2a.feishu.cn/wiki/Ef1VwGHtRiUIQIkQl1hco2ISnFc) <br>
- 😄 [数字人快速克隆及视频合成开源项目（非实时交互）：Heygem](https://github.com/GuijiAI/HeyGem.ai)<br><br> 
+ 😄 [实时交互SDK：[Android]](./duix-android/dh_aigc_android/README.md)<br>
+ 😄 [实时交互SDK：[iOS]](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK.md)<br>
+ 😄 [常见问题：[FQA]](https://jexopm4t2a.feishu.cn/wiki/Ef1VwGHtRiUIQIkQl1hco2ISnFc) <br>
+ 😄 [数字人快速克隆及视频合成开源项目（非实时交互）：[HeyGem.ai]](https://github.com/GuijiAI/HeyGem.ai)<br><br> 
 
 ## 支持 Support
 加入我们的微信或 Discord 社区以获得支持和讨论。关注Twitter，观看基于DUIX开源能力制作的最新数字人视频。<br>

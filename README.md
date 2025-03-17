@@ -1,10 +1,14 @@
-# Duix - Silicon-Based Digital Human SDK 🌐🤖   [[Chinese]](./README_ZH.md)   
+# Duix - Silicon-Based Digital Human Real-time Interaction SDK 🌐🤖   [[Chinese]](./README_ZH.md)   
 
 <div style="width: 100%; text-align: center;">
   <img src="res/logo_en.jpg" style="width: 100%; height: auto;"/>
 </div>
 
- 📖 Documentation  [[android]](./duix-android/dh_aigc_android/README.md)&nbsp;&nbsp;[[ios]](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK.md)&nbsp;&nbsp;&nbsp;&nbsp;📑 [FAQ](https://jexopm4t2a.feishu.cn/wiki/Ef1VwGHtRiUIQIkQl1hco2ISnFc)  <br><br> 
+ ## 📖 Documentation <br> 
+ 😄 [Real-time Interaction SDK：[Android]](./duix-android/dh_aigc_android/README.md)<br>
+ 😄 [Real-time Interaction SDK：[iOS]](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK.md)<br>
+ 😄 [Frequently Asked Questions (FAQ)：[FQA]](https://jexopm4t2a.feishu.cn/wiki/Ef1VwGHtRiUIQIkQl1hco2ISnFc) <br>
+ 😄 [Digital Human Rapid Cloning and Video Synthesis Open Source Project (Non-Real-Time Interaction):[HeyGem.ai]](https://github.com/GuijiAI/HeyGem.ai)<br><br> 
 
 ## [Duix App](https://apps.apple.com/app/id6451088879)
 Welcome to the Duix App. Feel free to download it and experience the advanced digital human interaction features we offer.<br><br> 
