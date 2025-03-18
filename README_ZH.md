@@ -135,7 +135,7 @@ ios参考 [简体中文](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK.md)  <b
 
 ### 联系我们 contact us
 ```
-end_sub@hotmail.com
+James@toolwiz.com
 ```
 
 

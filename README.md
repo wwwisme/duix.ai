@@ -141,7 +141,7 @@ Answer: Please visit https://guiji.cn/duix-light-document/en/introduce/ to exper
 ## Contact Us
 
 ```
-end_sub@hotmail.com
+James@toolwiz.com
 ```
 
 
