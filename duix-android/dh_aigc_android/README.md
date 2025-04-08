@@ -220,25 +220,69 @@ boolean stopAudio();
 duix?.stopAudio()
 ```
 
-### 6. 播放动作区间
+### 6. 设置是否随机播放动作区间
 
-当模型中支持播放动作区间时可使用该函数播放动作区间，多个时随机播放。
+当模型中支持播放动作区间时可使用该函数指定随机或顺序播放动作区。
 
 函数定义:
 
 ```
-void motion();
+/**
+ * 当模型支持动作区间时设置播放动作区间是否是随机播放
+ * @param random 是否随机播放 true: 随机播放; false: 顺序播放
+ * @return true: 模型支持动作区间，设置是否随机播放成功；false: 模型不支持动作区间或初始化未完成
+ */
+boolean setRandomMotion(boolean random)
 ```
 
 调用示例如下：
 
 ```kotlin
-duix?.motion()
+duix?.setRandomMotion(true)
 ```
 
-###      
+### 7. 开始播放动作区间
 
-### 四. Proguard配置
+当模型中支持播放动作区间时可使用该函数开始播放动作区间
+
+函数定义:
+
+```
+/**
+ * 当模型支持动作区间时播放动作区间
+ * @return true: 模型支持动作区间，开始播放动作区间；false: 模型不支持动作区间或初始化未完成
+ */
+boolean startMotion();
+```
+
+调用示例如下：
+
+```kotlin
+duix?.startMotion()
+```
+
+### 8. 停止播放动作区间
+
+当模型中支持播放动作区间时可使用该函数停止播放动作区间
+
+函数定义:
+
+```
+/**
+ * 当模型支持动作区间时停止播放动作区间
+ * @param immediately 是否立即停止播放, true: 立即停止播放动作区间回到静默区间；false: 等当前动作区间播放完毕后回到静默区间
+ * @return true: 模型支持动作区间，停止播放动作区间；false: 模型不支持动作区间或初始化未完成
+ */
+boolean stopMotion(boolean immediately);
+```
+
+调用示例如下：
+
+```kotlin
+duix?.stopMotion(false)
+```
+
+## 四. Proguard配置
 
 如果代码使用了混淆，请在proguard-rules.pro中配置：
 
@@ -256,6 +300,13 @@ duix?.motion()
 4. 播放音频使用16k采样率单通道16位深的wav本地文件
 
 ## 六、版本记录
+
+**<a>3.0.5</a>**
+
+```text
+1. 更新arm32位cpu的libonnxruntime.so版本以修复兼容问题。
+2. 修改动作区间播放函数，可以使用随机播放和顺序播放，需要主动调用停止播放动作区间以回到静默区间。
+```
 
 **<a>3.0.4</a>**
 

@@ -47,9 +47,11 @@ public class ModelInfo implements Serializable {
         modelMD5Map.put("weight_168u.b", "wb");     // 不一定有
     }
 
-    private boolean hasMask = true;            // 是否有Mask配置
+
     private int width = 540;            // 数字人宽
     private int height = 960;           // 数字人高
+    private boolean hasMask = true;            // 是否有Mask配置
+
 
     private List<Region> silenceRegions = new ArrayList<>();
     private List<Region> motionRegions = new ArrayList<>();
@@ -306,5 +308,17 @@ public class ModelInfo implements Serializable {
 
     public boolean isHasMask() {
         return hasMask;
+    }
+
+    @Override
+    public String toString() {
+        return "ModelInfo{" +
+                "width=" + width +
+                ", height=" + height +
+                ", hasMask=" + hasMask +
+                ", silenceRegions=" + silenceRegions +
+                ", motionRegions=" + motionRegions +
+                ", ncnnConfig='" + ncnnConfig + '\'' +
+                '}';
     }
 }

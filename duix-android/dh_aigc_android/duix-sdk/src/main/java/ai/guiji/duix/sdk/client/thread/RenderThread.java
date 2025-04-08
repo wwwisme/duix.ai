@@ -61,7 +61,8 @@ public class RenderThread extends Thread {
     private static final int MSG_STOP_AUDIO = 5;            // 停止播放音频
     private static final int MSG_PLAY_AUDIO = 6;            // 音频的下载及ncnn计算完毕，准备播放
     private static final int MSG_REQUIRE_MOTION = 7;        // 请求播放动作区间
-
+    private static final int MSG_RANDOM_MOTION = 8;         // 请求播放动作区间
+    private static final int MSG_STOP_MOTION = 11;          // 请求结束播放动作区间
 
     private static final int MSG_PAUSE_AUDIO = 9;            // 暂停播放音频
     private static final int MSG_RESUME_AUDIO = 10;          // 恢复播放音频
@@ -85,6 +86,9 @@ public class RenderThread extends Thread {
     private SimpleExoPlayer mExoPlayer;                     // 音频播放器
     private int mTotalBnf = 0;                              // 播放音频的帧数
     private boolean requireMotion = false;                  // 请求播放动作
+    private boolean mMotionRandom = false;                   // 是否随机播放动作
+    private boolean mMotionContinue = false;                 // 动作区间持续播放
+    private int mCurrentMotionIndex = -1;                    // 当前动作区间
 
     private ModelInfo mModelInfo;                           // 模型的全部信息都放在这里面
     private ByteBuffer rawBuffer;
@@ -170,16 +174,16 @@ public class RenderThread extends Thread {
                 }
                 Logger.d("模型初始化完成");
                 if (callback != null) {
-                    callback.onInitResult(0, mModelInfo.toString());
+                    callback.onInitResult(0, "init success", mModelInfo);
                 }
             } catch (Exception e){
                 if (callback != null) {
-                    callback.onInitResult(-1, "模型加载异常: " + e);
+                    callback.onInitResult(-1, "模型加载异常: " + e, null);
                 }
             }
         } else {
             if (callback != null) {
-                callback.onInitResult(-2, "模型配置读取异常");
+                callback.onInitResult(-2, "模型配置读取异常", null);
             }
         }
 
@@ -234,9 +238,48 @@ public class RenderThread extends Thread {
         }
     }
 
-    public void requireMotion() {
+    public boolean setRandomMotion(boolean random){
         if (mHandler != null) {
-            mHandler.sendEmptyMessage(MSG_REQUIRE_MOTION);
+            if (mModelInfo != null && !mModelInfo.getMotionRegions().isEmpty()){
+                Message msg = new Message();
+                msg.what = MSG_RANDOM_MOTION;
+                msg.obj = random;
+                mHandler.sendMessage(msg);
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    public boolean startMotion() {
+        if (mHandler != null) {
+            if (mModelInfo != null && !mModelInfo.getMotionRegions().isEmpty()){
+                mHandler.sendEmptyMessage(MSG_REQUIRE_MOTION);
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    public boolean stopMotion(boolean immediately){
+        if (mHandler != null) {
+            if (mModelInfo != null && !mModelInfo.getMotionRegions().isEmpty()){
+                Message msg = new Message();
+                msg.what = MSG_STOP_MOTION;
+                msg.obj = immediately;
+                mHandler.sendMessage(msg);
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
         }
     }
 
@@ -282,27 +325,44 @@ public class RenderThread extends Thread {
         }
     }
 
+    private void findMotionRegions(){
+        if (!mModelInfo.getMotionRegions().isEmpty()) {
+            if (mMotionRandom){
+                mCurrentMotionIndex = new Random().nextInt(mModelInfo.getMotionRegions().size());
+            } else {
+                mCurrentMotionIndex++;
+                if (mCurrentMotionIndex >= mModelInfo.getMotionRegions().size()){
+                    mCurrentMotionIndex = 0;
+                }
+            }
+            mPreviewQueue.clear();
+            ModelInfo.Region motionRegion = mModelInfo.getMotionRegions().get(mCurrentMotionIndex);
+            Logger.d("发现想要动作区间index: " + mCurrentMotionIndex + " region: " + motionRegion);
+            mPreviewQueue.addAll(motionRegion.frames);
+        }
+    }
+
     private void renderStep() {
         ModelInfo.Frame frame;
         if (requireMotion) {
             // 收到动作的通知
             requireMotion = false;
-            if (mModelInfo.getMotionRegions().size() > 0) {
-                int index = new Random().nextInt(mModelInfo.getMotionRegions().size());
-                mPreviewQueue.clear();
-                ModelInfo.Region motionRegion = mModelInfo.getMotionRegions().get(index);
-                Logger.d("发现想要动作区间index: " + index + " region: " + motionRegion);
-                mPreviewQueue.addAll(motionRegion.frames);
-            }
+            mMotionContinue = true;
+            mCurrentMotionIndex = -1;
+            findMotionRegions();
         }
         if (mPreviewQueue.isEmpty()) {
-            // 先假设把静默的都加进来
-            List<ModelInfo.Region> silenceRegions = mModelInfo.getSilenceRegions();
-            mPreviewQueue.addAll(silenceRegions.get(0).frames);
-            List<ModelInfo.Frame> copiedList = new ArrayList<>(silenceRegions.get(0).frames);
-            // 反向的也加进来
-            Collections.reverse(copiedList);
-            mPreviewQueue.addAll(copiedList);
+            if (mMotionContinue){
+                findMotionRegions();
+            } else {
+                // 先假设把静默的都加进来
+                List<ModelInfo.Region> silenceRegions = mModelInfo.getSilenceRegions();
+                mPreviewQueue.addAll(silenceRegions.get(0).frames);
+                List<ModelInfo.Frame> copiedList = new ArrayList<>(silenceRegions.get(0).frames);
+                // 反向的也加进来
+                Collections.reverse(copiedList);
+                mPreviewQueue.addAll(copiedList);
+            }
         }
         frame = mPreviewQueue.poll();
         if (frame != null) {
@@ -456,8 +516,19 @@ public class RenderThread extends Thread {
         }
     }
 
+    private void handleRandomMotion(boolean random){
+        mMotionRandom = random;
+    }
+
     private void handleRequireMotion() {
         requireMotion = true;
+    }
+
+    private void handleStopMotion(boolean immediately){
+        mMotionContinue = false;
+        if (immediately){
+            mPreviewQueue.clear();
+        }
     }
 
     static class RenderHandler extends Handler {
@@ -500,6 +571,12 @@ public class RenderThread extends Thread {
                 case MSG_REQUIRE_MOTION:
                     render.handleRequireMotion();
                     break;
+                case MSG_STOP_MOTION:
+                    render.handleStopMotion((boolean) msg.obj);
+                    break;
+                case MSG_RANDOM_MOTION:
+                    render.handleRandomMotion((boolean) msg.obj);
+                    break;
                 case MSG_QUIT:
                     Logger.i("duix thread quit!");
                     Looper myLooper = Looper.myLooper();
@@ -513,7 +590,7 @@ public class RenderThread extends Thread {
     }
 
     public interface RenderCallback {
-        void onInitResult(int code, String message);
+        void onInitResult(int code, String message, ModelInfo modelInfo);
 
         void onPlayStart();
 

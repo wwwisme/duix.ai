@@ -26,6 +26,7 @@ class MainActivity : BaseActivity() {
 
     // https://cdn.guiji.ai/duix/digital/model/1706009711636/liangwei_540s.zip
     // https://cdn.guiji.ai/duix/digital/model/1706009766199/mingzhi_540s.zip
+    // https://cdn.guiji.ai/duix/digital/model/1716034688/bendi3_20240518.zip
     private val modelUrl =
         "https://cdn.guiji.ai/duix/digital/model/1716034688/bendi3_20240518.zip"   // ** 在这里更新模型地址 **
     private lateinit var modelDir: File

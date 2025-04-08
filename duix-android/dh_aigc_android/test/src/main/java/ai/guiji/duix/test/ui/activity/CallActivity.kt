@@ -3,6 +3,7 @@ package ai.guiji.duix.test.ui.activity
 import ai.guiji.duix.sdk.client.Constant
 import ai.guiji.duix.sdk.client.DUIX
 import ai.guiji.duix.sdk.client.bean.ImageFrame
+import ai.guiji.duix.sdk.client.bean.ModelInfo
 import ai.guiji.duix.sdk.client.render.DUIXRenderer
 import ai.guiji.duix.test.databinding.ActivityCallBinding
 import ai.guiji.duix.test.render.DebugSink
@@ -33,6 +34,7 @@ class CallActivity : BaseActivity() {
     private lateinit var binding: ActivityCallBinding
     private var duix: DUIX? = null
     private var mDUIXRender: DUIXRenderer? = null
+    private var mModelInfo: ModelInfo?=null     // 加载的模型信息
 
     /**
      * 当duix渲染模块未抛出异常，但无法呈现数字人形象时，考虑OpenGL上屏的代码可能存在问题。
@@ -87,6 +89,8 @@ class CallActivity : BaseActivity() {
         duix = DUIX(mContext, baseDir, modelDir, sink) { event, msg, info ->
             when (event) {
                 Constant.CALLBACK_EVENT_INIT_READY -> {
+                    mModelInfo = info as ModelInfo
+                    Log.e(TAG, "CALLBACK_EVENT_INIT_READY: $info")
                     initOk()
                 }
 
@@ -104,6 +108,11 @@ class CallActivity : BaseActivity() {
 
                 Constant.CALLBACK_EVENT_AUDIO_PLAY_END -> {
                     Log.e(TAG, "CALLBACK_EVENT_PLAY_END: $msg")
+                    runOnUiThread {
+                        if ((mModelInfo?.motionRegions?.size ?: 0) > 0){
+                            duix?.stopMotion(true)
+                        }
+                    }
                 }
 
                 Constant.CALLBACK_EVENT_AUDIO_PLAY_ERROR -> {
@@ -150,6 +159,10 @@ class CallActivity : BaseActivity() {
     private fun initOk() {
         Log.e(TAG, "init ok")
         runOnUiThread {
+            // 设置是随机播放动作区间还是顺序播放
+            if ((mModelInfo?.motionRegions?.size ?: 0) > 0){
+                duix?.setRandomMotion(true)
+            }
             binding.btnPlayEN.visibility = View.VISIBLE
             binding.btnPlayZH.visibility = View.VISIBLE
         }
@@ -197,7 +210,10 @@ class CallActivity : BaseActivity() {
         runOnUiThread {
             duix?.playAudio(path)
             // 如果模型支持动作区间会播放动作区间
-            duix?.motion()
+            if ((mModelInfo?.motionRegions?.size ?: 0) > 0){
+                Log.e("123", "startMotion")
+                duix?.startMotion()
+            }
         }
     }
 

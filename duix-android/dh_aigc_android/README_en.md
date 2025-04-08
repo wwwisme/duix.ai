@@ -215,25 +215,58 @@ Example call:
 duix?.stopAudio()
 ```
 
-### 6. Play Action Interval
-
-When the model supports playing action intervals, you can use this function to play multiple intervals; when there are multiple, it plays randomly.
+### 6. Play Action Mode
 
 Function definition:
 
-```kotlin
-void motion();
+```
+boolean setRandomMotion(boolean random);
 ```
 
 Example call:
 
 ```kotlin
-duix?.motion()
+duix?.setRandomMotion(true)
 ```
 
-### 7. Proguard Configuration
+### 7. Play Action Interval
+
+When the model supports playing action intervals, you can use this function to play multiple intervals.
+
+Function definition:
+
+```
+void startMotion();
+```
+
+Example call:
+
+```kotlin
+duix?.startMotion()
+```
+
+### 8. Stop Action Interval
+
+When the model supports playing action intervals, you can use this function to stop play action intervals.
+
+Function definition:
+
+```
+void stopMotion(boolean immediately);
+```
+
+Example call:
+
+```kotlin
+duix?.stopMotion(false)
+```
+
+## 7. Proguard Configuration
 
 If the code uses obfuscation, please configure in proguard-rules.pro:
+
+
+## IV. Proguard configuration
 
 ```pro
 -keep class com.btows.ncnntest.** {*; }
@@ -243,12 +276,12 @@ If the code uses obfuscation, please configure in proguard-rules.pro:
 
 <br>
 
-## IV. Precautions
+## V. Precautions
 
 1. The basic configuration folder and the corresponding model folder storage path must be correctly configured to drive rendering.
 2. The audio file to be played should not be too large; a large audio file import will consume a lot of CPU, causing drawing stuck.<br><br>
 
-## V. Version Record
+## VI. Version Record
 
 **3.0.4**
 
@@ -264,7 +297,7 @@ If the code uses obfuscation, please configure in proguard-rules.pro:
 
 <br>
 
-## VI. Other Related Third-Party Open Source Projects
+## VII. Other Related Third-Party Open Source Projects
 
 | Module                                           | Description                                         |
 | :----------------------------------------------- | :-------------------------------------------------- |

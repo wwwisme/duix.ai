@@ -5,6 +5,7 @@ import android.content.Context;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import ai.guiji.duix.sdk.client.bean.ModelInfo;
 import ai.guiji.duix.sdk.client.render.RenderSink;
 import ai.guiji.duix.sdk.client.thread.RenderThread;
 
@@ -42,11 +43,11 @@ public class DUIX {
         }
         mRenderThread = new RenderThread(mContext, baseDir, modelDir, renderSink, new RenderThread.RenderCallback() {
             @Override
-            public void onInitResult(int code, String message) {
+            public void onInitResult(int code, String message, ModelInfo modelInfo) {
                 if (code == 0){
                     isReady = true;
                     if (mCallback != null){
-                        mCallback.onEvent(Constant.CALLBACK_EVENT_INIT_READY, "init ok", null);
+                        mCallback.onEvent(Constant.CALLBACK_EVENT_INIT_READY, "init ok", modelInfo);
                     }
                 } else {
                     if (mCallback != null){
@@ -88,12 +89,33 @@ public class DUIX {
         mRenderThread.start();
     }
 
+    public boolean setRandomMotion(boolean random){
+        if (mRenderThread != null) {
+            return mRenderThread.setRandomMotion(random);
+        } else {
+            return false;
+        }
+    }
+
     /**
      * 播放动作区间
      */
-    public void motion() {
+    public boolean startMotion() {
         if (mRenderThread != null) {
-            mRenderThread.requireMotion();
+            return mRenderThread.startMotion();
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * 停止播放动作区间
+     */
+    public boolean stopMotion(boolean immediately){
+        if (mRenderThread != null) {
+            return mRenderThread.stopMotion(immediately);
+        } else {
+            return false;
         }
     }
 
