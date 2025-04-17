@@ -335,7 +335,7 @@
 {
     filePath=[filePath stringByReplacingOccurrencesOfString:@"file://" withString:@""];
     NSString *unzipPath = [self getHistoryCachePath:@"unZipCache"];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),^{
         [SSZipArchive unzipFileAtPath:filePath toDestination:unzipPath progressHandler:^(NSString * _Nonnull entry, unz_file_info zipInfo, long entryNumber, long total) {
             
         } completionHandler:^(NSString * _Nonnull path, BOOL succeeded, NSError * _Nullable error) {
