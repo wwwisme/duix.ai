@@ -88,7 +88,6 @@ static GJLDigitalManager * manager = nil;
 //uuid
 @property (nonatomic, strong) NSString *uuid;
 
-@property (nonatomic, strong) dispatch_queue_t playMetalQueue;
 @end
 @implementation GJLDigitalManager
 
@@ -126,7 +125,7 @@ static GJLDigitalManager * manager = nil;
     self.playAudioQueue= dispatch_queue_create("com.digitalsdk.playAudioQueue", DISPATCH_QUEUE_SERIAL);
     
     self.heart_timer_queue=dispatch_queue_create("com.digitalsdk.heart_timer_queue", DISPATCH_QUEUE_SERIAL);
-    self.playMetalQueue= dispatch_queue_create("com.digitalsdk.playMetalQueue", DISPATCH_QUEUE_SERIAL);
+ 
 }
 
 

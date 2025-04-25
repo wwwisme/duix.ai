@@ -216,11 +216,11 @@ typedef NS_ENUM(NSInteger, JPMetalViewContentMode) {
     }
     @autoreleasepool
     {
-        
+        __weak __typeof(self) wself = self;
         dispatch_async(dispatch_get_main_queue(), ^{
    
    
-            id<MTLCommandBuffer> commandBuffer = [self.commandQueue commandBuffer];
+            id<MTLCommandBuffer> commandBuffer = [wself.commandQueue commandBuffer];
 
             MTLRenderPassDescriptor *renderPassDescriptor = view.currentRenderPassDescriptor;
             // MTLRenderPassDescriptor描述一系列attachments的值，类似GL的FrameBuffer；同时也用来创建MTLRenderCommandEncoder
@@ -231,17 +231,17 @@ typedef NS_ENUM(NSInteger, JPMetalViewContentMode) {
                 renderPassDescriptor.colorAttachments[0].loadAction = MTLLoadActionClear;
                 renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(0.0, 0, 0, 0.0f); // 设置默认颜色
                 id<MTLRenderCommandEncoder> renderEncoder = [commandBuffer renderCommandEncoderWithDescriptor:renderPassDescriptor]; //编码绘制指令的Encoder
-                [renderEncoder setViewport:(MTLViewport){0.0, 0.0, static_cast<double>(self.viewportSize.x), static_cast<double>(self.viewportSize.y), -1.0, 1.0 }]; // 设置显示区域
-                [renderEncoder setRenderPipelineState:self.pipelineState]; // 设置渲染管道，以保证顶点和片元两个shader会被调用
+                [renderEncoder setViewport:(MTLViewport){0.0, 0.0, static_cast<double>(wself.viewportSize.x), static_cast<double>(wself.viewportSize.y), -1.0, 1.0 }]; // 设置显示区域
+                [renderEncoder setRenderPipelineState:wself.pipelineState]; // 设置渲染管道，以保证顶点和片元两个shader会被调用
                 
-                [renderEncoder setVertexBuffer:self.vertices
+                [renderEncoder setVertexBuffer:wself.vertices
                                         offset:0
                                        atIndex:0]; // 设置顶点缓存
                 
                
                 if([DigitalHumanDriven manager].back_type==1)
                 {
-                    [renderEncoder setFragmentTexture:self.backTexture
+                    [renderEncoder setFragmentTexture:wself.backTexture
                                         atIndex:LYFragmentTextureIndexGreenTextureY]; // 设置纹理
 //                    [blitEncoder optimizeContentsForGPUAccess:self.backTexture];
                 }
@@ -250,17 +250,17 @@ typedef NS_ENUM(NSInteger, JPMetalViewContentMode) {
         //        [renderEncoder setFragmentTexture:self.texture
         //                            atIndex:LYFragmentTextureIndexGreenTextureUV]; // 设置纹理
                 
-                [renderEncoder setFragmentTexture:self.maskTexture
+                [renderEncoder setFragmentTexture:wself.maskTexture
                                     atIndex:LYFragmentTextureIndexNormalTextureY]; // 设置纹理
                 
-                [renderEncoder setFragmentTexture:self.bfgTexture
+                [renderEncoder setFragmentTexture:wself.bfgTexture
                                     atIndex:LYFragmentTextureIndexNormalTextureUV]; // 设置纹理
         //        [renderEncoder setFragmentTexture:self.texture
         //                                  atIndex:0]; // 设置纹理
                 
                 [renderEncoder drawPrimitives:MTLPrimitiveTypeTriangle
                                   vertexStart:0
-                                  vertexCount:self.numVertices]; // 绘制
+                                  vertexCount:wself.numVertices]; // 绘制
                 
         //        [renderEncoder setFragmentTexture:backgroundTexture atIndex:1];
               
