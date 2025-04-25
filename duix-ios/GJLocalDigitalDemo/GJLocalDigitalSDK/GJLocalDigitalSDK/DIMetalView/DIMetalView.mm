@@ -41,12 +41,14 @@ typedef NS_ENUM(NSInteger, JPMetalViewContentMode) {
 @property (nonatomic, strong) id<MTLTexture> backTexture;
 @property (nonatomic, strong) id<MTLTexture> bfgTexture;
 @property (nonatomic, assign)GLuint frame_blending_mode_uniform;
+@property (nonatomic, strong) dispatch_queue_t metalQueue;
 @end
 @implementation DIMetalView
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame])
     {
+        self.metalQueue = dispatch_queue_create("com.metal.queue", DISPATCH_QUEUE_SERIAL);
         self.fillMode=JPMetalViewContentModeFill;
         float height=self.frame.size.height;
         if(self.fillMode==JPMetalViewContentModeStretch || self.fillMode==JPMetalViewContentModeFit)
@@ -65,10 +67,7 @@ typedef NS_ENUM(NSInteger, JPMetalViewContentMode) {
             self.mtkView.preferredFramesPerSecond = 25;
         }
  
-        if([DigitalHumanDriven manager].back_type==0)
-        {
-            self.mtkView.backgroundColor=[UIColor clearColor];
-        }
+     
         self.mtkView.clearColor = MTLClearColorMake(0.0, 0.0, 0.0, 0);
         self.mtkView.sampleCount = 1;
         self.mtkView.framebufferOnly = NO;
@@ -108,11 +107,12 @@ typedef NS_ENUM(NSInteger, JPMetalViewContentMode) {
     {
         sampleName=@"samplingShader3";
     }
+    if([DigitalHumanDriven manager].back_type==0)
+    {
+        self.mtkView.backgroundColor=[UIColor clearColor];
+    }
     id<MTLFunction> fragmentFunction= [defaultLibrary newFunctionWithName:sampleName]; // 片元shader，samplingShader是函数名
- 
-    
 
-    
     MTLRenderPipelineDescriptor *pipelineStateDescriptor = [[MTLRenderPipelineDescriptor alloc] init];
     pipelineStateDescriptor.vertexFunction = vertexFunction;
     pipelineStateDescriptor.fragmentFunction = fragmentFunction;
@@ -216,51 +216,69 @@ typedef NS_ENUM(NSInteger, JPMetalViewContentMode) {
     }
     @autoreleasepool
     {
-    id<MTLCommandBuffer> commandBuffer = [self.commandQueue commandBuffer];
-    MTLRenderPassDescriptor *renderPassDescriptor = view.currentRenderPassDescriptor;
-    // MTLRenderPassDescriptor描述一系列attachments的值，类似GL的FrameBuffer；同时也用来创建MTLRenderCommandEncoder
-    if(renderPassDescriptor != nil)
-    {
-        renderPassDescriptor.colorAttachments[0].loadAction = MTLLoadActionClear;
-        renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(0.0, 0, 0, 0.0f); // 设置默认颜色
-        id<MTLRenderCommandEncoder> renderEncoder = [commandBuffer renderCommandEncoderWithDescriptor:renderPassDescriptor]; //编码绘制指令的Encoder
-        [renderEncoder setViewport:(MTLViewport){0.0, 0.0, static_cast<double>(self.viewportSize.x), static_cast<double>(self.viewportSize.y), -1.0, 1.0 }]; // 设置显示区域
-        [renderEncoder setRenderPipelineState:self.pipelineState]; // 设置渲染管道，以保证顶点和片元两个shader会被调用
         
-        [renderEncoder setVertexBuffer:self.vertices
-                                offset:0
-                               atIndex:0]; // 设置顶点缓存
-        if([DigitalHumanDriven manager].back_type==1)
-        {
-            [renderEncoder setFragmentTexture:self.backTexture
-                                atIndex:LYFragmentTextureIndexGreenTextureY]; // 设置纹理
-        }
-       
-        
-//        [renderEncoder setFragmentTexture:self.texture
-//                            atIndex:LYFragmentTextureIndexGreenTextureUV]; // 设置纹理
-        
-        [renderEncoder setFragmentTexture:self.maskTexture
-                            atIndex:LYFragmentTextureIndexNormalTextureY]; // 设置纹理
-        
-        [renderEncoder setFragmentTexture:self.bfgTexture
-                            atIndex:LYFragmentTextureIndexNormalTextureUV]; // 设置纹理
-//        [renderEncoder setFragmentTexture:self.texture
-//                                  atIndex:0]; // 设置纹理
-        
-        [renderEncoder drawPrimitives:MTLPrimitiveTypeTriangle
-                          vertexStart:0
-                          vertexCount:self.numVertices]; // 绘制
-        
-//        [renderEncoder setFragmentTexture:backgroundTexture atIndex:1];
-        
-        [renderEncoder endEncoding]; // 结束
-        
-        [commandBuffer presentDrawable:view.currentDrawable]; // 显示
-    }
-    
-    [commandBuffer commit]; // 提交；
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+   
+   
+            id<MTLCommandBuffer> commandBuffer = [self.commandQueue commandBuffer];
+
+            MTLRenderPassDescriptor *renderPassDescriptor = view.currentRenderPassDescriptor;
+            // MTLRenderPassDescriptor描述一系列attachments的值，类似GL的FrameBuffer；同时也用来创建MTLRenderCommandEncoder
+            if(renderPassDescriptor != nil)
+            {
+                
+      
+                renderPassDescriptor.colorAttachments[0].loadAction = MTLLoadActionClear;
+                renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(0.0, 0, 0, 0.0f); // 设置默认颜色
+                id<MTLRenderCommandEncoder> renderEncoder = [commandBuffer renderCommandEncoderWithDescriptor:renderPassDescriptor]; //编码绘制指令的Encoder
+                [renderEncoder setViewport:(MTLViewport){0.0, 0.0, static_cast<double>(self.viewportSize.x), static_cast<double>(self.viewportSize.y), -1.0, 1.0 }]; // 设置显示区域
+                [renderEncoder setRenderPipelineState:self.pipelineState]; // 设置渲染管道，以保证顶点和片元两个shader会被调用
+                
+                [renderEncoder setVertexBuffer:self.vertices
+                                        offset:0
+                                       atIndex:0]; // 设置顶点缓存
+                
+               
+                if([DigitalHumanDriven manager].back_type==1)
+                {
+                    [renderEncoder setFragmentTexture:self.backTexture
+                                        atIndex:LYFragmentTextureIndexGreenTextureY]; // 设置纹理
+//                    [blitEncoder optimizeContentsForGPUAccess:self.backTexture];
+                }
+               
+                
+        //        [renderEncoder setFragmentTexture:self.texture
+        //                            atIndex:LYFragmentTextureIndexGreenTextureUV]; // 设置纹理
+                
+                [renderEncoder setFragmentTexture:self.maskTexture
+                                    atIndex:LYFragmentTextureIndexNormalTextureY]; // 设置纹理
+                
+                [renderEncoder setFragmentTexture:self.bfgTexture
+                                    atIndex:LYFragmentTextureIndexNormalTextureUV]; // 设置纹理
+        //        [renderEncoder setFragmentTexture:self.texture
+        //                                  atIndex:0]; // 设置纹理
+                
+                [renderEncoder drawPrimitives:MTLPrimitiveTypeTriangle
+                                  vertexStart:0
+                                  vertexCount:self.numVertices]; // 绘制
+                
+        //        [renderEncoder setFragmentTexture:backgroundTexture atIndex:1];
+              
+               
+                  
+
+              
+                [renderEncoder endEncoding]; // 结束
+                
+              
+            }
+            [commandBuffer presentDrawable:view.currentDrawable]; // 显示
+ 
+            
+            [commandBuffer commit]; // 提交；
+        });
+ 
+
     }
 }
 -(cv::Mat)cvMatFromUIImage:(UIImage *)image

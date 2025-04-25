@@ -87,7 +87,8 @@ static GJLDigitalManager * manager = nil;
 @property (nonatomic, assign)NSInteger sequence_type;
 //uuid
 @property (nonatomic, strong) NSString *uuid;
-//@property (nonatomic, strong) dispatch_queue_t playImageQueue;
+
+@property (nonatomic, strong) dispatch_queue_t playMetalQueue;
 @end
 @implementation GJLDigitalManager
 
@@ -116,16 +117,16 @@ static GJLDigitalManager * manager = nil;
 }
 - (void)initQueue {
     
-    self.digital_timer_queue = dispatch_queue_create("com.digitalsdk.digital_timer_queue", DISPATCH_QUEUE_CONCURRENT);
+    self.digital_timer_queue = dispatch_queue_create("com.digitalsdk.digital_timer_queue", DISPATCH_QUEUE_SERIAL);
     
     self.playImageQueue= dispatch_queue_create("com.digitalsdk.playImageQueue", DISPATCH_QUEUE_SERIAL);
     
     
     self.playAudioGroup = dispatch_group_create();
-    self.playAudioQueue= dispatch_queue_create("com.digitalsdk.playAudioQueue", DISPATCH_QUEUE_CONCURRENT);
+    self.playAudioQueue= dispatch_queue_create("com.digitalsdk.playAudioQueue", DISPATCH_QUEUE_SERIAL);
     
-    self.heart_timer_queue=dispatch_queue_create("com.digitalsdk.heart_timer_queue", DISPATCH_QUEUE_CONCURRENT);
-    
+    self.heart_timer_queue=dispatch_queue_create("com.digitalsdk.heart_timer_queue", DISPATCH_QUEUE_SERIAL);
+    self.playMetalQueue= dispatch_queue_create("com.digitalsdk.playMetalQueue", DISPATCH_QUEUE_SERIAL);
 }
 
 
@@ -310,6 +311,7 @@ static GJLDigitalManager * manager = nil;
                 dispatch_async(dispatch_get_main_queue(), ^{
                     if(weakSelf.mtkView!=nil &&[DigitalHumanDriven manager].isStartSuscess)
                     {
+                
                   
                         [weakSelf.mtkView renderWithMatUInt8:mat_uint8 :width :height];
                       
@@ -328,6 +330,7 @@ static GJLDigitalManager * manager = nil;
                 dispatch_async(dispatch_get_main_queue(), ^{
                     if(weakSelf.mtkView!=nil &&[DigitalHumanDriven manager].isStartSuscess)
                     {
+                        
                         [weakSelf.mtkView renderWithCVMat:mat :maskMat :bfgMat :bbgMat];
                     }
                     

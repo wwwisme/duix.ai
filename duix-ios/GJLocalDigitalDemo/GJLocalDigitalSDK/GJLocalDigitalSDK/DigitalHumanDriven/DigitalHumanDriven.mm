@@ -40,6 +40,7 @@ static dispatch_once_t onceToken;
         self.configModel=[[DigitalConfigModel alloc] init];
         self.metal_type=0;
         self.back_type=0;
+
 //        self.mat_type=0;
     }
     return self;
