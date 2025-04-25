@@ -260,7 +260,7 @@
             self.questionLabel.text=@"";
             self.answerLabel.text=@"";
         });
-            [[GJLDigitalManager manager] toSopMotion:YES];
+            [[GJLDigitalManager manager] toSopMotion:NO];
        
     }
 }
