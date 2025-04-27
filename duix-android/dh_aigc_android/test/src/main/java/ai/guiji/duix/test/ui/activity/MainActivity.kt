@@ -19,16 +19,13 @@ class MainActivity : BaseActivity() {
     private lateinit var binding: ActivityMainBinding
 
     private val baseConfigUrl =
-        "https://cdn.guiji.ai/duix/location/gj_dh_res.zip"
+        "https://github.com/GuijiAI/duix.ai/releases/download/v1.0.0/gj_dh_res.zip"
     private lateinit var baseDir: File
     private val baseConfigUUID = "d39caddd-488b-4682-b6d1-13549b135dd1"     // 可以用来控制模型文件版本
     private var baseConfigReady = false
 
-    // https://cdn.guiji.ai/duix/digital/model/1706009711636/liangwei_540s.zip
-    // https://cdn.guiji.ai/duix/digital/model/1706009766199/mingzhi_540s.zip
-    // https://cdn.guiji.ai/duix/digital/model/1716034688/bendi3_20240518.zip
     private val modelUrl =
-        "https://cdn.guiji.ai/duix/digital/model/1716034688/bendi3_20240518.zip"   // ** 在这里更新模型地址 **
+        "https://github.com/GuijiAI/duix.ai/releases/download/v1.0.0/bendi3_20240518.zip"   // ** 在这里更新模型地址 **
     private lateinit var modelDir: File
     private val liangweiUUID = "d39caddd-488b-4682-b6d1-13549b135dd1"       // 可以用来控制模型文件版本
     private var modelReady = false

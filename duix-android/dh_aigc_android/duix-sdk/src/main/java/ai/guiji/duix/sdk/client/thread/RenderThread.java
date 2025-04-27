@@ -330,15 +330,18 @@ public class RenderThread extends Thread {
             if (mMotionRandom){
                 mCurrentMotionIndex = new Random().nextInt(mModelInfo.getMotionRegions().size());
             } else {
-                mCurrentMotionIndex++;
-                if (mCurrentMotionIndex >= mModelInfo.getMotionRegions().size()){
-                    mCurrentMotionIndex = 0;
+                // 非每个动作都随机的模式，开始播放的时候找到以后后面就不变了
+                if (mCurrentMotionIndex == -1){
+                    mCurrentMotionIndex = new Random().nextInt(mModelInfo.getMotionRegions().size());
                 }
             }
             mPreviewQueue.clear();
             ModelInfo.Region motionRegion = mModelInfo.getMotionRegions().get(mCurrentMotionIndex);
             Logger.d("发现想要动作区间index: " + mCurrentMotionIndex + " region: " + motionRegion);
             mPreviewQueue.addAll(motionRegion.frames);
+            List<ModelInfo.Frame> copiedList = new ArrayList<>(motionRegion.frames);
+            Collections.reverse(copiedList);
+            mPreviewQueue.addAll(copiedList);
         }
     }
 

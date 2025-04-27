@@ -106,4 +106,7 @@ Erf = 100,
 Diag = 101,
 CELU = 102,
 Shrink = 103,
+RMSNorm = 104,
+Spectrogram = 105,
+InverseSpectrogram = 106,
 

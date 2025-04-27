@@ -23,10 +23,11 @@
 #import "GYAccess.h"
 
 
-//基础模型
-#define BASEMODELURL   @"https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/location/gj_dh_res.zip"
-//////数字人模型
-#define DIGITALMODELURL @"https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1716034688/bendi3_20240518.zip"
+//
+//基础模型 git 地址下载较慢，请下载后自己管理加速
+#define BASEMODELURL   @"https://github.com/GuijiAI/duix.ai/releases/download/v1.0.0/gj_dh_res.zip"
+//////数字人模型 git 地址下载较慢，请下载后自己管理加速
+#define DIGITALMODELURL @"https://github.com/GuijiAI/duix.ai/releases/download/v1.0.0/bendi3_20240518.zip"
 
 
 
@@ -259,7 +260,7 @@
             self.questionLabel.text=@"";
             self.answerLabel.text=@"";
         });
-            [[GJLDigitalManager manager] toSopMotion:YES];
+            [[GJLDigitalManager manager] toSopMotion:NO];
        
     }
 }
@@ -391,7 +392,8 @@
 //播放音频
 -(void)toRecord
 {
-
+//    [[GJLDigitalManager manager] toRandomMotion];
+//    [[GJLDigitalManager manager] toStartMotion];
      NSString * filepath=[[NSBundle mainBundle] pathForResource:@"3.wav" ofType:nil];
      [[GJLDigitalManager manager] toSpeakWithPath:filepath];
 

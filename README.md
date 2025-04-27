@@ -4,6 +4,9 @@
   <img src="res/logo_en.jpg" style="width: 100%; height: auto;"/>
 </div>
 
+  ## Online Experience <br> 
+  😄 [DUIX Digital Human Real-Time Interaction Platform:[DUIX.COM]](https://duix.com/)<br>
+     
  ## 📖 Documentation <br> 
  😄 [Real-time Interaction SDK：[Android]](./duix-android/dh_aigc_android/README.md)<br>
  😄 [Real-time Interaction SDK：[iOS]](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK.md)<br>

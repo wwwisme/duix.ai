@@ -38,8 +38,9 @@ static dispatch_once_t onceToken;
     if(self)
     {
         self.configModel=[[DigitalConfigModel alloc] init];
-        self.metal_type=1;
+        self.metal_type=0;
         self.back_type=0;
+
 //        self.mat_type=0;
     }
     return self;
@@ -242,7 +243,10 @@ static dispatch_once_t onceToken;
                 if(self.matBlock)
                 {
                    self.matBlock(mat.cvmat().clone(),maskMat.cvmat().clone(),bfgMat.cvmat().clone(),bbgMat.cvmat().clone());
-
+                    mat.cvmat().release();
+                    maskMat.cvmat().release();
+                    bfgMat.cvmat().release();
+                    bbgMat.cvmat().release();
                 }
             }
             else
@@ -285,6 +289,10 @@ static dispatch_once_t onceToken;
                     reuslt_maskMat.release();
                     reuslt_bfgMat.release();
                     reuslt_bbgMat.release();
+                    mat.cvmat().release();
+                    maskMat.cvmat().release();
+                    bfgMat.cvmat().release();
+                    bbgMat.cvmat().release();
                 }
             }
          
@@ -354,7 +362,7 @@ static dispatch_once_t onceToken;
                 {
             
                     self.matBlock2(mat.cvmat().clone());
-
+                    mat.cvmat().release();
                 }
             }
             else
@@ -376,7 +384,7 @@ static dispatch_once_t onceToken;
             
                     self.uint8Block2(reuslt_mat_uint8, mat.width(), mat.height());
                     reuslt_mat.release();
-    
+                    mat.cvmat().release();
                 }
             }
          
