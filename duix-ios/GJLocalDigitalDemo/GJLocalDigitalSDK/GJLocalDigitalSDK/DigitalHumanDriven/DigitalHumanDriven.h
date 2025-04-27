@@ -53,7 +53,7 @@
 - (void)maskrstWithPath:(NSString *)imagePath index:(int)index array:(NSArray *)array mskPath:(NSString*)maskPath bfgPath:(NSString*)bfgPath bbgPath:(NSString*)bbgPath ;
 - (void)simprstWithPath:(NSString *)imagePath index:(int)index array:(NSArray *)array;
 - (int)initGJDigital  ;
--(int)processmd5WithPath:(NSString*)inputPath outPath:(NSString*)outPath;
+
 
 - (void)free;
 

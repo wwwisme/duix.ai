@@ -182,8 +182,9 @@ public:
     // enabled by default
     void set_light_mode(bool enable);
 
-    // deprecated, no-op
-    // instead, set net.opt.num_threads before net.load_param()
+    // set thread count for this extractor
+    // this will overwrite the global setting
+    // default count is system depended
     void set_num_threads(int num_threads);
 
     // set blob memory allocator
@@ -193,8 +194,6 @@ public:
     void set_workspace_allocator(Allocator* allocator);
 
 #if NCNN_VULKAN
-    // deprecated, no-op
-    // instead, set net.opt.use_vulkan_compute before net.load_param()
     void set_vulkan_compute(bool enable);
 
     void set_blob_vkallocator(VkAllocator* allocator);

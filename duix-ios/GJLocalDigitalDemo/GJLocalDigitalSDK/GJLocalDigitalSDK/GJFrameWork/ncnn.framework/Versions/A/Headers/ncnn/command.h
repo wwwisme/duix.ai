@@ -21,6 +21,8 @@
 
 #include "mat.h"
 
+#include <vulkan/vulkan.h>
+
 namespace ncnn {
 
 class Pipeline;
