@@ -14,7 +14,7 @@
 #include "malpha.h"
 #include "blendgram.h"
 #include  "wavcache.h"
-#include "aesmain.h"
+//#include "aesmain.h"
 #include "netwav.h"
 
 struct gjdigit_s{
@@ -315,13 +315,13 @@ int gjdigit_test(gjdigit_t* dg){
     return 2;
 }
 
-int gjdigit_processmd5(gjdigit_t* dg,int enc,const char* infn,const char* outfn){
-    //
-    std::string s_in(infn);
-    std::string s_out(outfn);
-    int rst = mainenc(enc,(char*)s_in.c_str(),(char*)s_out.c_str());
-    return rst;
-}
+//int gjdigit_processmd5(gjdigit_t* dg,int enc,const char* infn,const char* outfn){
+//    //
+//    std::string s_in(infn);
+//    std::string s_out(outfn);
+//    int rst = mainenc(enc,(char*)s_in.c_str(),(char*)s_out.c_str());
+//    return rst;
+//}
 
 int gjdigit_startgpg(gjdigit_t* dg,const char* infn,const char* outfn){
     std::string s_in(infn);

@@ -10,6 +10,7 @@
 #import "DIMetalView.h"
 #import "GJLAudioPlayerView.h"
 #import "GJLGCDTimer.h"
+#import <GJLDecry/GJLDecry.h>
 #define DEBASEPATH @"DecryBasePath"
 #define DEDIGITALPATH @"DecryDigitalPath"
 
@@ -134,116 +135,20 @@ static GJLDigitalManager * manager = nil;
 
     [self.auidoPlayView cancelLoading];
     
-    NSFileManager * filemager=[NSFileManager defaultManager];
-    NSString * encry_wenet_onnx_path=[NSString stringWithFormat:@"%@/wenet.o",basePath];
-    NSString * encry_weight_168u_path=[NSString stringWithFormat:@"%@/weight_168u.b",basePath];
-    
-    NSString * encry_paramPath=[NSString stringWithFormat:@"%@/dh_model.p",digitalPath];
-    NSString * encry_binPath=[NSString stringWithFormat:@"%@/dh_model.b",digitalPath];
-    NSString * encry_configJson=[NSString stringWithFormat:@"%@/config.j",digitalPath];
-    NSString * encry_bboxPath=[NSString stringWithFormat:@"%@/bbox.j",digitalPath];
-    
-    
-    
-    NSString * baseName=[NSString stringWithFormat:@"%@_%@",DEBASEPATH,[[basePath lastPathComponent] stringByDeletingPathExtension]];
-    NSString *decryBasePath = [self getHistoryCachePath:baseName];
- 
-    
-    
-    
-    
-    NSString * digitalName=[NSString stringWithFormat:@"%@_%@",DEDIGITALPATH,[[digitalPath lastPathComponent] stringByDeletingPathExtension]];
-    NSString *decryDigitalPath = [self getHistoryCachePath:digitalName];
-    
-    
-    
-    NSString * wenet_onnx_path=[NSString stringWithFormat:@"%@/wenet.onnx",decryBasePath];
-    NSString * weight_168u_path=[NSString stringWithFormat:@"%@/weight_168u.bin",decryBasePath];
-    
-
-    
-    NSString * paramPath=[NSString stringWithFormat:@"%@/dh_model.param",decryDigitalPath];
-    NSString * binPath=[NSString stringWithFormat:@"%@/dh_model.bin",decryDigitalPath];
-    NSString * configJson=[NSString stringWithFormat:@"%@/config.json",decryDigitalPath];
-    NSString * bboxPath=[NSString stringWithFormat:@"%@/bbox.json",decryDigitalPath];
-    
-    //数字人模型包含的基础模型
-    NSString * encry_weight_digital_168u_path=[NSString stringWithFormat:@"%@/weight_168u.b",digitalPath];
-    if([filemager fileExistsAtPath:encry_weight_digital_168u_path])
+    self.resultIndex= [[GJLDecryManager manager] initBaseModel:basePath digitalModel:digitalPath];
+    if(self.resultIndex==-1)
     {
-        encry_weight_168u_path=encry_weight_digital_168u_path;
-        weight_168u_path=[NSString stringWithFormat:@"%@/weight_168u.bin",decryDigitalPath];
-    
-    }
-    
-    if(![filemager fileExistsAtPath:encry_wenet_onnx_path])
-    {
-        self.resultIndex=-1;
-        return  self.resultIndex;
-    }
-    if(![filemager fileExistsAtPath:encry_weight_168u_path])
-    {
-        self.resultIndex=-1;
-        return  self.resultIndex;
-    }
-    if(![filemager fileExistsAtPath:encry_paramPath])
-    {
-        self.resultIndex=-1;
         return self.resultIndex;
     }
-    if(![filemager fileExistsAtPath:encry_binPath])
-    {
-        self.resultIndex=-1;
-        return self.resultIndex;
-    }
-    if(![filemager fileExistsAtPath:encry_configJson])
-    {
-        self.resultIndex=-1;
-        return self.resultIndex;
-    }
-    if(![filemager fileExistsAtPath:encry_bboxPath])
-    {
-        self.resultIndex=-1;
-        return self.resultIndex;
-    }
-    
-    if(![filemager fileExistsAtPath:wenet_onnx_path])
-    {
-        [[DigitalHumanDriven manager] processmd5WithPath:encry_wenet_onnx_path outPath:wenet_onnx_path];
-    }
-    
-    if(![filemager fileExistsAtPath:weight_168u_path])
-    {
-        [[DigitalHumanDriven manager] processmd5WithPath:encry_weight_168u_path outPath:weight_168u_path];
-    }
-    
-    if(![filemager fileExistsAtPath:paramPath])
-    {
-        [[DigitalHumanDriven manager] processmd5WithPath:encry_paramPath outPath:paramPath];
-    }
-    
-    if(![filemager fileExistsAtPath:binPath])
-    {
-        [[DigitalHumanDriven manager] processmd5WithPath:encry_binPath outPath:binPath];
-    }
-    if(![filemager fileExistsAtPath:configJson])
-    {
-        [[DigitalHumanDriven manager] processmd5WithPath:encry_configJson outPath:configJson];
-    }
-    
-    if(![filemager fileExistsAtPath:bboxPath])
-    {
-        [[DigitalHumanDriven manager] processmd5WithPath:encry_bboxPath outPath:bboxPath];
-    }
-    
     
     
     
     //原始路径
     self.digitalPath=digitalPath;
     //解密之后路径
-    self.deDigitalPath=decryDigitalPath;
+    self.deDigitalPath=[GJLDecryManager manager].decryDigitalPath;
     
+    NSFileManager * filemager=[NSFileManager defaultManager];
     NSString *filePath =[NSString stringWithFormat:@"%@/raw_jpgs",self.digitalPath];
     NSArray *filelist= [filemager contentsOfDirectoryAtPath:filePath error:nil];
     
@@ -276,12 +181,12 @@ static GJLDigitalManager * manager = nil;
     self.isWaving=NO;
     DigitalHumanDriven *manager = [DigitalHumanDriven manager];
     
-    [self toJarphJson:configJson];
+    [self toJarphJson:[GJLDecryManager manager].configJson];
     
     
     
-    [manager initWenetWithPath:wenet_onnx_path];
-    [manager initMunetWithParamPath:paramPath binPath:binPath binPath2:weight_168u_path];
+    [manager initWenetWithPath:[GJLDecryManager manager].wenet_onnx_path];
+    [manager initMunetWithParamPath:[GJLDecryManager manager].paramPath binPath:[GJLDecryManager manager].binPath binPath2:[GJLDecryManager manager].weight_168u_path];
     
     
     

@@ -1,0 +1,6 @@
+framework module GJLDecry {
+  umbrella header "GJLDecry.h"
+  export *
+
+  module * { export * }
+}

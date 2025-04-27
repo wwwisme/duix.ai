@@ -39,26 +39,11 @@
 		A000F1A72BAC351C00AE6DD2 /* wavreader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A000F1892BAC351C00AE6DD2 /* wavreader.cpp */; };
 		A000F1A82BAC351C00AE6DD2 /* blendgram.h in Headers */ = {isa = PBXBuildFile; fileRef = A000F18A2BAC351C00AE6DD2 /* blendgram.h */; };
 		A000F1A92BAC351C00AE6DD2 /* aimodel.h in Headers */ = {isa = PBXBuildFile; fileRef = A000F18B2BAC351C00AE6DD2 /* aimodel.h */; };
-		A000F1BB2BAC354C00AE6DD2 /* base64.h in Headers */ = {isa = PBXBuildFile; fileRef = A000F1AB2BAC354C00AE6DD2 /* base64.h */; };
-		A000F1BC2BAC354C00AE6DD2 /* aes_cbc.c in Sources */ = {isa = PBXBuildFile; fileRef = A000F1AC2BAC354C00AE6DD2 /* aes_cbc.c */; };
-		A000F1BD2BAC354C00AE6DD2 /* cbc128.c in Sources */ = {isa = PBXBuildFile; fileRef = A000F1AD2BAC354C00AE6DD2 /* cbc128.c */; };
-		A000F1BE2BAC354C00AE6DD2 /* gj_aes.h in Headers */ = {isa = PBXBuildFile; fileRef = A000F1AE2BAC354C00AE6DD2 /* gj_aes.h */; };
-		A000F1BF2BAC354C00AE6DD2 /* aesmain.h in Headers */ = {isa = PBXBuildFile; fileRef = A000F1AF2BAC354C00AE6DD2 /* aesmain.h */; };
-		A000F1C02BAC354C00AE6DD2 /* aes_core.c in Sources */ = {isa = PBXBuildFile; fileRef = A000F1B02BAC354C00AE6DD2 /* aes_core.c */; };
-		A000F1C12BAC354C00AE6DD2 /* aes_ecb.c in Sources */ = {isa = PBXBuildFile; fileRef = A000F1B12BAC354C00AE6DD2 /* aes_ecb.c */; };
-		A000F1C22BAC354C00AE6DD2 /* aes.h in Headers */ = {isa = PBXBuildFile; fileRef = A000F1B22BAC354C00AE6DD2 /* aes.h */; };
-		A000F1C32BAC354C00AE6DD2 /* gaes_stream.cc in Sources */ = {isa = PBXBuildFile; fileRef = A000F1B32BAC354C00AE6DD2 /* gaes_stream.cc */; };
-		A000F1C42BAC354C00AE6DD2 /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = A000F1B42BAC354C00AE6DD2 /* base64.c */; };
-		A000F1C52BAC354C00AE6DD2 /* gj_dll.h in Headers */ = {isa = PBXBuildFile; fileRef = A000F1B52BAC354C00AE6DD2 /* gj_dll.h */; };
-		A000F1C62BAC354C00AE6DD2 /* gj_aes.c in Sources */ = {isa = PBXBuildFile; fileRef = A000F1B62BAC354C00AE6DD2 /* gj_aes.c */; };
-		A000F1C72BAC354C00AE6DD2 /* modes.h in Headers */ = {isa = PBXBuildFile; fileRef = A000F1B72BAC354C00AE6DD2 /* modes.h */; };
-		A000F1C82BAC354C00AE6DD2 /* aes_locl.h in Headers */ = {isa = PBXBuildFile; fileRef = A000F1B82BAC354C00AE6DD2 /* aes_locl.h */; };
-		A000F1C92BAC354C00AE6DD2 /* aesmain.c in Sources */ = {isa = PBXBuildFile; fileRef = A000F1B92BAC354C00AE6DD2 /* aesmain.c */; };
-		A000F1CA2BAC354C00AE6DD2 /* gaes_stream.h in Headers */ = {isa = PBXBuildFile; fileRef = A000F1BA2BAC354C00AE6DD2 /* gaes_stream.h */; };
 		A066FD9F2B2897EF007A3C68 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A066FD9E2B2897EF007A3C68 /* QuartzCore.framework */; };
 		A066FDA12B2897F7007A3C68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A066FDA02B2897F7007A3C68 /* Foundation.framework */; };
 		A066FDA42B289C7D007A3C68 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FC3EB82B285C0D0069EA0E /* CoreGraphics.framework */; };
 		A066FDA52B289CBC007A3C68 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A066FDA22B289C0D007A3C68 /* Metal.framework */; };
+		A06A8F402DBE277900AA3F07 /* GJLDecry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A06A8F3F2DBE277900AA3F07 /* GJLDecry.framework */; };
 		A0A336A22B31499800C07A38 /* DigitalConfigModel.h in Headers */ = {isa = PBXBuildFile; fileRef = A0A336A02B31499800C07A38 /* DigitalConfigModel.h */; };
 		A0A336A32B31499800C07A38 /* DigitalConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A336A12B31499800C07A38 /* DigitalConfigModel.m */; };
 		A0B1C4252B299C35009E0716 /* LYShaderTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = A0B1C4242B299C35009E0716 /* LYShaderTypes.h */; };
@@ -143,26 +128,11 @@
 		A000F1892BAC351C00AE6DD2 /* wavreader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = wavreader.cpp; sourceTree = "<group>"; };
 		A000F18A2BAC351C00AE6DD2 /* blendgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blendgram.h; sourceTree = "<group>"; };
 		A000F18B2BAC351C00AE6DD2 /* aimodel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aimodel.h; sourceTree = "<group>"; };
-		A000F1AB2BAC354C00AE6DD2 /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
-		A000F1AC2BAC354C00AE6DD2 /* aes_cbc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aes_cbc.c; sourceTree = "<group>"; };
-		A000F1AD2BAC354C00AE6DD2 /* cbc128.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cbc128.c; sourceTree = "<group>"; };
-		A000F1AE2BAC354C00AE6DD2 /* gj_aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gj_aes.h; sourceTree = "<group>"; };
-		A000F1AF2BAC354C00AE6DD2 /* aesmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aesmain.h; sourceTree = "<group>"; };
-		A000F1B02BAC354C00AE6DD2 /* aes_core.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aes_core.c; sourceTree = "<group>"; };
-		A000F1B12BAC354C00AE6DD2 /* aes_ecb.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aes_ecb.c; sourceTree = "<group>"; };
-		A000F1B22BAC354C00AE6DD2 /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
-		A000F1B32BAC354C00AE6DD2 /* gaes_stream.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gaes_stream.cc; sourceTree = "<group>"; };
-		A000F1B42BAC354C00AE6DD2 /* base64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base64.c; sourceTree = "<group>"; };
-		A000F1B52BAC354C00AE6DD2 /* gj_dll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gj_dll.h; sourceTree = "<group>"; };
-		A000F1B62BAC354C00AE6DD2 /* gj_aes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gj_aes.c; sourceTree = "<group>"; };
-		A000F1B72BAC354C00AE6DD2 /* modes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = modes.h; sourceTree = "<group>"; };
-		A000F1B82BAC354C00AE6DD2 /* aes_locl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes_locl.h; sourceTree = "<group>"; };
-		A000F1B92BAC354C00AE6DD2 /* aesmain.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aesmain.c; sourceTree = "<group>"; };
-		A000F1BA2BAC354C00AE6DD2 /* gaes_stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gaes_stream.h; sourceTree = "<group>"; };
 		A066FD9E2B2897EF007A3C68 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A066FDA02B2897F7007A3C68 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A066FDA22B289C0D007A3C68 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		A066FDA62B289E0C007A3C68 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		A06A8F3F2DBE277900AA3F07 /* GJLDecry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GJLDecry.framework; sourceTree = "<group>"; };
 		A0A336A02B31499800C07A38 /* DigitalConfigModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DigitalConfigModel.h; sourceTree = "<group>"; };
 		A0A336A12B31499800C07A38 /* DigitalConfigModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DigitalConfigModel.m; sourceTree = "<group>"; };
 		A0B1C4242B299C35009E0716 /* LYShaderTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYShaderTypes.h; sourceTree = "<group>"; };
@@ -221,6 +191,7 @@
 				A0FC3E522B283DD80069EA0E /* libturbojpeg.a in Frameworks */,
 				A0FC3E2C2B283BC00069EA0E /* openmp.framework in Frameworks */,
 				A0FC3E2D2B283BC00069EA0E /* ncnn.framework in Frameworks */,
+				A06A8F402DBE277900AA3F07 /* GJLDecry.framework in Frameworks */,
 				A0FC3E9B2B2840BC0069EA0E /* AVFoundation.framework in Frameworks */,
 				A0FC3E532B283DD80069EA0E /* libjpeg.a in Frameworks */,
 				A066FDA12B2897F7007A3C68 /* Foundation.framework in Frameworks */,
@@ -275,29 +246,6 @@
 				A000F1712BAC351B00AE6DD2 /* mfcc.hpp */,
 			);
 			path = mfcc;
-			sourceTree = "<group>";
-		};
-		A000F1AA2BAC354C00AE6DD2 /* aes */ = {
-			isa = PBXGroup;
-			children = (
-				A000F1AB2BAC354C00AE6DD2 /* base64.h */,
-				A000F1AC2BAC354C00AE6DD2 /* aes_cbc.c */,
-				A000F1AD2BAC354C00AE6DD2 /* cbc128.c */,
-				A000F1AE2BAC354C00AE6DD2 /* gj_aes.h */,
-				A000F1AF2BAC354C00AE6DD2 /* aesmain.h */,
-				A000F1B02BAC354C00AE6DD2 /* aes_core.c */,
-				A000F1B12BAC354C00AE6DD2 /* aes_ecb.c */,
-				A000F1B22BAC354C00AE6DD2 /* aes.h */,
-				A000F1B32BAC354C00AE6DD2 /* gaes_stream.cc */,
-				A000F1B42BAC354C00AE6DD2 /* base64.c */,
-				A000F1B52BAC354C00AE6DD2 /* gj_dll.h */,
-				A000F1B62BAC354C00AE6DD2 /* gj_aes.c */,
-				A000F1B72BAC354C00AE6DD2 /* modes.h */,
-				A000F1B82BAC354C00AE6DD2 /* aes_locl.h */,
-				A000F1B92BAC354C00AE6DD2 /* aesmain.c */,
-				A000F1BA2BAC354C00AE6DD2 /* gaes_stream.h */,
-			);
-			path = aes;
 			sourceTree = "<group>";
 		};
 		A0B1C42B2B29A7A6009E0716 /* AudioPlayerView */ = {
@@ -376,6 +324,7 @@
 		A0FC3E292B283BAB0069EA0E /* GJFrameWork */ = {
 			isa = PBXGroup;
 			children = (
+				A06A8F3F2DBE277900AA3F07 /* GJLDecry.framework */,
 				A0FC3E412B283CD10069EA0E /* onnxruntime.framework */,
 				A0FC3E2E2B283BCE0069EA0E /* opencv2.framework */,
 				A0FC3E2B2B283BC00069EA0E /* ncnn.framework */,
@@ -417,7 +366,6 @@
 		A0FC3E542B283E460069EA0E /* Cpp */ = {
 			isa = PBXGroup;
 			children = (
-				A000F1AA2BAC354C00AE6DD2 /* aes */,
 				A000F16C2BAC351B00AE6DD2 /* aisdk */,
 				A0FC3E552B283E460069EA0E /* ios */,
 			);
@@ -482,11 +430,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A000F1912BAC351C00AE6DD2 /* pfpld.h in Headers */,
-				A000F1CA2BAC354C00AE6DD2 /* gaes_stream.h in Headers */,
-				A000F1C52BAC354C00AE6DD2 /* gj_dll.h in Headers */,
 				A000F1A82BAC351C00AE6DD2 /* blendgram.h in Headers */,
 				A000F1A92BAC351C00AE6DD2 /* aimodel.h in Headers */,
-				A000F1C72BAC354C00AE6DD2 /* modes.h in Headers */,
 				A000F1A62BAC351C00AE6DD2 /* aicommon.h in Headers */,
 				A000F18C2BAC351C00AE6DD2 /* AudioFFT.hpp in Headers */,
 				A000F1902BAC351C00AE6DD2 /* face_utils.h in Headers */,
@@ -497,13 +442,10 @@
 				A0D81D752B298FBB002F98C1 /* DIMetalView.h in Headers */,
 				A0FC3E502B283DD80069EA0E /* jconfig.h in Headers */,
 				A0FC3E972B283E7E0069EA0E /* DigitalHumanDriven.h in Headers */,
-				A000F1C22BAC354C00AE6DD2 /* aes.h in Headers */,
 				A000F16B2BAC34DD00AE6DD2 /* gjdigit.h in Headers */,
 				A000F18E2BAC351C00AE6DD2 /* sas_util.h in Headers */,
 				A0B1C42E2B29A7A7009E0716 /* GJLAudioPlayerView.h in Headers */,
-				A000F1BF2BAC354C00AE6DD2 /* aesmain.h in Headers */,
 				A000F1942BAC351C00AE6DD2 /* wavreader.h in Headers */,
-				A000F1C82BAC354C00AE6DD2 /* aes_locl.h in Headers */,
 				A000F1982BAC351C00AE6DD2 /* wenet.h in Headers */,
 				A000F18F2BAC351C00AE6DD2 /* mfcc.hpp in Headers */,
 				A000F18D2BAC351C00AE6DD2 /* iir_filter.hpp in Headers */,
@@ -517,12 +459,10 @@
 				A0A336A22B31499800C07A38 /* DigitalConfigModel.h in Headers */,
 				A0B1C4252B299C35009E0716 /* LYShaderTypes.h in Headers */,
 				A000F1962BAC351C00AE6DD2 /* netwav.h in Headers */,
-				A000F1BE2BAC354C00AE6DD2 /* gj_aes.h in Headers */,
 				A0FC3E4D2B283DD80069EA0E /* jpeglib.h in Headers */,
 				A0FC3E4E2B283DD80069EA0E /* jerror.h in Headers */,
 				A0B1C4342B29BECA009E0716 /* GJLGCDTimer.h in Headers */,
 				A000F19C2BAC351C00AE6DD2 /* malpha.h in Headers */,
-				A000F1BB2BAC354C00AE6DD2 /* base64.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,31 +536,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0D81D742B298FBB002F98C1 /* DIMetalView.mm in Sources */,
-				A000F1C92BAC354C00AE6DD2 /* aesmain.c in Sources */,
 				A0B1C4332B29BECA009E0716 /* GJLGCDTimer.m in Sources */,
 				A000F1932BAC351C00AE6DD2 /* face_utils.cpp in Sources */,
-				A000F1C32BAC354C00AE6DD2 /* gaes_stream.cc in Sources */,
 				A000F19D2BAC351C00AE6DD2 /* blendgram.cpp in Sources */,
 				A0FC3DC42B2830CE0069EA0E /* GJLDigitalManager.mm in Sources */,
 				A0BB09242B3ACCA000BF0CC1 /* GJLGlobalFunc.m in Sources */,
 				A000F1952BAC351C00AE6DD2 /* wavcache.cpp in Sources */,
-				A000F1C62BAC354C00AE6DD2 /* gj_aes.c in Sources */,
 				A000F1A52BAC351C00AE6DD2 /* netwav.cpp in Sources */,
-				A000F1C12BAC354C00AE6DD2 /* aes_ecb.c in Sources */,
 				A000F1992BAC351C00AE6DD2 /* aimodel.cpp in Sources */,
 				A000F1A22BAC351C00AE6DD2 /* pfpld.cpp in Sources */,
 				A0FC3E982B283E7E0069EA0E /* DigitalHumanDriven.mm in Sources */,
-				A000F1C02BAC354C00AE6DD2 /* aes_core.c in Sources */,
 				A0B1C42F2B29A7A7009E0716 /* GJLAudioPlayerView.m in Sources */,
-				A000F1C42BAC354C00AE6DD2 /* base64.c in Sources */,
 				A000F16A2BAC34DD00AE6DD2 /* gjdigit.cpp in Sources */,
-				A000F1BC2BAC354C00AE6DD2 /* aes_cbc.c in Sources */,
 				A000F19F2BAC351C00AE6DD2 /* jmat.cpp in Sources */,
 				A000F1A72BAC351C00AE6DD2 /* wavreader.cpp in Sources */,
 				A000F1972BAC351C00AE6DD2 /* scrfd.cpp in Sources */,
 				A0E8C97E2B29CD5A0089DEE7 /* GJLOpenUDID.m in Sources */,
 				A0FC3EA92B2855430069EA0E /* shaders.metal in Sources */,
-				A000F1BD2BAC354C00AE6DD2 /* cbc128.c in Sources */,
 				A000F19A2BAC351C00AE6DD2 /* malpha.cpp in Sources */,
 				A000F19B2BAC351C00AE6DD2 /* wenet.cpp in Sources */,
 				A0A336A32B31499800C07A38 /* DigitalConfigModel.m in Sources */,

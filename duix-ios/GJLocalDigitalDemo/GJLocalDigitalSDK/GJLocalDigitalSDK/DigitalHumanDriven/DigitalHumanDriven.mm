@@ -418,14 +418,14 @@ static dispatch_once_t onceToken;
     
 
 }
--(int)processmd5WithPath:(NSString*)inputPath outPath:(NSString*)outPath
-{
-    //(self->gjdigit,mat.udata(),mat.width(),mat.height(),boxs,index);
-    int rst = gjdigit_processmd5(self->gjdigit,0,[inputPath UTF8String],[outPath UTF8String]);
-    
-    return rst;
-    
-}
+//-(int)processmd5WithPath:(NSString*)inputPath outPath:(NSString*)outPath
+//{
+//    //(self->gjdigit,mat.udata(),mat.width(),mat.height(),boxs,index);
+//    int rst = gjdigit_processmd5(self->gjdigit,0,[inputPath UTF8String],[outPath UTF8String]);
+//    
+//    return rst;
+//    
+//}
 - (void)free {
     if(gjdigit!=nil)
     {

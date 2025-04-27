@@ -79,7 +79,6 @@ NCNN_EXPORT float log10f(float);
 * ====================================================
 */
 NCNN_EXPORT float erf(float);
-NCNN_EXPORT float erff(float);
 NCNN_EXPORT float erfcf(float);
 
 /*

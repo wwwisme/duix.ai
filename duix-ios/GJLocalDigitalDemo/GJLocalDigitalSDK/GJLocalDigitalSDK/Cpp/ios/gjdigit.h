@@ -23,7 +23,7 @@ int gjdigit_maskrst(gjdigit_t* dg,uint8_t* bpic,int width,int height,int* box,ui
 
 int gjdigit_simprst(gjdigit_t* dg,uint8_t* bpic,int width,int height,int* box,int index);
 
-int gjdigit_processmd5(gjdigit_t* dg,int enc,const char* infn,const char* outfn);
+//int gjdigit_processmd5(gjdigit_t* dg,int enc,const char* infn,const char* outfn);
 
 int gjdigit_startgpg(gjdigit_t* dg,const char* infn,const char* outfn);
 int gjdigit_stop(gjdigit_t* dg);
