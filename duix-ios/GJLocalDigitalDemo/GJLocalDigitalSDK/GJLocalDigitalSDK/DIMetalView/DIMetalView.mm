@@ -42,6 +42,7 @@ typedef NS_ENUM(NSInteger, JPMetalViewContentMode) {
 @property (nonatomic, strong) id<MTLTexture> bfgTexture;
 @property (nonatomic, assign)GLuint frame_blending_mode_uniform;
 @property (nonatomic, strong) dispatch_queue_t metalQueue;
+@property (nonatomic, strong) id <MTLDevice> device;
 @end
 @implementation DIMetalView
 - (instancetype)initWithFrame:(CGRect)frame
@@ -57,6 +58,7 @@ typedef NS_ENUM(NSInteger, JPMetalViewContentMode) {
         }
         self.mtkView = [[MTKView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, height)];
         self.mtkView.device = MTLCreateSystemDefaultDevice(); // 获取默认的device
+
         NSString *version = [UIDevice currentDevice].systemVersion;
         if(version.doubleValue>=15.0&&version.doubleValue<16.0)
         {
@@ -69,8 +71,7 @@ typedef NS_ENUM(NSInteger, JPMetalViewContentMode) {
  
      
         self.mtkView.clearColor = MTLClearColorMake(0.0, 0.0, 0.0, 0);
-        self.mtkView.sampleCount = 1;
-        self.mtkView.framebufferOnly = NO;
+        self.mtkView.framebufferOnly = YES;
   
         [self addSubview:self.mtkView];
         self.mtkView.delegate = self;

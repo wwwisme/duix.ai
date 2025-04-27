@@ -30,6 +30,7 @@
 #define NCNN_PIXEL_AFFINE 1
 #define NCNN_PIXEL_DRAWING 1
 #define NCNN_VULKAN 0
+#define NCNN_SIMPLEVK 1
 #define NCNN_SYSTEM_GLSLANG 0
 #define NCNN_RUNTIME_CPU 1
 #define NCNN_GNU_INLINE_ASM 1
@@ -39,6 +40,9 @@
 #define NCNN_F16C 0
 #define NCNN_AVX2 0
 #define NCNN_AVXVNNI 0
+#define NCNN_AVXVNNIINT8 0
+#define NCNN_AVXVNNIINT16 0
+#define NCNN_AVXNECONVERT 0
 #define NCNN_AVX512 0
 #define NCNN_AVX512VNNI 0
 #define NCNN_AVX512BF16 0
@@ -58,18 +62,21 @@
 #define NCNN_LSX 0
 #define NCNN_MMI 0
 #define NCNN_RVV 0
+#define NCNN_ZFH 0
+#define NCNN_ZVFH 0
+#define NCNN_XTHEADVECTOR 0
 #define NCNN_INT8 1
 #define NCNN_BF16 1
 #define NCNN_FORCE_INLINE 1
 
-#define NCNN_VERSION_STRING "1.0.20231027"
+#define NCNN_VERSION_STRING "1.0.20241226"
 
 #include "ncnn_export.h"
 
 #ifdef __cplusplus
 
 #if NCNN_THREADS
-#if (defined _WIN32 && !(defined __MINGW32__))
+#if defined _WIN32
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 #include <process.h>
@@ -85,7 +92,7 @@
 namespace ncnn {
 
 #if NCNN_THREADS
-#if (defined _WIN32 && !(defined __MINGW32__))
+#if defined _WIN32
 class NCNN_EXPORT Mutex
 {
 public:
@@ -140,7 +147,7 @@ public:
 private:
     DWORD key;
 };
-#else // (defined _WIN32 && !(defined __MINGW32__))
+#else // defined _WIN32
 class NCNN_EXPORT Mutex
 {
 public:
@@ -185,7 +192,7 @@ public:
 private:
     pthread_key_t key;
 };
-#endif // (defined _WIN32 && !(defined __MINGW32__))
+#endif // defined _WIN32
 #else // NCNN_THREADS
 class NCNN_EXPORT Mutex
 {
@@ -235,6 +242,28 @@ private:
     Mutex& mutex;
 };
 
+static inline void swap_endianness_16(void* x)
+{
+    unsigned char* xx = (unsigned char*)x;
+    unsigned char x0 = xx[0];
+    unsigned char x1 = xx[1];
+    xx[0] = x1;
+    xx[1] = x0;
+}
+
+static inline void swap_endianness_32(void* x)
+{
+    unsigned char* xx = (unsigned char*)x;
+    unsigned char x0 = xx[0];
+    unsigned char x1 = xx[1];
+    unsigned char x2 = xx[2];
+    unsigned char x3 = xx[3];
+    xx[0] = x3;
+    xx[1] = x2;
+    xx[2] = x1;
+    xx[3] = x0;
+}
+
 } // namespace ncnn
 
 #if NCNN_SIMPLESTL
@@ -253,6 +282,15 @@ private:
 #include <math.h>
 #include <fenv.h>
 #endif
+
+#if NCNN_VULKAN
+#if NCNN_SIMPLEVK
+#include "simplevk.h"
+#else
+#include <vulkan/vulkan.h>
+#endif
+#include "vulkan_header_fix.h"
+#endif // NCNN_VULKAN
 
 #endif // __cplusplus
 
