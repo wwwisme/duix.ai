@@ -96,6 +96,9 @@ public class StorageService {
                         callback.onError("unzip dir not found!");
                     }
                 } else {
+                    if (zipFile.exists()){
+                        zipFile.delete();
+                    }
                     callback.onError("unzip file error!");
                 }
             } else {

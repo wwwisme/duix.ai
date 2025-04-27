@@ -5,7 +5,7 @@ import android.content.Context;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import ai.guiji.duix.sdk.client.bean.ModelInfo;
+import ai.guiji.duix.sdk.client.loader.ModelInfo;
 import ai.guiji.duix.sdk.client.render.RenderSink;
 import ai.guiji.duix.sdk.client.thread.RenderThread;
 

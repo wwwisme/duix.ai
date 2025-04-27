@@ -45,7 +45,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 import ai.guiji.duix.sdk.client.bean.ImageFrame;
-import ai.guiji.duix.sdk.client.bean.ModelInfo;
+import ai.guiji.duix.sdk.client.loader.ModelInfo;
+import ai.guiji.duix.sdk.client.loader.ModelInfoLoader;
 import ai.guiji.duix.sdk.client.render.RenderSink;
 import ai.guiji.duix.sdk.client.util.Logger;
 
@@ -159,7 +160,7 @@ public class RenderThread extends Thread {
         int sessionKey = (int) (System.currentTimeMillis() / 1000);
         scrfdncnn.createdigit(sessionKey, (SCRFDNcnn.Callback) (what, arg1, arg2, msg1, msg2, object) -> {
         });
-        ModelInfo info = ModelInfo.loadResource(scrfdncnn, baseConfigDir, modelDir);
+        ModelInfo info = ModelInfoLoader.load(mContext, scrfdncnn, baseConfigDir, modelDir);
         if (info != null) {
             try {
                 scrfdncnn.config(info.getNcnnConfig());

@@ -3,7 +3,7 @@ package ai.guiji.duix.test.ui.activity
 import ai.guiji.duix.sdk.client.Constant
 import ai.guiji.duix.sdk.client.DUIX
 import ai.guiji.duix.sdk.client.bean.ImageFrame
-import ai.guiji.duix.sdk.client.bean.ModelInfo
+import ai.guiji.duix.sdk.client.loader.ModelInfo
 import ai.guiji.duix.sdk.client.render.DUIXRenderer
 import ai.guiji.duix.test.databinding.ActivityCallBinding
 import ai.guiji.duix.test.render.DebugSink
@@ -14,7 +14,6 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.bumptech.glide.Glide
-import okhttp3.internal.and
 import java.io.File
 import java.io.FileOutputStream
 import java.io.OutputStream
@@ -140,10 +139,13 @@ class CallActivity : BaseActivity() {
         }
         for (y in 0 until imageFrame.height) {
             for (x in 0 until imageFrame.width){
-                val b = imageFrame.rawBuffer[(y * imageFrame.width + x) * 3] and 0xFF
-                val g = imageFrame.rawBuffer[(y * imageFrame.width + x) * 3 + 1] and 0xFF
-                val r = imageFrame.rawBuffer[(y * imageFrame.width + x) * 3 + 2] and 0xFF
+                val b = imageFrame.rawBuffer[(y * imageFrame.width + x) * 3].toInt() and 0xFF
+                val g = imageFrame.rawBuffer[(y * imageFrame.width + x) * 3 + 1].toInt() and 0xFF
+                val r = imageFrame.rawBuffer[(y * imageFrame.width + x) * 3 + 2].toInt() and 0xFF
                 val pixelColor = 0xff000000.toInt() or (r shl 16) or (g shl 8) or b
+                if (tempBitmap?.isRecycled == true){
+                    return
+                }
                 tempBitmap?.setPixel(x, y, pixelColor)
             }
         }
@@ -174,6 +176,7 @@ class CallActivity : BaseActivity() {
         duix?.release()
         mDUIXRender?.release()
         tempBitmap?.recycle()
+        tempBitmap = null
     }
 
     /**

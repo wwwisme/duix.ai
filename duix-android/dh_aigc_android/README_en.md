@@ -35,10 +35,6 @@ dependencies {
     implementation project(":duix-sdk")
     // The SDK uses exoplayer to handle audio (required)
     implementation 'com.google.android.exoplayer:exoplayer:2.14.2'
-
-    // Cloud Q&A interface uses SSE component (optional)
-    implementation 'com.squareup.okhttp3:okhttp-sse:4.10.0'
-
     ...
 }
 ```
@@ -48,11 +44,7 @@ Permission requirements, add the following configuration in AndroidManifest.xml:
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
 </manifest>
 ```

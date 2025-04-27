@@ -28,12 +28,4 @@ public class App extends Application {
         }
         return mOkHttpClient;
     }
-
-    public static String addBaseUrl(String url, String baseUrl){
-        String u = url;
-        if (!TextUtils.isEmpty(u) && !u.startsWith("http")){
-            u = baseUrl + u;
-        }
-        return u;
-    }
 }
