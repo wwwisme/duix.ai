@@ -18,7 +18,7 @@ Welcome to the Duix App. Feel free to download it and experience the advanced di
 
 ## Support
 Join our wechat or Discord community for support and discussions. Follow Twitter,to watch the latest digital human videos created based on the open-source capabilities of DUIX.<br>
-💬 [Email (James@toolwiz.com)](James@toolwiz.com)<br>
+💬 [Email (james@duix.com)](james@duix.com)<br>
 💬 [Join our WeChat (微信)](https://github.com/GuijiAI/duix.ai/blob/main/res/18群二维码.jpg)<br>
 😄 [Join our Discord](https://discord.gg/8jh28PVsMU)<br>
 ✨ [Follow us on Twitter](https://twitter.com/HuapengSima)<br><br> 
@@ -145,7 +145,7 @@ Answer: Please visit https://guiji.cn/duix-light-document/en/introduce/ to exper
 ## Contact Us
 
 ```
-James@toolwiz.com
+james@duix.com
 ```
 
 
