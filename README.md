@@ -4,7 +4,7 @@
   <img src="res/logo_en.jpg" style="width: 100%; height: auto;"/>
 </div>
 
-  ## Online Experience <br> 
+  ## 🚀 Online Experience <br> 
   😄 [DUIX Digital Human Real-Time Interaction Platform:[DUIX.COM]](https://duix.com/)<br>
      
  ## 📖 Documentation <br> 
