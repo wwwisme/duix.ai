@@ -4,7 +4,7 @@
   <img src="res/logo.jpg" style="width: 100%; height: auto;"/>
 </div>
 
-## 在线体验：<br> 
+## 🚀 在线体验：<br> 
  😄 [DUIX数字人实时交互平台：https://duix.com](https://duix.com/)<br>
 
  ## 📖 文档 Documentation <br>
