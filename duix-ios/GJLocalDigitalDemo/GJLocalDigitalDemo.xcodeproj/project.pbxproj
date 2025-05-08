@@ -21,8 +21,6 @@
 		A04822222B2C5FF6005E06BD /* GJCheckNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = A04822212B2C5FF6005E06BD /* GJCheckNetwork.m */; };
 		A06A8E6F2DB9CEF600AA3F07 /* GJLocalDigitalSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FBC80C2BF5B34600C77AFB /* GJLocalDigitalSDK.framework */; };
 		A06A8E702DB9CEF600AA3F07 /* GJLocalDigitalSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0FBC80C2BF5B34600C77AFB /* GJLocalDigitalSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A06A8F3D2DBE276F00AA3F07 /* GJLDecry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A06A8F3C2DBE276F00AA3F07 /* GJLDecry.framework */; };
-		A06A8F3E2DBE276F00AA3F07 /* GJLDecry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A06A8F3C2DBE276F00AA3F07 /* GJLDecry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A0B1C4362B29C1F2009E0716 /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = A0B1C4352B29C1F2009E0716 /* 1.wav */; };
 		A0BB09402B3C34A700BF0CC1 /* GJLDigitalAnswerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB093F2B3C34A700BF0CC1 /* GJLDigitalAnswerModel.m */; };
 		A0BB09432B3C34B800BF0CC1 /* GJDownWavTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB09422B3C34B800BF0CC1 /* GJDownWavTool.m */; };
@@ -55,7 +53,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A06A8F3E2DBE276F00AA3F07 /* GJLDecry.framework in Embed Frameworks */,
 				A06A8E702DB9CEF600AA3F07 /* GJLocalDigitalSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -123,7 +120,6 @@
 				A04821F42B2C5695005E06BD /* libz.tbd in Frameworks */,
 				A04821F12B2C5650005E06BD /* Security.framework in Frameworks */,
 				7FA77A706ADB2579D0F321CD /* Pods_GJLocalDigitalDemo.framework in Frameworks */,
-				A06A8F3D2DBE276F00AA3F07 /* GJLDecry.framework in Frameworks */,
 				A06A8E6F2DB9CEF600AA3F07 /* GJLocalDigitalSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
