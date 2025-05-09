@@ -10,7 +10,6 @@
  ## 📖 Documentation <br> 
  😄 [Real-time Interaction SDK：[Android]](./duix-android/dh_aigc_android/README.md)<br>
  😄 [Real-time Interaction SDK：[iOS]](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK.md)<br>
- 😄 [Frequently Asked Questions (FAQ)：[FQA]](https://jexopm4t2a.feishu.cn/wiki/Ef1VwGHtRiUIQIkQl1hco2ISnFc) <br>
  😄 [Digital Human Rapid Cloning and Video Synthesis Open Source Project (Non-Real-Time Interaction):[HeyGem.ai]](https://github.com/GuijiAI/HeyGem.ai)<br><br> 
 
 ## [Duix App](https://apps.apple.com/app/id6451088879)
@@ -29,9 +28,9 @@ DUIX, short for “Dialogue User Interface System”, is an AI-powered digital h
 
 We also provide you with a one-stop comprehensive digital human multimodal real-time interaction SDK integration solution - DUIX Interactive Digital Human SDK. This SDK product is based on technologies such as speech recognition (ASR), speech synthesis (TTS), natural language understanding (NLP), AIGC, and Large Language Model (LLM) , achieving an intelligent human-computer interaction experience that is "able to hear, see, speak, and understand you". It is suitable for multiple enterprise application scenarios such as intelligent customer service and smart screens.
 View details:<br><br>
-😄[Quickly set up DUIX digital human conversations](https://app.guiji.cn/session/create)<br>
-😄[DUIX SDK version and price](https://app.guiji.cn/platform)<br>
-😄[DUIX SDK Open Document](https://guiji.cn/duix-light-document/introduce/)<br><br>
+😄[Quickly set up DUIX digital human conversations](https://duix.com)<br>
+😄[DUIX SDK version and price](https://duix.com/pricing)<br>
+😄[DUIX SDK Open Document](https://docs.duix.com/api-reference/api/Introduction)<br><br>
 
 
 
@@ -128,10 +127,10 @@ Answer: The API for controlling digital human actions is not supported at the mo
 Answer: The replacement of downloaded files is detailed in the code.<br><br>
 
 #### 10、Would you like to learn about the integrated solution or more advanced versions?<br>
-Answer: Please visit https://guiji.cn/duix-light-document/en/introduce/ to experience more features.<br><br>
+Answer: Please visit https://duix.com to experience more features.<br><br>
 
 
-···For more FAQs, please refer to 📑 [FAQ](https://jexopm4t2a.feishu.cn/wiki/Ef1VwGHtRiUIQIkQl1hco2ISnFc)  <br><br> 
+···For more FAQs, please refer to 📑 [FAQ](https://docs.duix.com/api-reference/api/Introduction)  <br><br> 
 
 ## Version Record
 
