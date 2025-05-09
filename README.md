@@ -1,16 +1,15 @@
-# Duix - Silicon-Based Digital Human Real-time Interaction SDK 🌐🤖   [[Chinese]](./README_ZH.md)   
+# Duix - Silicon-Based Digital Human Real-time Interaction SDK 🌐🤖  
 
 <div style="width: 100%; text-align: center;">
   <img src="res/logo_en.jpg" style="width: 100%; height: auto;"/>
 </div>
 
-  ## Online Experience <br> 
+  ## 🚀 Online Experience <br> 
   😄 [DUIX Digital Human Real-Time Interaction Platform:[DUIX.COM]](https://duix.com/)<br>
      
  ## 📖 Documentation <br> 
  😄 [Real-time Interaction SDK：[Android]](./duix-android/dh_aigc_android/README.md)<br>
  😄 [Real-time Interaction SDK：[iOS]](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK.md)<br>
- 😄 [Frequently Asked Questions (FAQ)：[FQA]](https://jexopm4t2a.feishu.cn/wiki/Ef1VwGHtRiUIQIkQl1hco2ISnFc) <br>
  😄 [Digital Human Rapid Cloning and Video Synthesis Open Source Project (Non-Real-Time Interaction):[HeyGem.ai]](https://github.com/GuijiAI/HeyGem.ai)<br><br> 
 
 ## [Duix App](https://apps.apple.com/app/id6451088879)
@@ -18,20 +17,23 @@ Welcome to the Duix App. Feel free to download it and experience the advanced di
 
 ## Support
 Join our wechat or Discord community for support and discussions. Follow Twitter,to watch the latest digital human videos created based on the open-source capabilities of DUIX.<br>
-💬 [Email (James@toolwiz.com)](James@toolwiz.com)<br>
-💬 [Join our WeChat (微信)](https://github.com/GuijiAI/duix.ai/blob/main/res/18群二维码.jpg)<br>
+
+💬 Email : james@duix.com
+
+💬 [Join our WeChat ](https://github.com/GuijiAI/duix.ai/blob/main/res/18群二维码.jpg)<br>
+
 😄 [Join our Discord](https://discord.gg/8jh28PVsMU)<br>
+
 ✨ [Follow us on Twitter](https://twitter.com/HuapengSima)<br><br> 
 
 ## Introduction
-
 DUIX, short for “Dialogue User Interface System”, is an AI-powered digital human interaction platform created by Silicon-based Intelligence. By open-sourcing the capabilities of digital human interaction, developers can easily integrate large-scale models, automatic speech recognition (ASR), and text-to-speech (TTS) capabilities, enabling real-time interaction with digital humans. It supports one-click deployment on multiple platforms including Android and iOS, allowing each developer to effortlessly create intelligent and personalized digital human agents, and apply them in various industries.<br><br>
 
 We also provide you with a one-stop comprehensive digital human multimodal real-time interaction SDK integration solution - DUIX Interactive Digital Human SDK. This SDK product is based on technologies such as speech recognition (ASR), speech synthesis (TTS), natural language understanding (NLP), AIGC, and Large Language Model (LLM) , achieving an intelligent human-computer interaction experience that is "able to hear, see, speak, and understand you". It is suitable for multiple enterprise application scenarios such as intelligent customer service and smart screens.
 View details:<br><br>
-😄[Quickly set up DUIX digital human conversations](https://app.guiji.cn/session/create)<br>
-😄[DUIX SDK version and price](https://app.guiji.cn/platform)<br>
-😄[DUIX SDK Open Document](https://guiji.cn/duix-light-document/introduce/)<br><br>
+😄[Quickly set up DUIX digital human conversations](https://duix.com)<br>
+😄[DUIX SDK version and price](https://duix.com/pricing)<br>
+😄[DUIX SDK Open Document](https://docs.duix.com/api-reference/api/Introduction)<br><br>
 
 
 
@@ -57,7 +59,6 @@ For ios, refer to [GJLocalDigitalSDK_en.md](./duix-ios/GJLocalDigitalDemo/GJLoca
 
 ## How to deploy
 This document provides a detailed description of the integration process for developers working on this project. It is important to note that each developer may encounter different stages of the process during integration. This document is intended for developers to use as a reference.<br>
-[Interface Reference Handbook_ZH](./Interface%20Reference%20Handbook_ZH.pdf) <br>
 [Interface Reference Handbook_EN](./Interface%20Reference%20Handbook_EN.pdf) <br><br>
 
 ## Download Digital Human Local Model
@@ -128,10 +129,10 @@ Answer: The API for controlling digital human actions is not supported at the mo
 Answer: The replacement of downloaded files is detailed in the code.<br><br>
 
 #### 10、Would you like to learn about the integrated solution or more advanced versions?<br>
-Answer: Please visit https://guiji.cn/duix-light-document/en/introduce/ to experience more features.<br><br>
+Answer: Please visit https://duix.com to experience more features.<br><br>
 
 
-···For more FAQs, please refer to 📑 [FAQ](https://jexopm4t2a.feishu.cn/wiki/Ef1VwGHtRiUIQIkQl1hco2ISnFc)  <br><br> 
+For more FAQs, please refer to 📑 [APl Documentation](https://docs.duix.com/api-reference/api/Introduction)  <br><br> 
 
 ## Version Record
 
@@ -145,7 +146,7 @@ Answer: Please visit https://guiji.cn/duix-light-document/en/introduce/ to exper
 ## Contact Us
 
 ```
-James@toolwiz.com
+james@duix.com
 ```
 
 

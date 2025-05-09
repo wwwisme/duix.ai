@@ -30,10 +30,6 @@
 #define DIGITALMODELURL @"https://github.com/GuijiAI/duix.ai/releases/download/v1.0.0/bendi3_20240518.zip"
 
 
-
-
-
-
 @interface ViewController ()<GJDownWavToolDelegate>
 @property(nonatomic,strong)UIView *showView;
 @property(nonatomic,strong)NSString * basePath;

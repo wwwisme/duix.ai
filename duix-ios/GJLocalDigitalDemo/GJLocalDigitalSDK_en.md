@@ -9,7 +9,7 @@
 | Network     | Supports Wi-Fi and mobile networks. If using cloud-based Q&A libraries, the device bandwidth (actual bandwidth for the digital human) is expected to be 10mbps or higher.  |
 | Memory   | Memory available for the digital human >= 400MB                                            |
 
-
+ 
 ### Development Environment
 Development Tool: Xcode ios12.0 and above iphoneX and above
 
