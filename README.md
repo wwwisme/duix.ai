@@ -59,7 +59,6 @@ For ios, refer to [GJLocalDigitalSDK_en.md](./duix-ios/GJLocalDigitalDemo/GJLoca
 
 ## How to deploy
 This document provides a detailed description of the integration process for developers working on this project. It is important to note that each developer may encounter different stages of the process during integration. This document is intended for developers to use as a reference.<br>
-[Interface Reference Handbook_ZH](./Interface%20Reference%20Handbook_ZH.pdf) <br>
 [Interface Reference Handbook_EN](./Interface%20Reference%20Handbook_EN.pdf) <br><br>
 
 ## Download Digital Human Local Model
