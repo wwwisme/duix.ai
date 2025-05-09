@@ -1,4 +1,4 @@
-# Duix - Silicon-Based Digital Human Real-time Interaction SDK 🌐🤖   [[Chinese]](./README_ZH.md)   
+# Duix - Silicon-Based Digital Human Real-time Interaction SDK 🌐🤖  
 
 <div style="width: 100%; text-align: center;">
   <img src="res/logo_en.jpg" style="width: 100%; height: auto;"/>
@@ -20,7 +20,7 @@ Join our wechat or Discord community for support and discussions. Follow Twitter
 
 💬 Email : james@duix.com
 
-💬 [Join our WeChat (微信)](https://github.com/GuijiAI/duix.ai/blob/main/res/18群二维码.jpg)<br>
+💬 [Join our WeChat ](https://github.com/GuijiAI/duix.ai/blob/main/res/18群二维码.jpg)<br>
 
 😄 [Join our Discord](https://discord.gg/8jh28PVsMU)<br>
 
