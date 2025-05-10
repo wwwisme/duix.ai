@@ -633,6 +633,7 @@ static GJLDigitalManager * manager = nil;
     self.digitalTimer =[GJLGCDTimer scheduledTimerWithTimeInterval:0.04 repeats:YES queue:strongSelf.digital_timer_queue block:^{
         [strongSelf playNext];
     }];
+    block(YES,@"开始成功");
     
 }
 -(void)toStopHeartTimer
