@@ -19,13 +19,14 @@
   ## Table of Contents：
    😄 1. [Introduction](#introduction)<br>
    😄 2. [Features](https://duix.com/)<br>
-   😄 [3. Documentation](https://duix.com/)<br>
-   😄 [4. Model Downloads](https://duix.com/)<br>
-   😄 [5. Use Case](https://duix.com/)<br>
-   😄 [6. FAQ](https://duix.com/)<br>
-   😄 [7. Contact Us](https://duix.com/)<br>
+   😄 3. [Documentation](https://duix.com/)<br>
+   😄 4. [ Model Downloads](https://duix.com/)<br>
+   😄 5.[ Use Case](https://duix.com/)<br>
+   😄 6.[ FAQ](https://duix.com/)<br>
+   😄 7. [Contact Us](https://duix.com/)<br>
    
-   ### <a id="introduction"></a>1. Introduction<br>
+   ### <a id="introduction"></a>1. Introduction：
+   
        DUIX=Dialogue User Interface System<br>
        
        DUIX.com is a leading global platform for digital human capabilities, offering cloud/edge real-time interaction, digital human video generation, and cloning/customization through an all-in-one solution. We create intelligent human-computer interactions that "hear, see, speak, and understand you".<br>
