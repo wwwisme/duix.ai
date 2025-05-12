@@ -1,11 +1,10 @@
-# Duix - Silicon-Based Digital Human Real-time Interaction SDK 🌐🤖  
+#Duix - Silicon-Based Digital Human Real-time Interaction SDK 🌐🤖  
 
 <div style="width: 100%; text-align: center;">
   <img src="res/logo_en.png" style="width: 100%; height: auto;"/>
 </div>
 
-
-<div style="display: flex; justify-content: center; gap: 20px;background-color: black;margin: 0 auto;max-width: 90%;">
+<div style="display: flex; justify-content: center; gap: 20px;background-color: black;margin: 0 auto;max-width: 100%;">
   <a href="https://duix.com/"><img src="res/duix_home.png" alt="图片1" style="width: 157px;height: 28px;margin-right: 30px;"></a>
   <a href="https://docs.duix.com/api-reference/api/Introduction"><img src="res/duix_doc.png" alt="图片2" style="width: 157px;height: 28px;"margin-right: 30px;></a>
   <a href="https://duix.com/platform/create"><img src="res/duix_conversation.png" alt="图片3" style="width: 242px;height: 28px;"margin-right: 30px;></a>
