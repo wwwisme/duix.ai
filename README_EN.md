@@ -30,6 +30,10 @@
    😄 DUIX=Dialogue User Interface System
    
    😄 [DUIX.com](https://duix.com/) is a leading global platform for digital human capabilities, offering cloud/edge real-time interaction, digital human video generation, and cloning/customization through an all-in-one solution. We create intelligent human-computer interactions that "hear, see, speak, and understand you".
+   
+   😄 This open-source release, DUIX-Mobile, delivers a mobile-centric solution for real-time digital human interaction. Developers can seamlessly integrate proprietary or third-party LLMs, speech recognition (ASR), and text-to-speech (TTS) technologies to build dynamic digital human interfaces.
+   
+   😄 Featuring cross-platform one-click deployment (Android/iOS) and minimal technical barriers, DUIX-Mobile empowers developers to create personalized digital agents adaptable to diverse industry scenarios like smart customer service, virtual lawyers/doctors, and AI-powered mobile assistants. Start building today and redefine digital human interaction!
        
          
    
