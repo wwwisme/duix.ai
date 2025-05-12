@@ -135,16 +135,6 @@ Please download the model files according to your needs. We recommend that you c
 | **God of Wealth <br>[Download](https://github.com/GuijiAI/duix.ai/blob/main/res/270p/caishen/caishen.mp4)** | **Guanyin Bodhisattva<br> [Download](https://github.com/GuijiAI/duix.ai/blob/main/res/270p/guanyin/guanyin.mp4)** | **Su Shi<br> [Download](https://github.com/GuijiAI/duix.ai/blob/main/res/270p/sushi/sushi.mp4)** | **Virtual Girlfriend <br>[Download](https://github.com/GuijiAI/duix.ai/blob/main/res/270p/nvyou/nvyou.mp4)** |
 
 
-## Version Record
-
-- **3.0.4**: Fixed an issue where some devices’ default gl float low precision caused the avatar to not display properly.
-- **3.0.3**: Optimized local rendering<br><br>
-
-## Acknowledgments
-
-- We have drawn on [wenet](https://github.com/wenet-e2e/wenet) for audio features.<br><br>
-
-
 ## <a id="use-case"></a>5. Use Case
    
 Our models support diverse applications across web, mobile, Android smart displays, and other platforms. Below are implementation examples for different scenarios and devices. We welcome your feedback!
