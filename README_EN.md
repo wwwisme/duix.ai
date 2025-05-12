@@ -15,24 +15,11 @@
   </table>
 </div>
 
-<div style="background-color: black;padding: 20px;text-align: center;">
-    <div style="display: inline-block;border-collapse: collapse;">
-        <a href="https://duix.com/" target="_blank" style="display: inline-block; padding: 0 10px;">
-            <img src="res/duix_home.png" style="height: 28px; vertical-align: middle;">
-        </a>
-        <a href="https://docs.duix.com/api-reference/api/Introduction" target="_blank" style="display: inline-block; padding: 0 10px;">
-            <img src="res/duix_doc.png" style="height: 28px; vertical-align: middle;">
-        </a>
-        <a href="https://duix.com/platform/create" target="_blank" style="display: inline-block; padding: 0 10px;">
-            <img src="res/duix_conversation.png" style="height: 28px; vertical-align: middle;">
-        </a>
-        <a href="https://duix.com/platform/replicas" target="_blank" style="display: inline-block; padding: 0 10px;">
-            <img src="res/duix_more.png" style="height: 28px; vertical-align: middle;">
-        </a>
-    </div>
-</div>
-
-
+  ## DUIX-Mobile: On-Device AI-Powered Digital Human SDK for Real-Time Interaction (Android/iOS)  
+  ## Table of Contents：<br> 
+   😄 1. Introduction(https://duix.com/)<br>
+   
+   
   ## 🚀 Online Experience <br> 
   😄 [DUIX Digital Human Real-Time Interaction Platform:[DUIX.COM]](https://duix.com/)<br>
      
