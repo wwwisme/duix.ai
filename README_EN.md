@@ -90,9 +90,9 @@
  （8）Want advanced solutions?
   Explore enterprise features at [duix.com](https://duix.com/).
   
-  ### <a id="contact-us"></a>7. Contact Us
+
    
-  If you have any questions, please raise an issue or contact us at James@duix.com
+<!--  If you have any questions, please raise an issue or contact us at James@duix.com-->
 
      
 
@@ -172,7 +172,7 @@ Please download the model files according to your needs. We recommend that you c
 
 - We have drawn on [wenet](https://github.com/wenet-e2e/wenet) for audio features.<br><br>
 
-## Contact Us
+## <a id="contact-us"></a>7. Contact Us
 
 ```
 james@duix.com
