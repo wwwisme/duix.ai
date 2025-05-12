@@ -27,9 +27,9 @@
    
   ## <a id="introduction"></a>1. Introduction
    
-   😄 [DUIX=Dialogue User Interface System]
+   😄 DUIX=Dialogue User Interface System
    
-   😄 [DUIX.com is a leading global platform for digital human capabilities, offering cloud/edge real-time interaction, digital human video generation, and cloning/customization through an all-in-one solution. We create intelligent human-computer interactions that "hear, see, speak, and understand you".]
+   😄 DUIX.com is a leading global platform for digital human capabilities, offering cloud/edge real-time interaction, digital human video generation, and cloning/customization through an all-in-one solution. We create intelligent human-computer interactions that "hear, see, speak, and understand you".
        
          
    
