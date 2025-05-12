@@ -4,15 +4,13 @@
   <img src="res/logo_en.png" style="width: 100%; height: auto;"/>
 </div>
 
-<div style="width: 100%; text-align: center;">
-  <img src="res/duix_home.png" style="width: auto; height: auto;"/>
+<div style="display: flex; gap: 10px;">
+  <a href="https://duix.com/"><img src="res/duix_home.png" alt="图片1" style="width: auto;height: auto;"></a>
+  <a href="https://docs.duix.com/api-reference/api/Introduction"><img src="res/duix_doc.png" alt="图片2" style="width: auto;height: auto;"></a>
+  <a href="https://duix.com/platform/create"><img src="res/duix_conversation.png" alt="图片3" style="width: auto;height: auto;"></a>
+    <a href="https://duix.com/platform/replicas"><img src="res/duix_more.png" alt="图片4" style="width: auto;height: auto;"></a>
 </div>
 
-<div style="background-color: #f0f0f0; padding: 20px; border-radius: 8px;">
-  <p>这是一段有背景颜色的文字。</p>
-  
-  <img src="你的图片链接.jpg" alt="描述图片" style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
-</div>
 
 
   ## 🚀 Online Experience <br> 
