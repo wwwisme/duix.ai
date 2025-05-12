@@ -11,6 +11,15 @@
   <a href="https://duix.com/platform/replicas"><img src="res/duix_more.png" alt="图片4" style="height: 28px; margin: 0 10px;"></a>
 </div>
 
+<div style="background-color: black; padding: 20px; text-align: center;">
+  <table align="center">
+    <tr>
+      <td style="padding: 0 10px;"><a href="链接1" target="_blank"><img src="res/duix_home.png" style="height: 28px;"></a></td>
+      <td style="padding: 0 10px;"><a href="链接2" target="_blank"><img src="res/duix_home.png" style="height: 28px;"></a></td>
+      <td style="padding: 0 10px;"><a href="链接3" target="_blank"><img src="res/duix_home.png" style="height: 28px;"></a></td>
+    </tr>
+  </table>
+</div>
 
 
 
