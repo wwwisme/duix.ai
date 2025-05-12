@@ -4,19 +4,13 @@
   <img src="res/logo_en.png" style="width: 100%; height: auto;"/>
 </div>
 
-<div style="text-align: center;background-color: black;padding: 20px">
-  <a href="https://duix.com/"><img src="res/duix_home.png" alt="图片1" style="height: 28px; margin: 0 10px;"></a>
-  <a href="https://docs.duix.com/api-reference/api/Introduction"><img src="res/duix_doc.png" alt="图片2" style="height: 28px; margin: 0 10px;"></a>
-  <a href="https://duix.com/platform/create"><img src="res/duix_conversation.png" alt="图片3" style="height: 28px; margin: 0 10px;"></a>
-  <a href="https://duix.com/platform/replicas"><img src="res/duix_more.png" alt="图片4" style="height: 28px; margin: 0 10px;"></a>
-</div>
-
 <div style="background-color: black; padding: 20px; text-align: center;">
   <table align="center">
     <tr>
-      <td style="padding: 0 10px;"><a href="链接1" target="_blank"><img src="res/duix_home.png" style="height: 28px;"></a></td>
-      <td style="padding: 0 10px;"><a href="链接2" target="_blank"><img src="res/duix_home.png" style="height: 28px;"></a></td>
-      <td style="padding: 0 10px;"><a href="链接3" target="_blank"><img src="res/duix_home.png" style="height: 28px;"></a></td>
+      <td style="padding: 0 10px;"><a href="https://duix.com/" target="_blank"><img src="res/duix_home.png" style="height: 28px;"></a></td>
+      <td style="padding: 0 10px;"><a href="https://docs.duix.com/api-reference/api/Introduction" target="_blank"><img src="res/duix_doc.png" style="height: 28px;"></a></td>
+      <td style="padding: 0 10px;"><a href="https://duix.com/platform/create" target="_blank"><img src="res/duix_conversation.png" style="height: 28px;"></a></td>
+      <td style="padding: 0 10px;"><a href="https://duix.com/platform/replicas" target="_blank"><img src="res/duix_more.png" style="height: 28px;"></a></td>
     </tr>
   </table>
 </div>
