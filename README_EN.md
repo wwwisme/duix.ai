@@ -11,32 +11,7 @@
   <a href="https://duix.com/platform/replicas"><img src="res/duix_more.png" alt="图片4" style="width: 200px;height: 28px;margin-right: 30px;"></a>
 </div>
 
-<style>
-  .image-group {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .image-group a:not(:last-child)::after {
-    content: "";
-    width: 30px;
-    display: inline-block;
-  }
-</style>
 
-<div class="image-group">
-  <a href="https://example.com/link1" style="text-decoration: none;">
-    <img src="res/duix_home.png" alt="图片1描述" style="height: 28px; object-fit: cover; border: none;">
-  </a>
-  
-  <a href="https://example.com/link2" style="text-decoration: none;">
-    <img src="res/duix_home.png" alt="图片2描述" style="height: 28px; object-fit: cover; border: none;">
-  </a>
-  
-  <a href="https://example.com/link3" style="text-decoration: none;">
-    <img src="res/duix_home.png" alt="图片3描述" style="height: 28px; object-fit: cover; border: none;">
-  </a>
-</div>
 
   ## 🚀 Online Experience <br> 
   😄 [DUIX Digital Human Real-Time Interaction Platform:[DUIX.COM]](https://duix.com/)<br>
