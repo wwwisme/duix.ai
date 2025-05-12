@@ -51,9 +51,9 @@
   
   ## <a id="documentation"></a>3. Features
    
-  Android Developer： [DUIX-Mobile SDK：[Android]]（https://github.com/GuijiAI/duix.ai/blob/main/duix-android/dh_aigc_android/README_en.md）
+  Android Developer： [DUIX-Mobile SDK：[Android]](https://github.com/GuijiAI/duix.ai/blob/main/duix-android/dh_aigc_android/README_en.md)
    
-  IOS Developer：[DUIX-Mobile SDK：[iOS]]（https://github.com/GuijiAI/duix.ai/blob/main/duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK_en.md）
+  IOS Developer：[DUIX-Mobile SDK：[iOS]](https://github.com/GuijiAI/duix.ai/blob/main/duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK_en.md)
          
    
   ## 🚀 Online Experience <br> 
