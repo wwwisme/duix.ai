@@ -18,12 +18,12 @@
   ## DUIX-Mobile: On-Device AI-Powered Digital Human SDK for Real-Time Interaction (Android/iOS)  
   ## Table of Contents：
    😄 1. [Introduction](#introduction)<br>
-   😄 2. [Features](https://duix.com/)<br>
-   😄 3. [Documentation](https://duix.com/)<br>
-   😄 4. [ Model Downloads](https://duix.com/)<br>
-   😄 5.[ Use Case](https://duix.com/)<br>
-   😄 6.[ FAQ](https://duix.com/)<br>
-   😄 7. [Contact Us](https://duix.com/)<br>
+   😄 2. [Features](#features)<br>
+   😄 3. [Documentation](#documentation)<br>
+   😄 4. [Model Downloads](#model-downloads)<br>
+   😄 5. [Use Case](#use-case)<br>
+   😄 6. [FAQ](#faq)<br>
+   😄 7. [Contact Us](#contact-us)<br>
    
   ## <a id="introduction"></a>1. Introduction
    
@@ -35,6 +35,25 @@
    
   Featuring cross-platform one-click deployment (Android/iOS) and minimal technical barriers, DUIX-Mobile empowers developers to create personalized digital agents adaptable to diverse industry scenarios like smart customer service, virtual lawyers/doctors, and AI-powered mobile assistants. Start building today and redefine digital human interaction!
        
+       
+  ## <a id="features"></a>2. Features
+   
+  (1) Human-Like AI：Mimic human facial expressions, tone, and empathy.
+   
+  (2) Ultra-Fast Response: Real-time interaction under 1.5 seconds for fluid conversations.
+   
+  (3) Cost-Efficient Deployment: Low-resource, rapid setup on mobile devices, smart screens, and more.
+ 
+  (4) Network-Light Design: On-device processing minimizes connectivity needs, perfect for finance, government, and legal services.
+ 
+  (5) Universal Adaptability: Customize digital humans and scenarios for any industry with modular, scalable architecture.
+  
+  
+  ## <a id="documentation"></a>3. Features
+   
+  Android Developer： [DUIX-Mobile SDK：[Android]]（https://github.com/GuijiAI/duix.ai/blob/main/duix-android/dh_aigc_android/README_en.md）
+   
+  IOS Developer：[DUIX-Mobile SDK：[iOS]]（https://github.com/GuijiAI/duix.ai/blob/main/duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK_en.md）
          
    
   ## 🚀 Online Experience <br> 
