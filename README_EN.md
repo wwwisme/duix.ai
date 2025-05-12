@@ -2,10 +2,14 @@
 
 <div style="width: 100%; text-align: center;">
   <img src="res/logo_en.png" style="width: 100%; height: auto;"/>
+  <div style=" display: flex;justify-content: center;gap: 19px;flex-wrap: wrap;">
+  <a href="https://duix.com/"><img src="res/duix_home.png" alt="图片1" style="width: 157px;height: 28px;"></a>
+  <a href="https://docs.duix.com/api-reference/api/Introduction"><img src="res/duix_doc.png" alt="图片2" style="width: 157px;height: 28px;"></a>
+  <a href="https://duix.com/platform/create"><img src="res/duix_conversation.png" alt="图片3" style="width: 157px;height: 28px;"></a>
+  <a href="https://duix.com/platform/replicas"><img src="res/duix_more.png" alt="图片4" style="width: 157px;height: 28px;"></a>
+</div>
 </div>
 
-| [<img src="res/duix_home.png" alt="图片1" width="157" height="28">](https://duix.com) | [<img src="res/duix_doc.png" alt="图片2" width="157" height="28">](https://docs.duix.com/api-reference/api/Introduction) | [<img src="res/duix_conversation.png" alt="图片3" width="157" height="28">](https://duix.com/platform/create) | [<img src="res/duix_more.png" alt="图片4" width="157" height="28">](https://duix.com/platform/replicas) |
-|---|---|---|---|
 
 
 
