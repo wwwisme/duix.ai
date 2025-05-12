@@ -141,7 +141,7 @@ Our models support diverse applications across web, mobile, Android smart displa
 ## <a id="contact-us"></a>7. Contact Us
 
 ```
- James@duix.com
+James@duix.com
 ```
 
 
