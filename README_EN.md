@@ -4,7 +4,7 @@
   <img src="res/logo_en.png" style="width: 100%; height: auto;"/>
 </div>
 
-<div style=" display: flex;justify-content: center;gap: 19px;width: 100%;background-color: #000000;padding: 10px;">
+<div style=" display: flex;justify-content: center;gap: 19px;flex-wrap: wrap;">
 <center>
   <a href="https://duix.com/"><img src="res/duix_home.png" alt="图片1" style="width: 157px;height: 28px;"></a>
   <a href="https://docs.duix.com/api-reference/api/Introduction"><img src="res/duix_doc.png" alt="图片2" style="width: 157px;height: 28px;"></a>
