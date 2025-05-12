@@ -1,6 +1,6 @@
 # Duix - Silicon-Based Digital Human Real-time Interaction SDK 🌐🤖  
 
-<div style="width: 100%; text-align: center;">
+  <div style=" display: flex;justify-content: center;gap: 19px;flex-wrap: wrap;">
   <img src="res/logo_en.png" style="width: 100%; height: auto;"/>
   <div style=" display: flex;justify-content: center;gap: 19px;flex-wrap: wrap;">
   <a href="https://duix.com/"><img src="res/duix_home.png" alt="图片1" style="width: 157px;height: 28px;"></a>
