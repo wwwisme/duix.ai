@@ -26,15 +26,15 @@
 
 <div class="image-group">
   <a href="https://example.com/link1" style="text-decoration: none;">
-    <img src="image1.jpg" alt="图片1描述" style="height: 200px; object-fit: cover; border: none;">
+    <img src="res/duix_home.png" alt="图片1描述" style="height: 200px; object-fit: cover; border: none;">
   </a>
   
   <a href="https://example.com/link2" style="text-decoration: none;">
-    <img src="image2.jpg" alt="图片2描述" style="height: 200px; object-fit: cover; border: none;">
+    <img src="res/duix_home.png" alt="图片2描述" style="height: 200px; object-fit: cover; border: none;">
   </a>
   
   <a href="https://example.com/link3" style="text-decoration: none;">
-    <img src="image3.jpg" alt="图片3描述" style="height: 200px; object-fit: cover; border: none;">
+    <img src="res/duix_home.png" alt="图片3描述" style="height: 200px; object-fit: cover; border: none;">
   </a>
 </div>
 
