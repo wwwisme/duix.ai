@@ -55,45 +55,9 @@
    
   IOS Developer：[DUIX-Mobile SDK：[iOS]](https://github.com/GuijiAI/duix.ai/blob/main/duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK_en.md)
   
-  
-
-  
-  
-  
-
-   
 <!--  If you have any questions, please raise an issue or contact us at James@duix.com-->
 
      
-
-
-## [Duix App](https://apps.apple.com/app/id6451088879)
-Welcome to the Duix App. Feel free to download it and experience the advanced digital human interaction features we offer.<br><br> 
-
-## Support
-Join our wechat or Discord community for support and discussions. Follow Twitter,to watch the latest digital human videos created based on the open-source capabilities of DUIX.<br>
-
-💬 Email : james@duix.com
-
-💬 [Join our WeChat ](https://github.com/GuijiAI/duix.ai/blob/main/res/18群二维码.jpg)<br>
-
-😄 [Join our Discord](https://discord.gg/8jh28PVsMU)<br>
-
-✨ [Follow us on Twitter](https://twitter.com/HuapengSima)<br><br> 
-
-## Introduction
-DUIX, short for “Dialogue User Interface System”, is an AI-powered digital human interaction platform created by Silicon-based Intelligence. By open-sourcing the capabilities of digital human interaction, developers can easily integrate large-scale models, automatic speech recognition (ASR), and text-to-speech (TTS) capabilities, enabling real-time interaction with digital humans. It supports one-click deployment on multiple platforms including Android and iOS, allowing each developer to effortlessly create intelligent and personalized digital human agents, and apply them in various industries.<br><br>
-
-We also provide you with a one-stop comprehensive digital human multimodal real-time interaction SDK integration solution - DUIX Interactive Digital Human SDK. This SDK product is based on technologies such as speech recognition (ASR), speech synthesis (TTS), natural language understanding (NLP), AIGC, and Large Language Model (LLM) , achieving an intelligent human-computer interaction experience that is "able to hear, see, speak, and understand you". It is suitable for multiple enterprise application scenarios such as intelligent customer service and smart screens.
-View details:<br><br>
-😄[Quickly set up DUIX digital human conversations](https://duix.com)<br>
-😄[DUIX SDK version and price](https://duix.com/pricing)<br>
-😄[DUIX SDK Open Document](https://docs.duix.com/api-reference/api/Introduction)<br><br>
-
-## How to deploy
-This document provides a detailed description of the integration process for developers working on this project. It is important to note that each developer may encounter different stages of the process during integration. This document is intended for developers to use as a reference.<br>
-[Interface Reference Handbook_EN](./Interface%20Reference%20Handbook_EN.pdf) <br><br>
-
 ### <a id="model-downloads"></a>4. Model Downloads
    
 We provide public test models for easy download and integration. Feel free to download and try them out!
