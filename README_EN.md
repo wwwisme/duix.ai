@@ -56,39 +56,9 @@
   IOS Developer：[DUIX-Mobile SDK：[iOS]](https://github.com/GuijiAI/duix.ai/blob/main/duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK_en.md)
   
   
-  ### <a id="model-downloads"></a>4. Model Downloads
-   
-  We provide public test models for easy download and integration. Feel free to download and try them out!
+
   
-  ### <a id="use-case"></a>5. Use Case
-   
-  Our models support diverse applications across web, mobile, Android smart displays, and other platforms. Below are implementation examples for different scenarios and devices. We welcome your feedback!
-   
-  ### <a id="faq"></a>6. FAQ
-   
- （1）How do I create a custom digital avatar?
-  Record a 2-5 minute video of a person speaking naturally to the camera. Adjust posture/content for your use case (e.g., wear formal attire and discuss legal topics for consultation scenarios).
   
- （2）What’s included in digital avatar pricing?
-  Our base package covers avatar appearance and voice cloning, fully compatible with our SDK. For advanced needs, contact us.
-  
- （3）Can I update my custom avatar?
-  The open-source version uses public models only. Custom updates require a service request
-  
- （4）Is there an API for avatar cloning?
-  A:Training services currently require deployment on our managed servers.
-  
- （5）Are broadcast start/end callbacks available?
-  Yes, implemented via SDK methods (see documentation).
-  
- （6）Can I control avatar gestures via API?
-  Action control APIs are currently unavailable.
-  
- （7） How do I replace downloaded files?
-  File replacement workflows are code-level managed (see implementation guides).
-  
- （8）Want advanced solutions?
-  Explore enterprise features at [duix.com](https://duix.com/).
   
 
    
@@ -124,8 +94,10 @@ View details:<br><br>
 This document provides a detailed description of the integration process for developers working on this project. It is important to note that each developer may encounter different stages of the process during integration. This document is intended for developers to use as a reference.<br>
 [Interface Reference Handbook_EN](./Interface%20Reference%20Handbook_EN.pdf) <br><br>
 
-## Download Digital Human Local Model
-We offer a selection of digital human models for download and use. We will update the local model packages from time to time so that you can download and utilize the latest models. Below is the list of currently available local model packages:
+### <a id="model-downloads"></a>4. Model Downloads
+   
+We provide public test models for easy download and integration. Feel free to download and try them out!
+
 #### male
 |  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/andrew.jpg" width="200"> |  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/MoneyGod.jpg" width="200"> |  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/SuShi.jpg" width="200"> |  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E8%89%BE%E7%91%9E%E5%85%8B.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E5%AD%90%E8%BD%A9.png" width="200">|
 |:-------:|:-------:|:-------:|:-------:|:-------:|
@@ -172,6 +144,38 @@ Please download the model files according to your needs. We recommend that you c
 
 - We have drawn on [wenet](https://github.com/wenet-e2e/wenet) for audio features.<br><br>
 
+
+  ### <a id="use-case"></a>5. Use Case
+   
+  Our models support diverse applications across web, mobile, Android smart displays, and other platforms. Below are implementation examples for different scenarios and devices. We welcome your feedback!
+   
+  ### <a id="faq"></a>6. FAQ
+   
+ （1）How do I create a custom digital avatar?
+  Record a 2-5 minute video of a person speaking naturally to the camera. Adjust posture/content for your use case (e.g., wear formal attire and discuss legal topics for consultation scenarios).
+  
+ （2）What’s included in digital avatar pricing?
+  Our base package covers avatar appearance and voice cloning, fully compatible with our SDK. For advanced needs, contact us.
+  
+ （3）Can I update my custom avatar?
+  The open-source version uses public models only. Custom updates require a service request
+  
+ （4）Is there an API for avatar cloning?
+  A:Training services currently require deployment on our managed servers.
+  
+ （5）Are broadcast start/end callbacks available?
+  Yes, implemented via SDK methods (see documentation).
+  
+ （6）Can I control avatar gestures via API?
+  Action control APIs are currently unavailable.
+  
+ （7） How do I replace downloaded files?
+  File replacement workflows are code-level managed (see implementation guides).
+  
+ （8）Want advanced solutions?
+  Explore enterprise features at [duix.com](https://duix.com/).
+  
+  
 ## <a id="contact-us"></a>7. Contact Us
 
 ```
