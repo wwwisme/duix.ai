@@ -145,32 +145,32 @@ Please download the model files according to your needs. We recommend that you c
 - We have drawn on [wenet](https://github.com/wenet-e2e/wenet) for audio features.<br><br>
 
 
-  ### <a id="use-case"></a>5. Use Case
+## <a id="use-case"></a>5. Use Case
    
-  Our models support diverse applications across web, mobile, Android smart displays, and other platforms. Below are implementation examples for different scenarios and devices. We welcome your feedback!
+Our models support diverse applications across web, mobile, Android smart displays, and other platforms. Below are implementation examples for different scenarios and devices. We welcome your feedback!
    
-  ### <a id="faq"></a>6. FAQ
+## <a id="faq"></a>6. FAQ
    
- （1）How do I create a custom digital avatar?
-  Record a 2-5 minute video of a person speaking naturally to the camera. Adjust posture/content for your use case (e.g., wear formal attire and discuss legal topics for consultation scenarios).
+（1）How do I create a custom digital avatar?
+ Record a 2-5 minute video of a person speaking naturally to the camera. Adjust posture/content for your use case (e.g., wear formal attire and discuss legal topics for consultation scenarios).
   
- （2）What’s included in digital avatar pricing?
-  Our base package covers avatar appearance and voice cloning, fully compatible with our SDK. For advanced needs, contact us.
+（2）What’s included in digital avatar pricing?
+ Our base package covers avatar appearance and voice cloning, fully compatible with our SDK. For advanced needs, contact us.
   
- （3）Can I update my custom avatar?
-  The open-source version uses public models only. Custom updates require a service request
+（3）Can I update my custom avatar?
+ The open-source version uses public models only. Custom updates require a service request
   
- （4）Is there an API for avatar cloning?
-  A:Training services currently require deployment on our managed servers.
+（4）Is there an API for avatar cloning?
+ A:Training services currently require deployment on our managed servers.
   
- （5）Are broadcast start/end callbacks available?
-  Yes, implemented via SDK methods (see documentation).
+（5）Are broadcast start/end callbacks available?
+ Yes, implemented via SDK methods (see documentation).
   
- （6）Can I control avatar gestures via API?
-  Action control APIs are currently unavailable.
+（6）Can I control avatar gestures via API?
+ Action control APIs are currently unavailable.
   
- （7） How do I replace downloaded files?
-  File replacement workflows are code-level managed (see implementation guides).
+（7） How do I replace downloaded files?
+ File replacement workflows are code-level managed (see implementation guides).
   
  （8）Want advanced solutions?
   Explore enterprise features at [duix.com](https://duix.com/).
