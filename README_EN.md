@@ -81,13 +81,13 @@
  （5）Are broadcast start/end callbacks available?
   Yes, implemented via SDK methods (see documentation).
   
-  (6) Can I control avatar gestures via API?
+ （6）Can I control avatar gestures via API?
   Action control APIs are currently unavailable.
   
-  (7)How do I replace downloaded files?
+ （7） How do I replace downloaded files?
   File replacement workflows are code-level managed (see implementation guides).
   
-  (8）Want advanced solutions?
+ （8）Want advanced solutions?
   Explore enterprise features at [duix.com](https://duix.com/).
   
   ### <a id="contact-us"></a>7. Contact Us
