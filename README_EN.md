@@ -16,8 +16,8 @@
 </div>
 
   ## DUIX-Mobile: On-Device AI-Powered Digital Human SDK for Real-Time Interaction (Android/iOS)  
-  ## Table of Contents：<br> 
-   😄 [1. Introduction](https://duix.com/)<br>
+  ## Table of Contents：
+   😄 1. [Introduction](#introduction)
    😄 [2. Features](https://duix.com/)<br>
    😄 [3. Documentation](https://duix.com/)<br>
    😄 [4. Model Downloads](https://duix.com/)<br>
@@ -25,11 +25,8 @@
    😄 [6. FAQ](https://duix.com/)<br>
    😄 [7. Contact Us](https://duix.com/)<br>
    
-   ## 1.Introduction<br>
-   
-        DUIX=Dialogue User Interface System<br><br> 
-         
-        [DUIX.com](https://duix.com/)is a leading global platform for digital human capabilities, offering cloud/edge real-time interaction, digital human video generation, and cloning/customization through an all-in-one solution. We create intelligent human-computer interactions that "hear, see, speak, and understand you".This open-source release, DUIX-Mobile, delivers a mobile-centric solution for real-time digital human interaction. Developers can seamlessly integrate proprietary or third-party LLMs, speech recognition (ASR), and text-to-speech (TTS) technologies to build dynamic digital human interfaces.Featuring cross-platform one-click deployment (Android/iOS) and minimal technical barriers, DUIX-Mobile empowers developers to create personalized digital agents adaptable to diverse industry scenarios like smart customer service, virtual lawyers/doctors, and AI-powered mobile assistants. Start building today and redefine digital human interaction!<br><br> 
+   ### <a id="introduction"></a>1. Introduction
+        系统概述与核心价值说明:
    
   ## 🚀 Online Experience <br> 
   😄 [DUIX Digital Human Real-Time Interaction Platform:[DUIX.COM]](https://duix.com/)<br>
