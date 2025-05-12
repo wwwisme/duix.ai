@@ -5,7 +5,7 @@
 </div>
 
 
-<div style="display: flex; justify-content: center; gap: 20px;width: 80%;">
+<div style="display: flex; justify-content: center; gap: 20px;background-color: black;margin: 0 auto;max-width: 90%;">
   <a href="https://duix.com/"><img src="res/duix_home.png" alt="图片1" style="width: 157px;height: 28px;margin-right: 30px;"></a>
   <a href="https://docs.duix.com/api-reference/api/Introduction"><img src="res/duix_doc.png" alt="图片2" style="width: 157px;height: 28px;"margin-right: 30px;></a>
   <a href="https://duix.com/platform/create"><img src="res/duix_conversation.png" alt="图片3" style="width: 242px;height: 28px;"margin-right: 30px;></a>
