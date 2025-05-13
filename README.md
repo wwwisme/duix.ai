@@ -44,9 +44,8 @@
   (4) Network-Light Design: On-device processing minimizes connectivity needs, perfect for finance, government, and legal services.
  
   (5) Universal Adaptability: Customize digital humans and scenarios for any industry with modular, scalable architecture.
-  
-  
-  ## <a id="documentation"></a>3. Features
+  4  
+  ## <a id="documentation"></a>3. Documentation
    
   Android Developer： [DUIX-Mobile SDK：[Android]](https://github.com/GuijiAI/duix.ai/blob/main/duix-android/dh_aigc_android/README_en.md)
    
@@ -58,26 +57,15 @@
 We provide public test models for easy download and integration. Feel free to download and try them out!
 
 #### male
-|  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/andrew.jpg" width="200"> |  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/MoneyGod.jpg" width="200"> |  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/SuShi.jpg" width="200"> |  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E8%89%BE%E7%91%9E%E5%85%8B.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E5%AD%90%E8%BD%A9.png" width="200">|
-|:-------:|:-------:|:-------:|:-------:|:-------:|
-| **andrew**<br> [Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/dhp-tools/dhp-tools/651705983152197/61025/651705983152197_ccf3256b2449c76e77f94276dffcb293.zip) | **MoneyGod**<br> [Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/dhp-tools/dhp-tools/651644573884485/61002/651644573884485_2387469906049706416017f105e5340f.zip) |  **Su Shi**<br> [Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/dhp-tools/dhp-tools/651660515688517/61011/651660515688517_825de648c30be80a89110dd0e63ecb3b.zip) | **Eric**<br>[Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719193748558/airuike_20240409.zip) | **Zi Xuan**<br>[Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719194036608/zixuan_20240411v2.zip) | 
+|  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/William.png" width="200"> |  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/andrew.png" width="200"> |  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/Eric.jpeg" width="200"> |  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/Michael.png" width="200"> |
+|:-------:|:-------:|:-------:|:-------:|
+| **William**<br> [Download](https://github.com/GuijiAI/duix.ai/releases/download/v1.0.0/627306542239813_1871244b5e6912efc636ba31ea4c5c6d_optim_m80.zip) | **andrew**<br> [Download](https://github.com/GuijiAI/duix.ai/releases/download/v1.0.0/651705983152197_ccf3256b2449c76e77f94276dffcb293_optim_m80.zip) |  **Su Eric**<br> [Download](https://github.com/GuijiAI/duix.ai/releases/download/v1.0.0/airuike_20240409.zip) | **Michael**<br>[Download](https://github.com/GuijiAI/duix.ai/releases/download/v1.0.0/675429759852613_7f8d9388a4213080b1820b83dd057cfb_optim_m80.zip) |
 
-|<img src="https://github.com/GuijiAI/duix.ai/raw/main/res/%E7%94%B7.jpg" width="200">|
-|:-------:|
-**Ming Xuan**<br>[Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719194633518/mingxuan_20240624.zip) 
 
 #### female
-| <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/Arya.png" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/Shirley.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/Guanyin.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res//%E8%8B%8F%E8%8F%B2.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E6%85%95%E5%AE%B9%E6%99%93.png" width="200"> |
-|:-------:|:-------:|:-------:|:-------:|:-------:|
-| **Arya**<br>[Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/dhp-tools/dhp-tools/651637733658693/61000/651637733658693_2e0a4278a73411a2ff04ef1a849d2a6d.zip) | **Shirley**<br> [Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/dhp-tools/dhp-tools/651686686687301/61026/651686686687301_846161843f9ffdaaeace716bf3436be5.zip) | **Guanyin**<br> [Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/dhp-tools/dhp-tools/651622691811397/60996/651622691811397_ebe9bd2db8e26c1a7b07932b4a55c45c.zip) | **Sophie**<br> [Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719193425133/sufei_20240409.zip) | **Mu Rong Xiao<br> [下载](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719193516102/murongxiao_20240410.zip)** |
-
-| <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E5%86%B7%E7%84%B1.png" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/Amelia.png" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E8%B5%B5%E9%9B%85.png" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E5%BF%86%E7%91%B6.png" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E5%BF%83%E5%A6%8D.jpg" width="200"> 
-|:-------:|:-------:|:-------:|:-------:|:-------:|
-| **Cold Flame**<br> [Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719193451931/lengyan_20240407.zip) | **Amelia**<br> [Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719193625986/amelia_20240411.zip) | **Zhao Ya<br> [Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719194234727/zhaoya_20240411.zip)** | **Yi Yao<br> [Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719194263441/yiyao_20240418.zip)** | **Xin Yan<br> [Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719194373660/xinyan_20240411.zip)** 
-
-| <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E6%99%93%E8%90%B1.png" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E6%80%9D%E7%91%B6.png" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E8%AF%97%E9%9B%85.png" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/raw/main/res/%E5%A5%B3.jpg" width="200"> 
+| <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/Hazel.png" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/Luna.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/Ivy.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/Aurora.png" width="200"> | 
 |:-------:|:-------:|:-------:|:-------:|
-| **Xiao Xuan<br> [Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719194313414/xiaoxuan_20240418.zip)** | **Si Yao<br> [Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719194450521/siyao_20240418.zip)** | **Shi Ya<br> [Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719194516880/shiya_20240409.zip)** | **Dear Sister<br> [Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719194007931/bendi1_0329.zip)** |
+| **Hazel**<br>[Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/dhp-tools/dhp-tools/651637733658693/61000/651637733658693_2e0a4278a73411a2ff04ef1a849d2a6d.zip) | **Luna**<br> [Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/dhp-tools/dhp-tools/651686686687301/61026/651686686687301_846161843f9ffdaaeace716bf3436be5.zip) | **Ivy**<br> [Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/dhp-tools/dhp-tools/651622691811397/60996/651622691811397_ebe9bd2db8e26c1a7b07932b4a55c45c.zip) | **Aurora**<br> [Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719193425133/sufei_20240409.zip) | 
 
 
 Please download the model files according to your needs. We recommend that you carefully read the accompanying documentation after downloading to ensure the correct installation and use of the models.<br><br>
