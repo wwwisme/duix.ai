@@ -52,9 +52,7 @@
    
   IOS Developer：[DUIX-Mobile SDK：[iOS]](https://github.com/GuijiAI/duix.ai/blob/main/duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK_en.md)
   
-<!--  If you have any questions, please raise an issue or contact us at James@duix.com-->
 
-     
 ### <a id="model-downloads"></a>4. Model Downloads
    
 We provide public test models for easy download and integration. Feel free to download and try them out!
