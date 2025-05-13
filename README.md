@@ -1,68 +1,64 @@
-# Duix - Silicon-Based Digital Human Real-time Interaction SDK 🌐🤖  
 
 <div style="width: 100%; text-align: center;">
   <img src="res/logo_en.png" style="width: 100%; height: auto;"/>
 </div>
 
-  ## 🚀 Online Experience <br> 
-  😄 [DUIX Digital Human Real-Time Interaction Platform:[DUIX.COM]](https://duix.com/)<br>
+
+<div align="center">
+  <a href="https://duix.com/" style="padding: 0 20px"><img src="res/duix_home.png" alt="图片1" style="height: 28px;"></a>
+  <a href="https://docs.duix.com/api-reference/api/Introduction" style="padding: 0 20px"><img src="res/duix_doc.png" alt="图片2" style="height: 28px;"></a>
+  <a href="https://duix.com/platform/create" style="padding: 0 20px"><img src="res/duix_conversation.png" alt="图片3" style="height: 28px;"></a>
+  <a href="https://duix.com/platform/replicas" style="padding: 0 20px"><img src="res/duix_more.png" alt="图片4" style="height: 28px;"></a>
+</div>
+
+
+  ## DUIX-Mobile: On-Device AI-Powered Digital Human SDK for Real-Time Interaction (Android/iOS)  
+  ## Table of Contents：
+   😄 1. [Introduction](#introduction)<br>
+   😄 2. [Features](#features)<br>
+   😄 3. [Documentation](#documentation)<br>
+   😄 4. [Model Downloads](#model-downloads)<br>
+   😄 5. [Use Case](#use-case)<br>
+   😄 6. [FAQ](#faq)<br>
+   😄 7. [Contact Us](#contact-us)<br>
+   
+  ### <a id="introduction"></a>1. Introduction
+   
+  DUIX=Dialogue User Interface System
+   
+  [DUIX.com](https://duix.com/) is a leading global platform for digital human capabilities, offering cloud/edge real-time interaction, digital human video generation, and cloning/customization through an all-in-one solution. We create intelligent human-computer interactions that "hear, see, speak, and understand you".
+   
+  This open-source release, DUIX-Mobile, delivers a mobile-centric solution for real-time digital human interaction. Developers can seamlessly integrate proprietary or third-party LLMs, speech recognition (ASR), and text-to-speech (TTS) technologies to build dynamic digital human interfaces.
+   
+  Featuring cross-platform one-click deployment (Android/iOS) and minimal technical barriers, DUIX-Mobile empowers developers to create personalized digital agents adaptable to diverse industry scenarios like smart customer service, virtual lawyers/doctors, and AI-powered mobile assistants. Start building today and redefine digital human interaction!
+       
+       
+  ### <a id="features"></a>2. Features
+   
+  (1) Human-Like AI：Mimic human facial expressions, tone, and empathy.
+   
+  (2) Ultra-Fast Response: Real-time interaction under 1.5 seconds for fluid conversations.
+   
+  (3) Cost-Efficient Deployment: Low-resource, rapid setup on mobile devices, smart screens, and more.
+ 
+  (4) Network-Light Design: On-device processing minimizes connectivity needs, perfect for finance, government, and legal services.
+ 
+  (5) Universal Adaptability: Customize digital humans and scenarios for any industry with modular, scalable architecture.
+  
+  
+  ### <a id="documentation"></a>3. Features
+   
+  Android Developer： [DUIX-Mobile SDK：[Android]](https://github.com/GuijiAI/duix.ai/blob/main/duix-android/dh_aigc_android/README_en.md)
+   
+  IOS Developer：[DUIX-Mobile SDK：[iOS]](https://github.com/GuijiAI/duix.ai/blob/main/duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK_en.md)
+  
+<!--  If you have any questions, please raise an issue or contact us at James@duix.com-->
+
      
- ## 📖 Documentation <br> 
- 😄 [Real-time Interaction SDK：[Android]](./duix-android/dh_aigc_android/README.md)<br>
- 😄 [Real-time Interaction SDK：[iOS]](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK.md)<br>
- 😄 [Digital Human Rapid Cloning and Video Synthesis Open Source Project (Non-Real-Time Interaction):[HeyGem.ai]](https://github.com/GuijiAI/HeyGem.ai)<br><br> 
+### <a id="model-downloads"></a>4. Model Downloads
+   
+We provide public test models for easy download and integration. Feel free to download and try them out!
 
-## [Duix App](https://apps.apple.com/app/id6451088879)
-Welcome to the Duix App. Feel free to download it and experience the advanced digital human interaction features we offer.<br><br> 
-
-## Support
-Join our wechat or Discord community for support and discussions. Follow Twitter,to watch the latest digital human videos created based on the open-source capabilities of DUIX.<br>
-
-💬 Email : james@duix.com
-
-💬 [Join our WeChat ](https://github.com/GuijiAI/duix.ai/blob/main/res/18群二维码.jpg)<br>
-
-😄 [Join our Discord](https://discord.gg/8jh28PVsMU)<br>
-
-✨ [Follow us on Twitter](https://twitter.com/HuapengSima)<br><br> 
-
-## Introduction
-DUIX, short for “Dialogue User Interface System”, is an AI-powered digital human interaction platform created by Silicon-based Intelligence. By open-sourcing the capabilities of digital human interaction, developers can easily integrate large-scale models, automatic speech recognition (ASR), and text-to-speech (TTS) capabilities, enabling real-time interaction with digital humans. It supports one-click deployment on multiple platforms including Android and iOS, allowing each developer to effortlessly create intelligent and personalized digital human agents, and apply them in various industries.<br><br>
-
-We also provide you with a one-stop comprehensive digital human multimodal real-time interaction SDK integration solution - DUIX Interactive Digital Human SDK. This SDK product is based on technologies such as speech recognition (ASR), speech synthesis (TTS), natural language understanding (NLP), AIGC, and Large Language Model (LLM) , achieving an intelligent human-computer interaction experience that is "able to hear, see, speak, and understand you". It is suitable for multiple enterprise application scenarios such as intelligent customer service and smart screens.
-View details:<br><br>
-😄[Quickly set up DUIX digital human conversations](https://duix.com)<br>
-😄[DUIX SDK version and price](https://duix.com/pricing)<br>
-😄[DUIX SDK Open Document](https://docs.duix.com/api-reference/api/Introduction)<br><br>
-
-
-
-
-## Project features
-
-- Low deployment cost: No need for customers to provide technical teams for cooperation, supports low-cost rapid deployment on various terminals and large screens.
-- Low network dependence: Suitable for virtual assistant self-service in scenarios such as subways, banks, and government affairs.
-- Diverse functions: Can meet the diverse needs of video, media, customer service, finance, radio, and television in multiple industries according to customer requirements.<br><br>
-
-## Source Code Directory Description
-
-```
-duix-android: android demo       
-duix-ios: ios demo 
-```
-<br>
-
-## Open Documentation Entry
-
-For android, refer to [README_en.md](./duix-android/dh_aigc_android/README_en.md)
-For ios, refer to [GJLocalDigitalSDK_en.md](./duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK_en.md)<br><br>
-
-## How to deploy
-This document provides a detailed description of the integration process for developers working on this project. It is important to note that each developer may encounter different stages of the process during integration. This document is intended for developers to use as a reference.<br>
-[Interface Reference Handbook_EN](./Interface%20Reference%20Handbook_EN.pdf) <br><br>
-
-## Download Digital Human Local Model
-We offer a selection of digital human models for download and use. We will update the local model packages from time to time so that you can download and utilize the latest models. Below is the list of currently available local model packages:
 #### male
 |  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/andrew.jpg" width="200"> |  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/MoneyGod.jpg" width="200"> |  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/SuShi.jpg" width="200"> |  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E8%89%BE%E7%91%9E%E5%85%8B.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/%E5%AD%90%E8%BD%A9.png" width="200">|
 |:-------:|:-------:|:-------:|:-------:|:-------:|
@@ -88,6 +84,13 @@ We offer a selection of digital human models for download and use. We will updat
 
 Please download the model files according to your needs. We recommend that you carefully read the accompanying documentation after downloading to ensure the correct installation and use of the models.<br><br>
 
+
+
+
+## <a id="use-case"></a>5. Use Case
+   
+Our models support diverse applications across web, mobile, Android smart displays, and other platforms. Below are implementation examples for different scenarios and devices. We welcome your feedback!
+
 ### Business case presentation
 ### Mobile Phone and General Terminal Screen Cases
 | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/540p/lvshi/lvshi-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/540p/yisheng/yisheng-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/540p/peiban/peiban-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/540p/laoshi/laoshi-bg.jpg" width="200"> |
@@ -98,56 +101,47 @@ Please download the model files according to your needs. We recommend that you c
 | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/270p/caishen/caishen-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/270p/guanyin/guanyin-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/270p/sushi/sushi-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/270p/nvyou/nvyou-bg.jpg" width="200"> |
 |:-------:|:-------:|:-------:|:-------:|
 | **God of Wealth <br>[Download](https://github.com/GuijiAI/duix.ai/blob/main/res/270p/caishen/caishen.mp4)** | **Guanyin Bodhisattva<br> [Download](https://github.com/GuijiAI/duix.ai/blob/main/res/270p/guanyin/guanyin.mp4)** | **Su Shi<br> [Download](https://github.com/GuijiAI/duix.ai/blob/main/res/270p/sushi/sushi.mp4)** | **Virtual Girlfriend <br>[Download](https://github.com/GuijiAI/duix.ai/blob/main/res/270p/nvyou/nvyou.mp4)** |
+   
+## <a id="faq"></a>6. FAQ
+   
+（1）How do I create a custom digital avatar?
 
-## Frequently Asked Questions
-#### 1. Are free avatar models available for commercial use? Do they support digital human customization? Are they based on photos or videos?<br>
-Answer: The freely provided avatar models are available for commercial use worldwide at no cost (Enterprises with more than 100,000 users or annual revenue exceeding $10 million are required to sign a commercial license agreement). If needed, we can support digital human customization. Our digital human customization is based on videos. You can customize a unique digital human for use in the SDK. However, the customized digital human service is a paid service. You can contact us by scanning the QR code on WeChat.<br>
-<img src="https://github.com/GuijiAI/duix.ai/blob/main/res/ssx.png" width="200">
+  Record a 2-5 minute video of a person speaking naturally to the camera. Adjust posture/content for your use case (e.g., wear formal attire and discuss legal topics for consultation scenarios).
+  
+（2）What’s included in digital avatar pricing?
 
-#### 2. How to customize a digital avatar?<br>
-Answer: To customize a silicon-based digital human, you need to shoot a 3-5 minute video featuring a real person speaking directly to the camera. The specific posture and content of the speech can be determined according to the actual usage scenario. For example, if the video is for legal consultation purposes, you can choose to appear in formal attire and speak about legal-related content, ensuring consistency with the overall context. <br>
+  Our base package covers avatar appearance and voice cloning, fully compatible with our SDK. For advanced needs, contact us.
+  
+（3）Can I update my custom avatar?
 
-#### 3. How is the customization of digital avatars charged?<br>
-Answer: We provide digital human customization that includes the avatar's appearance and voice, compatible with our SDK open-source interface. For additional customization needs, you can contact our customer service via email.<br>
+  The open-source version uses public models only. Custom updates require a service request
+  
+（4）Is there an API for avatar cloning?
 
-#### 4. How can the digital avatar be updated?<br>
-Answer: Currently, the open-source version mainly provides public models. Customization is available upon request.<br>
+  A:Training services currently require deployment on our managed servers.
+  
+（5）Are broadcast start/end callbacks available?
 
-#### 5. Is there an API interface for avatar cloning<br>
-Answer: The training service currently only supports deployment on our internal servers for invocation.<br>
+  Yes, implemented via SDK methods (see documentation).
+  
+（6）Can I control avatar gestures via API?
 
-#### 6. Does the broadcasted wav file support streaming data?<br>
-Answer: Streaming support is currently under modification and optimization, and it is not supported at the moment.<br>
+  Action control APIs are currently unavailable.
+  
+（7） How do I replace downloaded files?
 
-#### 7. Are there callback methods for the start and end of the broadcast?<br>
-Answer:  Callback methods for the start and end of the broadcast are detailed in the SDK documentation. <br>
+  File replacement workflows are code-level managed (see implementation guides).
+  
+（8）Want advanced solutions?
 
-#### 8. Are there any API controls for the digital human's actions?<br>
-Answer: The API for controlling digital human actions is not supported at the moment.<br>
-
-#### 9. How to replace downloaded files?<br>
-Answer: The replacement of downloaded files is detailed in the code.<br><br>
-
-#### 10、Would you like to learn about the integrated solution or more advanced versions?<br>
-Answer: Please visit https://duix.com to experience more features.<br><br>
+  Explore enterprise features at [duix.com](https://duix.com/).
+  
+  
+## <a id="contact-us"></a>7. Contact Us
 
 
-For more FAQs, please refer to 📑 [APl Documentation](https://docs.duix.com/api-reference/api/Introduction)  <br><br> 
+If you have any questions, please raise an issue or contact us at james@duix.com
 
-## Version Record
-
-- **3.0.4**: Fixed an issue where some devices’ default gl float low precision caused the avatar to not display properly.
-- **3.0.3**: Optimized local rendering<br><br>
-
-## Acknowledgments
-
-- We have drawn on [wenet](https://github.com/wenet-e2e/wenet) for audio features.<br><br>
-
-## Contact Us
-
-```
-james@duix.com
-```
 
 
 ## Star History
