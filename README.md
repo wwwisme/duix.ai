@@ -65,7 +65,7 @@ We provide public test models for easy download and integration. Feel free to do
 #### male
 |  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/William.jpg" width="200"> |  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/andrew.jpg" width="200"> |  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/Michael.jpg" width="200"> |  <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/Eric.jpg" width="200"> |
 |:-------:|:-------:|:-------:|:-------:|
-| **William**<br> [Download](https://github.com/GuijiAI/duix.ai/releases/download/v1.0.0/627306542239813_1871244b5e6912efc636ba31ea4c5c6d_optim_m80.zip) | **andrew**<br> [Download](https://github.com/GuijiAI/duix.ai/releases/download/v1.0.0/651705983152197_ccf3256b2449c76e77f94276dffcb293_optim_m80.zip) |  **Eric**<br> [Download](https://github.com/GuijiAI/duix.ai/releases/download/v1.0.0/675429759852613_7f8d9388a4213080b1820b83dd057cfb_optim_m80.zip) | **Michael**<br>[Download](https://github.com/GuijiAI/duix.ai/releases/download/v1.0.0/airuike_20240409.zip) |
+| **William**<br> [Download](https://github.com/GuijiAI/duix.ai/releases/download/v1.0.0/627306542239813_1871244b5e6912efc636ba31ea4c5c6d_optim_m80.zip) | **andrew**<br> [Download](https://github.com/GuijiAI/duix.ai/releases/download/v1.0.0/651705983152197_ccf3256b2449c76e77f94276dffcb293_optim_m80.zip) |  **Michael**<br> [Download](https://github.com/GuijiAI/duix.ai/releases/download/v1.0.0/675429759852613_7f8d9388a4213080b1820b83dd057cfb_optim_m80.zip) | **Eric**<br>[Download](https://github.com/GuijiAI/duix.ai/releases/download/v1.0.0/airuike_20240409.zip) |
 
 
 
