@@ -132,7 +132,7 @@ Our models support diverse applications across web, mobile, Android smart displa
   
 （8）Want advanced solutions?
 
-  Explore enterprise features at [duix.com](https://duix.com/).
+   Explore enterprise features at [duix.com](https://duix.com/).
   
   
 ## <a id="contact-us"></a>7. Contact Us
