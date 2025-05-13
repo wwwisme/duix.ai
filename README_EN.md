@@ -4,8 +4,9 @@
   <img src="res/logo_en.png" style="width: 100%; height: auto;"/>
 </div>
 
-<div style="padding: 20px; text-align: center;">
-  <table align="center" style="border-collapse: collapse; border: none;">
+
+<div style="background-color: black; padding: 20px; text-align: center;">
+  <table align="center" style="border: none; border-collapse: collapse;">
     <tr>
       <td style="padding: 0 10px; border: none;"><a href="https://duix.com/" target="_blank"><img src="res/duix_home.png" style="height: 28px;"></a></td>
       <td style="padding: 0 10px; border: none;"><a href="https://docs.duix.com/api-reference/api/Introduction" target="_blank"><img src="res/duix_doc.png" style="height: 28px;"></a></td>
