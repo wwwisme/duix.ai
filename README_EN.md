@@ -87,6 +87,13 @@ We provide public test models for easy download and integration. Feel free to do
 
 Please download the model files according to your needs. We recommend that you carefully read the accompanying documentation after downloading to ensure the correct installation and use of the models.<br><br>
 
+
+
+
+## <a id="use-case"></a>5. Use Case
+   
+Our models support diverse applications across web, mobile, Android smart displays, and other platforms. Below are implementation examples for different scenarios and devices. We welcome your feedback!
+
 ### Business case presentation
 ### Mobile Phone and General Terminal Screen Cases
 | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/540p/lvshi/lvshi-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/540p/yisheng/yisheng-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/540p/peiban/peiban-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/540p/laoshi/laoshi-bg.jpg" width="200"> |
@@ -97,11 +104,6 @@ Please download the model files according to your needs. We recommend that you c
 | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/270p/caishen/caishen-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/270p/guanyin/guanyin-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/270p/sushi/sushi-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/270p/nvyou/nvyou-bg.jpg" width="200"> |
 |:-------:|:-------:|:-------:|:-------:|
 | **God of Wealth <br>[Download](https://github.com/GuijiAI/duix.ai/blob/main/res/270p/caishen/caishen.mp4)** | **Guanyin Bodhisattva<br> [Download](https://github.com/GuijiAI/duix.ai/blob/main/res/270p/guanyin/guanyin.mp4)** | **Su Shi<br> [Download](https://github.com/GuijiAI/duix.ai/blob/main/res/270p/sushi/sushi.mp4)** | **Virtual Girlfriend <br>[Download](https://github.com/GuijiAI/duix.ai/blob/main/res/270p/nvyou/nvyou.mp4)** |
-
-
-## <a id="use-case"></a>5. Use Case
-   
-Our models support diverse applications across web, mobile, Android smart displays, and other platforms. Below are implementation examples for different scenarios and devices. We welcome your feedback!
    
 ## <a id="faq"></a>6. FAQ
    
