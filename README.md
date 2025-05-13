@@ -33,7 +33,7 @@
   Featuring cross-platform one-click deployment (Android/iOS) and minimal technical barriers, DUIX-Mobile empowers developers to create personalized digital agents adaptable to diverse industry scenarios like smart customer service, virtual lawyers/doctors, and AI-powered mobile assistants. Start building today and redefine digital human interaction!
        
        
-  ### <a id="features"></a>2. Features
+  ## <a id="features"></a>2. Features
    
   (1) Human-Like AI：Mimic human facial expressions, tone, and empathy.
    
@@ -46,14 +46,14 @@
   (5) Universal Adaptability: Customize digital humans and scenarios for any industry with modular, scalable architecture.
   
   
-  ### <a id="documentation"></a>3. Features
+  ## <a id="documentation"></a>3. Features
    
   Android Developer： [DUIX-Mobile SDK：[Android]](https://github.com/GuijiAI/duix.ai/blob/main/duix-android/dh_aigc_android/README_en.md)
    
   IOS Developer：[DUIX-Mobile SDK：[iOS]](https://github.com/GuijiAI/duix.ai/blob/main/duix-ios/GJLocalDigitalDemo/GJLocalDigitalSDK_en.md)
   
 
-### <a id="model-downloads"></a>4. Model Downloads
+## <a id="model-downloads"></a>4. Model Downloads
    
 We provide public test models for easy download and integration. Feel free to download and try them out!
 
