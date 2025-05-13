@@ -101,7 +101,7 @@ Our models support diverse applications across web, mobile, Android smart displa
 | **God of Wealth <br>[Download](https://github.com/GuijiAI/duix.ai/blob/main/res/270p/caishen/caishen.mp4)** | **Guanyin Bodhisattva<br> [Download](https://github.com/GuijiAI/duix.ai/blob/main/res/270p/guanyin/guanyin.mp4)** | **Su Shi<br> [Download](https://github.com/GuijiAI/duix.ai/blob/main/res/270p/sushi/sushi.mp4)** | **Virtual Girlfriend <br>[Download](https://github.com/GuijiAI/duix.ai/blob/main/res/270p/nvyou/nvyou.mp4)** |
    
 ## <a id="faq"></a>6. FAQ
-   
+ 、、、  
 （1）How do I create a custom digital avatar?
 
    Record a 2-5 minute video of a person speaking naturally to the camera. Adjust posture/content for your use case (e.g., wear formal attire and discuss legal topics for consultation scenarios).
@@ -133,7 +133,7 @@ Our models support diverse applications across web, mobile, Android smart displa
 （8）Want advanced solutions?
 
    Explore enterprise features at [duix.com](https://duix.com/).
-  
+ 、、、  
   
 ## <a id="contact-us"></a>7. Contact Us
 
