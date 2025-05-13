@@ -35,7 +35,7 @@
        
   ## <a id="features"></a>2. Features
    
-  (1) Human-Like AI：Mimic human facial expressions, tone, and empathy.
+  (1) Human-Like AI: Mimic human facial expressions, tone, and empathy.
    
   (2) Ultra-Fast Response: Real-time interaction under 1.5 seconds for fluid conversations.
    
@@ -44,7 +44,7 @@
   (4) Network-Light Design: On-device processing minimizes connectivity needs, perfect for finance, government, and legal services.
  
   (5) Universal Adaptability: Customize digital humans and scenarios for any industry with modular, scalable architecture.
-  4  
+  
   ## <a id="documentation"></a>3. Documentation
    
   Android Developer： [DUIX-Mobile SDK：[Android]](https://github.com/GuijiAI/duix.ai/blob/main/duix-android/dh_aigc_android/README_en.md)
