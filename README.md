@@ -131,8 +131,12 @@ Our models support diverse applications across web, mobile, Android smart displa
    File replacement workflows are code-level managed (see implementation guides).
   
 （8）Want advanced solutions?
+<div style="background-color: #f0f8ff; padding: 10px; border-radius: 5px; text-align: center;">
+  <a href="https://duix.com/" style="color: #007bff; text-decoration: none;">
+    <strong>Explore enterprise features at <span style="color: #d9534f;">duix.com</span></strong>
+  </a>
+</div>
 
-   Explore enterprise features at [duix.com](https://duix.com/).
 
   
 ## <a id="contact-us"></a>7. Contact Us
