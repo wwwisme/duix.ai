@@ -63,7 +63,7 @@ We provide public test models for easy download and integration. Feel free to do
 
 
 #### female
-| <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/Hazel.png" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/Luna.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/Ivy.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/Aurora.png" width="200"> | 
+| <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/Hazel.png" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/Luna.png" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/Ivy.png" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/Aurora.jpeg" width="200"> | 
 |:-------:|:-------:|:-------:|:-------:|
 | **Hazel**<br>[Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/dhp-tools/dhp-tools/651637733658693/61000/651637733658693_2e0a4278a73411a2ff04ef1a849d2a6d.zip) | **Luna**<br> [Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/dhp-tools/dhp-tools/651686686687301/61026/651686686687301_846161843f9ffdaaeace716bf3436be5.zip) | **Ivy**<br> [Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/dhp-tools/dhp-tools/651622691811397/60996/651622691811397_ebe9bd2db8e26c1a7b07932b4a55c45c.zip) | **Aurora**<br> [Download](https://digital-public.obs.cn-east-3.myhuaweicloud.com/duix/digital/model/1719193425133/sufei_20240409.zip) | 
 
