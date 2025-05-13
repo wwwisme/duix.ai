@@ -22,7 +22,7 @@
    6. [FAQ](#faq)<br>
    7. [Contact Us](#contact-us)<br>
    
-  ### <a id="introduction"></a>1. Introduction
+  ## <a id="introduction"></a>1. Introduction
    
   DUIX=Dialogue User Interface System
    
