@@ -5,7 +5,7 @@
 </div>
 
 <div style="background-color: black; padding: 20px; text-align: center;">
-  <table align="center">
+  <table align="center" style="border-collapse: collapse; border: none;">
     <tr>
       <td style="padding: 0 10px; border: none;"><a href="https://duix.com/" target="_blank"><img src="res/duix_home.png" style="height: 28px;"></a></td>
       <td style="padding: 0 10px; border: none;"><a href="https://docs.duix.com/api-reference/api/Introduction" target="_blank"><img src="res/duix_doc.png" style="height: 28px;"></a></td>
@@ -14,6 +14,7 @@
     </tr>
   </table>
 </div>
+
 
   ## DUIX-Mobile: On-Device AI-Powered Digital Human SDK for Real-Time Interaction (Android/iOS)  
   ## Table of Contents：
