@@ -14,13 +14,13 @@
 
   ## DUIX-Mobile: On-Device AI-Powered Digital Human SDK for Real-Time Interaction (Android/iOS)  
   ## Table of Contents：
-   😄 1. [Introduction](#introduction)<br>
-   😄 2. [Features](#features)<br>
-   😄 3. [Documentation](#documentation)<br>
-   😄 4. [Model Downloads](#model-downloads)<br>
-   😄 5. [Use Case](#use-case)<br>
-   😄 6. [FAQ](#faq)<br>
-   😄 7. [Contact Us](#contact-us)<br>
+    1. [Introduction](#introduction)<br>
+    2. [Features](#features)<br>
+    3. [Documentation](#documentation)<br>
+    4. [Model Downloads](#model-downloads)<br>
+    5. [Use Case](#use-case)<br>
+    6. [FAQ](#faq)<br>
+    7. [Contact Us](#contact-us)<br>
    
   ### <a id="introduction"></a>1. Introduction
    
