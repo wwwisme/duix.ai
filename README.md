@@ -100,11 +100,11 @@ Our base package covers avatar appearance and voice cloning, fully compatible wi
   
 (3) Can I update my custom avatar?
 
-The open-source version uses public models only. Custom updates require a service request
+The open-source version uses public models only. Custom updates require a service request.
   
 (4) Is there an API for avatar cloning?
 
-A:Training services currently require deployment on our managed servers.
+Training services currently require deployment on our managed servers.
   
 (5) Are broadcast start/end callbacks available?
 
