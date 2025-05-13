@@ -145,4 +145,4 @@ If you have any questions, please raise an issue or contact us at james@duix.com
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=GuijiAI/Duix.mobile&type=Date)](https://star-history.com/#GuijiAI/Duix.mobile&Date)
+[![Star History Chart]](https://star-history.com/#GuijiAI/Duix.mobile&Date)
