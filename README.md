@@ -135,3 +135,6 @@ If you have any questions, please raise an issue or contact us at james@duix.com
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=GuijiAI/Duix.mobile&type=Date)](https://star-history.com/#GuijiAI/Duix.mobile&Date)
+
+
+<video controls className="w-full aspect-video" src="res/anli/Digital_bestie.mp4" />
