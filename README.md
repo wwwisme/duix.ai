@@ -18,9 +18,8 @@
    2. [Features](#features)<br>
    3. [Documentation](#documentation)<br>
    4. [Model Downloads](#model-downloads)<br>
-   5. [Use Case](#use-case)<br>
-   6. [FAQ](#faq)<br>
-   7. [Contact Us](#contact-us)<br>
+   5. [FAQ](#faq)<br>
+   6. [Contact Us](#contact-us)<br>
    
   ## <a id="introduction"></a>1. Introduction
    
@@ -71,25 +70,8 @@ We provide public test models for easy download and integration. Feel free to do
 
 Please download the model files according to your needs. We recommend that you carefully read the accompanying documentation after downloading to ensure the correct installation and use of the models.<br><br>
 
-
-
-
-## <a id="use-case"></a>5. Use Case
    
-Our models support diverse applications across web, mobile, Android smart displays, and other platforms. Below are implementation examples for different scenarios and devices. We welcome your feedback!
-
-### Business case presentation
-### Mobile Phone and General Terminal Screen Cases
-| <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/540p/lvshi/lvshi-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/540p/yisheng/yisheng-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/540p/peiban/peiban-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/540p/laoshi/laoshi-bg.jpg" width="200"> |
-|:-------:|:-------:|:-------:|:-------:|
-| **Digital Lawyer <br>[Download](https://github.com/GuijiAI/duix.ai/blob/main/res/540p/lvshi/lvshi.mp4)** | **Digital Doctor<br> [Download](https://github.com/GuijiAI/duix.ai/blob/main/res/540p/yisheng/yisheng.mp4)** | **Virtual Companion<br> [Download](https://github.com/GuijiAI/duix.ai/blob/main/res/540p/peiban/peiban.mp4)** | ** Speaking Tutor<br> [Download](https://github.com/GuijiAI/duix.ai/blob/main/res/540p/laoshi/laoshi.mp4)** |
-
-### Low-end Terminal Screen Cases
-| <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/270p/caishen/caishen-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/270p/guanyin/guanyin-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/270p/sushi/sushi-bg.jpg" width="200"> | <img src="https://github.com/GuijiAI/duix.ai/blob/main/res/270p/nvyou/nvyou-bg.jpg" width="200"> |
-|:-------:|:-------:|:-------:|:-------:|
-| **God of Wealth <br>[Download](https://github.com/GuijiAI/duix.ai/blob/main/res/270p/caishen/caishen.mp4)** | **Guanyin Bodhisattva<br> [Download](https://github.com/GuijiAI/duix.ai/blob/main/res/270p/guanyin/guanyin.mp4)** | **Su Shi<br> [Download](https://github.com/GuijiAI/duix.ai/blob/main/res/270p/sushi/sushi.mp4)** | **Virtual Girlfriend <br>[Download](https://github.com/GuijiAI/duix.ai/blob/main/res/270p/nvyou/nvyou.mp4)** |
-   
-## <a id="faq"></a>6. FAQ
+## <a id="faq"></a>5. FAQ
 
 (1) How do I create a custom digital avatar?
 
@@ -126,7 +108,7 @@ Explore enterprise features at [duix.com](https://duix.com/).
 
 
   
-## <a id="contact-us"></a>7. Contact Us
+## <a id="contact-us"></a>6. Contact Us
 
 
 If you have any questions, please raise an issue or contact us at james@duix.com
