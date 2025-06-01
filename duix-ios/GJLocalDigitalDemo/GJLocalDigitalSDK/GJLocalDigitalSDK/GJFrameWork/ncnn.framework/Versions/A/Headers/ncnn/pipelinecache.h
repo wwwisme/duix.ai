@@ -17,6 +17,10 @@
 
 #include "platform.h"
 
+#if NCNN_VULKAN
+#include <vulkan/vulkan.h>
+#endif // NCNN_VULKAN
+
 #include "mat.h"
 #include "gpu.h"
 

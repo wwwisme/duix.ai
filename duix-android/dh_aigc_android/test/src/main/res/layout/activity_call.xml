@@ -29,15 +29,6 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         android:visibility="invisible"
-        android:text="播放英文音频"
+        android:text="Play Audio"
         app:layout_constraintBottom_toBottomOf="parent" />
-
-    <Button
-        android:id="@+id/btnPlayZH"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:visibility="invisible"
-        android:text="播放中文音频"
-        app:layout_constraintBottom_toTopOf="@+id/btnPlayEN" />
 </androidx.constraintlayout.widget.ConstraintLayout>

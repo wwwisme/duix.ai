@@ -1,4 +1,4 @@
-# 硅基数字人SDK [[English]](./README_en.md)
+# 硅基数字人SDK [[English]] (./README_en.md)
 
 ## 一、产品介绍
 
@@ -38,11 +38,8 @@
 dependencies {
     // 引用SDK项目
     implementation project(":duix-sdk")
-    // sdk 中使用到 exoplayer 处理音频(必选)
     implementation 'com.google.android.exoplayer:exoplayer:2.14.2'
     
-    // 云端问答接口使用的SSE组件(非必选)
-    implementation 'com.squareup.okhttp3:okhttp-sse:4.10.0'
 
     ...
 }
@@ -54,11 +51,7 @@ dependencies {
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
 </manifest>
 ```

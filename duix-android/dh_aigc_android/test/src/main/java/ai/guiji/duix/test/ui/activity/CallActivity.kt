@@ -3,7 +3,7 @@ package ai.guiji.duix.test.ui.activity
 import ai.guiji.duix.sdk.client.Constant
 import ai.guiji.duix.sdk.client.DUIX
 import ai.guiji.duix.sdk.client.bean.ImageFrame
-import ai.guiji.duix.sdk.client.bean.ModelInfo
+import ai.guiji.duix.sdk.client.loader.ModelInfo
 import ai.guiji.duix.sdk.client.render.DUIXRenderer
 import ai.guiji.duix.test.databinding.ActivityCallBinding
 import ai.guiji.duix.test.render.DebugSink
@@ -14,7 +14,6 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.bumptech.glide.Glide
-import okhttp3.internal.and
 import java.io.File
 import java.io.FileOutputStream
 import java.io.OutputStream
@@ -36,10 +35,6 @@ class CallActivity : BaseActivity() {
     private var mDUIXRender: DUIXRenderer? = null
     private var mModelInfo: ModelInfo?=null     // 加载的模型信息
 
-    /**
-     * 当duix渲染模块未抛出异常，但无法呈现数字人形象时，考虑OpenGL上屏的代码可能存在问题。
-     * 打开调试开关查看回调数据是否能正常转换成RGB显示。
-     */
     private val debugFrame = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,10 +50,7 @@ class CallActivity : BaseActivity() {
         Log.e("123", "modelDir: $modelDir")
 
         binding.btnPlayEN.setOnClickListener {
-            playWav("intro.wav")
-        }
-        binding.btnPlayZH.setOnClickListener {
-            playWav("help.wav")
+            playWav("output.wav")
         }
 
         Glide.with(mContext).load("file:///android_asset/bg/bg1.png").into(binding.ivBg)
@@ -96,7 +88,7 @@ class CallActivity : BaseActivity() {
 
                 Constant.CALLBACK_EVENT_INIT_ERROR -> {
                     runOnUiThread {
-                        Toast.makeText(mContext, "初始化异常: $msg", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(mContext, "Initialization exception: $msg", Toast.LENGTH_SHORT).show()
                     }
                 }
 
@@ -140,10 +132,13 @@ class CallActivity : BaseActivity() {
         }
         for (y in 0 until imageFrame.height) {
             for (x in 0 until imageFrame.width){
-                val b = imageFrame.rawBuffer[(y * imageFrame.width + x) * 3] and 0xFF
-                val g = imageFrame.rawBuffer[(y * imageFrame.width + x) * 3 + 1] and 0xFF
-                val r = imageFrame.rawBuffer[(y * imageFrame.width + x) * 3 + 2] and 0xFF
+                val b = imageFrame.rawBuffer[(y * imageFrame.width + x) * 3].toInt() and 0xFF
+                val g = imageFrame.rawBuffer[(y * imageFrame.width + x) * 3 + 1].toInt() and 0xFF
+                val r = imageFrame.rawBuffer[(y * imageFrame.width + x) * 3 + 2].toInt() and 0xFF
                 val pixelColor = 0xff000000.toInt() or (r shl 16) or (g shl 8) or b
+                if (tempBitmap?.isRecycled == true){
+                    return
+                }
                 tempBitmap?.setPixel(x, y, pixelColor)
             }
         }
@@ -164,7 +159,6 @@ class CallActivity : BaseActivity() {
                 duix?.setRandomMotion(true)
             }
             binding.btnPlayEN.visibility = View.VISIBLE
-            binding.btnPlayZH.visibility = View.VISIBLE
         }
     }
 
@@ -174,6 +168,7 @@ class CallActivity : BaseActivity() {
         duix?.release()
         mDUIXRender?.release()
         tempBitmap?.recycle()
+        tempBitmap = null
     }
 
     /**
@@ -211,7 +206,6 @@ class CallActivity : BaseActivity() {
             duix?.playAudio(path)
             // 如果模型支持动作区间会播放动作区间
             if ((mModelInfo?.motionRegions?.size ?: 0) > 0){
-                Log.e("123", "startMotion")
                 duix?.startMotion()
             }
         }

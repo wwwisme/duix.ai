@@ -478,7 +478,7 @@ typedef NS_ENUM(NSInteger, JPMetalViewContentMode) {
 
            MTLRegion mat_region = {{ 0, 0, 0 }, {static_cast<NSUInteger>(width), static_cast<NSUInteger>(height), 1}}; // 纹理上传的范围
            if (imageBytes) { // UIImage的数据需要转成二进制才能上传，且不用jpg、png的NSData
-               [self.backTexture replaceRegion:mat_region
+               [self.bfgTexture replaceRegion:mat_region
                                mipmapLevel:0
                                  withBytes:imageBytes
                                bytesPerRow:4 * width];

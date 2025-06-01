@@ -21,13 +21,13 @@ class MainActivity : BaseActivity() {
     private val baseConfigUrl =
         "https://github.com/GuijiAI/duix.ai/releases/download/v1.0.0/gj_dh_res.zip"
     private lateinit var baseDir: File
-    private val baseConfigUUID = "d39caddd-488b-4682-b6d1-13549b135dd1"     // 可以用来控制模型文件版本
+    private val baseConfigUUID = "d39caddd-488b-4682-b6d1-13549b135dd1"
     private var baseConfigReady = false
 
     private val modelUrl =
-        "https://github.com/GuijiAI/duix.ai/releases/download/v1.0.0/bendi3_20240518.zip"   // ** 在这里更新模型地址 **
+        "https://github.com/GuijiAI/duix.ai/releases/download/v1.0.0/627306542239813_1871244b5e6912efc636ba31ea4c5c6d_optim_m80.zip"   // ** 在这里更新模型地址 **
     private lateinit var modelDir: File
-    private val liangweiUUID = "d39caddd-488b-4682-b6d1-13549b135dd1"       // 可以用来控制模型文件版本
+    private val liangweiUUID = "d39caddd-488b-4682-b6d1-13549b135dd1"
     private var modelReady = false
 
 
@@ -50,7 +50,7 @@ class MainActivity : BaseActivity() {
         modelDir = File(
             duixDir,
             modelUrl.substring(modelUrl.lastIndexOf("/") + 1).replace(".zip", "")
-        )        // 这里要求存放模型的文件夹的名字和下载的zip文件的一致以对应解压的文件夹路径
+        )
 
         binding.btnBaseConfigDownload.setOnClickListener {
             downloadBaseConfig()
@@ -66,7 +66,7 @@ class MainActivity : BaseActivity() {
         if (!modelReady) {
             downloadModel()
         } else if (!baseConfigReady) {
-            Toast.makeText(mContext, "您必须正确的安装基础配置文件", Toast.LENGTH_SHORT).show()
+            Toast.makeText(mContext, "You must install the basic configuration file correctly", Toast.LENGTH_SHORT).show()
         } else {
             val intent = Intent(mContext, CallActivity::class.java)
             intent.putExtra("baseDir", baseDir.absolutePath)
@@ -109,7 +109,7 @@ class MainActivity : BaseActivity() {
                     runOnUiThread {
                         binding.btnBaseConfigDownload.isEnabled = true
                         binding.progressBaseConfig.progress = 0
-                        Toast.makeText(mContext, "文件下载异常: $msg", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(mContext, "File download exception: $msg", Toast.LENGTH_SHORT).show()
                     }
                 }
             }, true
@@ -152,7 +152,7 @@ class MainActivity : BaseActivity() {
                         binding.btnModelPlay.isEnabled = true
                         binding.btnModelPlay.text = getString(R.string.download)
                         binding.progressModel.progress = 0
-                        Toast.makeText(mContext, "文件下载异常: $msg", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(mContext, "File download exception: $msg", Toast.LENGTH_SHORT).show()
                     }
                 }
             }, false        // for debug

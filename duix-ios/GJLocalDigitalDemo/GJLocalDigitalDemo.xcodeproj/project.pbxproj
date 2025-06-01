@@ -83,6 +83,7 @@
 		A04821F22B2C567E005E06BD /* libz.1.2.8.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.8.tbd; path = usr/lib/libz.1.2.8.tbd; sourceTree = SDKROOT; };
 		A04822202B2C5FF6005E06BD /* GJCheckNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCheckNetwork.h; sourceTree = "<group>"; };
 		A04822212B2C5FF6005E06BD /* GJCheckNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCheckNetwork.m; sourceTree = "<group>"; };
+		A06A8F3C2DBE276F00AA3F07 /* GJLDecry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GJLDecry.framework; path = GJLocalDigitalSDK/GJLocalDigitalSDK/GJFrameWork/GJLDecry.framework; sourceTree = "<group>"; };
 		A0B1C4352B29C1F2009E0716 /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
 		A0BB093E2B3C34A700BF0CC1 /* GJLDigitalAnswerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJLDigitalAnswerModel.h; sourceTree = "<group>"; };
 		A0BB093F2B3C34A700BF0CC1 /* GJLDigitalAnswerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJLDigitalAnswerModel.m; sourceTree = "<group>"; };
@@ -253,6 +254,7 @@
 		A0FC3EAC2B2855AC0069EA0E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A06A8F3C2DBE276F00AA3F07 /* GJLDecry.framework */,
 				A037D5F02B3D0B1800E1AF98 /* AVFoundation.framework */,
 				A04821F22B2C567E005E06BD /* libz.1.2.8.tbd */,
 				A04821EF2B2C5608005E06BD /* libz.tbd */,
@@ -582,6 +584,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/GJLocalDigitalDemo",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/GJLocalDigitalSDK/GJLocalDigitalSDK/GJFrameWork",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GJLocalDigitalDemo/Info.plist;
@@ -618,6 +621,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/GJLocalDigitalDemo",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/GJLocalDigitalSDK/GJLocalDigitalSDK/GJFrameWork",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GJLocalDigitalDemo/Info.plist;
