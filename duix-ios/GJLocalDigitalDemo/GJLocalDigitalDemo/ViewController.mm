@@ -21,126 +21,103 @@
 #import "SSZipArchive.h"
 #import "GJDownWavTool.h"
 #import "GYAccess.h"
-
-
+#import "GJLPCMManager.h"
+#import "GJLGCDNEWTimer.h"
+#import "OpenUDID.h"
+#import "UIColor+Expanded.h"
+#import "ReadWavPCMViewController.h"
 //
 //基础模型 git 地址下载较慢，请下载后自己管理加速
 #define BASEMODELURL   @"https://github.com/GuijiAI/duix.ai/releases/download/v1.0.0/gj_dh_res.zip"
-//////数字人模型 git 地址下载较慢，请下载后自己管理加速
+//数字人模型 git 地址下载较慢，请下载后自己管理加速
 #define DIGITALMODELURL @"https://github.com/GuijiAI/duix.ai/releases/download/v1.0.0/bendi3_20240518.zip"
 
 
-@interface ViewController ()<GJDownWavToolDelegate>
+
+@interface ViewController ()<GJDownWavToolDelegate,UITextViewDelegate>
 @property(nonatomic,strong)UIView *showView;
 @property(nonatomic,strong)NSString * basePath;
 @property(nonatomic,strong)NSString * digitalPath;
 @property (nonatomic, assign) BOOL isRequest;
-
-
-//答案数组
-@property (nonatomic, strong) NSMutableArray *answerArr;
-
-//录音中
-@property (nonatomic, assign) BOOL recording;
-
-
-//多个音频开始和结束 当前播放音频状态 0 结束 1播放中
-@property (nonatomic, assign) NSInteger playCurrentState;
-
-//// 单个音频 0结束播放  1开始播放 2播放中 3播放暂停
-//@property (nonatomic, assign) NSInteger playState;
-
-/*
- * playAudioIndex 播放到第几个音频
- */
-@property(nonatomic,assign)NSInteger playAudioIndex;
-
-
-
-
-@property (nonatomic, strong)UILabel * questionLabel;
-
-@property (nonatomic, strong)UILabel * answerLabel;
-
-
-@property (nonatomic, strong) UIImageView * imageView;
-
-@property (nonatomic, assign) BOOL isStop;
-
-@property (nonatomic, strong) NSString *qaSessionId;
+//基础模型
+@property (nonatomic, strong)UITextView * baseTextView;
+//数字人模型
+@property (nonatomic, strong)UITextView * digitalTextView;
 
 @end
 
 @implementation ViewController
--(UIView*)showView
-{
-    if(nil==_showView)
-    {
-        _showView=[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-        _showView.backgroundColor=[UIColor clearColor];
-    }
-    return _showView;
-}
--(UIImageView*)imageView
-{
-    if(nil==_imageView)
-    {
-        _imageView=[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-        NSString *bgpath =[NSString stringWithFormat:@"%@/%@",[[NSBundle mainBundle] bundlePath],@"bg2.jpg"];
-        _imageView.contentMode=UIViewContentModeScaleAspectFill;
-        _imageView.image=[UIImage imageWithContentsOfFile:bgpath];
-        
-    }
-    return _imageView;
-}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor=[UIColor greenColor];
+
+    self.view.backgroundColor=[UIColor whiteColor];
+  
+    UILabel *titleLabel=[[UILabel alloc] initWithFrame:CGRectMake(20, 150,self.view.frame.size.width-40,44)];
+    titleLabel.text=@"Github地址可能下载失败，您可以考虑将文件存放到自己的存储服务";
+    titleLabel.textColor=[UIColor blackColor];
+    titleLabel.textAlignment=NSTextAlignmentLeft;
+    titleLabel.numberOfLines=0;
+    [self.view addSubview:titleLabel];
     
-    [self.view addSubview:self.imageView];
- 
-    [self.view addSubview:self.showView];
+    UILabel *label1=[[UILabel alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(titleLabel.frame)+20,self.view.frame.size.width-40,44)];
+    label1.text=@"基础模型url:";
+    label1.textColor=[UIColor blackColor];
+    label1.textAlignment=NSTextAlignmentLeft;
+    [self.view addSubview:label1];
+    
+    self.baseTextView=[[UITextView alloc] init];
+     self.baseTextView.frame=CGRectMake(20,CGRectGetMaxY(label1.frame)+10, self.view.frame.size.width-40, 44);
+    self.baseTextView.backgroundColor = [UIColor clearColor];
+ //        _phoneTextField.layer.borderColor=[UIColor colorWithHexString:@"#FFFFFF" alpha:0.29].CGColor;
+ //        _phoneTextField.layer.borderWidth=1;
+     self.baseTextView.layer.masksToBounds = YES;
+     self.baseTextView.delegate = self;
+     self.baseTextView.layer.cornerRadius = 10;
+     self.baseTextView.layer.borderColor = [UIColor redColor].CGColor;
+     self.baseTextView.layer.borderWidth = 1;
+     self.baseTextView.returnKeyType=UIReturnKeyDone;
+    [self.view addSubview:self.baseTextView];
     
 
     
+    UILabel *label4=[[UILabel alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(  self.baseTextView.frame)+20,self.view.frame.size.width-40,44)];
+    label4.text=@"数字人模型url:";
+    label4.textColor=[UIColor blackColor];
+    label4.textAlignment=NSTextAlignmentLeft;
+    [self.view addSubview:label4];
     
-    [self.view addSubview:self.questionLabel];
-    
-    [self.view addSubview:self.answerLabel];
-    
-    
-//    UITapGestureRecognizer * tap=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toShowquestion)];
-//    tap.numberOfTapsRequired=2;
-//    [self.showView addGestureRecognizer:tap];
+    self.digitalTextView=[[UITextView alloc] init];
+     self.digitalTextView.frame=CGRectMake(20,CGRectGetMaxY(label4.frame)+10, self.view.frame.size.width-40, 44);
+    self.digitalTextView.backgroundColor = [UIColor clearColor];
+ //        _phoneTextField.layer.borderColor=[UIColor colorWithHexString:@"#FFFFFF" alpha:0.29].CGColor;
+ //        _phoneTextField.layer.borderWidth=1;
+     self.digitalTextView.layer.masksToBounds = YES;
+     self.digitalTextView.delegate = self;
+     self.digitalTextView.layer.cornerRadius = 10;
+     self.digitalTextView.layer.borderColor = [UIColor redColor].CGColor;
+     self.digitalTextView.layer.borderWidth = 1;
+     self.digitalTextView.returnKeyType=UIReturnKeyDone;
+
+    [self.view addSubview:self.digitalTextView];
+
     
     UIButton * startbtn=[UIButton buttonWithType:UIButtonTypeCustom];
-    startbtn.frame=CGRectMake(40, self.view.frame.size.height-100, 40, 40);
+    startbtn.frame=CGRectMake(40, self.view.frame.size.height-200, self.view.frame.size.width-80, 40);
     [startbtn setTitle:@"开始" forState:UIControlStateNormal];
     [startbtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [startbtn addTarget:self action:@selector(toStart) forControlEvents:UIControlEventTouchDown];
+    [startbtn addTarget:self action:@selector(toStartWav) forControlEvents:UIControlEventTouchDown];
     [self.view addSubview:startbtn];
     
-    UIButton * playbtn=[UIButton buttonWithType:UIButtonTypeCustom];
-    playbtn.frame=CGRectMake(CGRectGetMaxX(startbtn.frame)+20, self.view.frame.size.height-100, 40, 40);
-    [playbtn setTitle:@"播放" forState:UIControlStateNormal];
-    [playbtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [playbtn addTarget:self action:@selector(toRecord) forControlEvents:UIControlEventTouchDown];
-    [self.view addSubview:playbtn];
-    
-    
-//    UIButton * stopPlaybtn=[UIButton buttonWithType:UIButtonTypeCustom];
-//    stopPlaybtn.frame=CGRectMake(CGRectGetMaxX(playbtn.frame)+20, self.view.frame.size.height-100, 40, 40);
-//    [stopPlaybtn setTitle:@"停止" forState:UIControlStateNormal];
-//    [stopPlaybtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-//    [stopPlaybtn addTarget:self action:@selector(toPlay) forControlEvents:UIControlEventTouchDown];
-//    [self.view addSubview:stopPlaybtn];
+    NSUserDefaults * defaults=[NSUserDefaults standardUserDefaults];
+    self.baseTextView.text=[defaults objectForKey:@"BASEMODELURL"]?:BASEMODELURL;
+    NSLog(@"DIGITALMODELURLKEY:%@",[defaults objectForKey:@"DIGITALMODELURLKEY"]);
+    self.digitalTextView.text=[defaults objectForKey:@"DIGITALMODELURLKEY"]?:DIGITALMODELURL;
 
-    UIButton * stopbtn=[UIButton buttonWithType:UIButtonTypeCustom];
-    stopbtn.frame=CGRectMake(CGRectGetMaxX(playbtn.frame)+20, self.view.frame.size.height-100, 40, 40);
-    [stopbtn setTitle:@"结束" forState:UIControlStateNormal];
-    [stopbtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [stopbtn addTarget:self action:@selector(toStop) forControlEvents:UIControlEventTouchDown];
-    [self.view addSubview:stopbtn];
+
+
+ 
+
 
     [[GJCheckNetwork manager] getWifiState];
     __weak typeof(self)weakSelf = self;
@@ -149,8 +126,7 @@
             || state == Net_WiFi) {
             if (!weakSelf.isRequest) {
                 weakSelf.isRequest = YES;
-                //注意有网络是初始化
-                [weakSelf initALL];
+   
                 [weakSelf isDownModel];
             }
         }
@@ -159,136 +135,64 @@
 
 
 
-  
-    
-
-}
--(void)initALL
-{
-    //注意有网络是初始化ASR
-
-    //初始化下载音频
-    [[GJDownWavTool sharedTool] initCachesPath];
-    [GJDownWavTool sharedTool].delegate = self;
-    
-    //初始化数字人回调和音频回调
-    [self toDigitalBlock];
-}
--(void)toShowquestion
-{
-    self.questionLabel.hidden=!self.questionLabel.hidden;
-    self.answerLabel.hidden=!self.answerLabel.hidden;
-}
-
-
-
-
-- (void)downloadWithModel:(GJLDigitalAnswerModel *)answerModel {
-    
-    [[GJDownWavTool sharedTool] downWavWithModel:answerModel];
-    
-}
-
-- (void)downloadFinish:(GJLDigitalAnswerModel *)answerModel finish:(BOOL)finish {
-    
-
-  
-        NSInteger index = [self.answerArr indexOfObject:answerModel];
-        if (finish) {
-            if (index == self.playAudioIndex&&self.playCurrentState ==0) {
-    
-//
-                [self toSpeakWithPath:answerModel];
-            }
-        } else {
-            if (index == self.playAudioIndex&&self.playCurrentState ==0) {
-                //如果要播就直接结束到下一个
-                NSLog(@"播放问题---下载失败，播放下一条--%@",answerModel.filePath);
-                
-                [self moviePlayDidEnd];
-            }
-        }
  
-}
--(void)toSpeakWithPath:(GJLDigitalAnswerModel*)answerModel
-{
-    //
-    if(self.playAudioIndex==0)
-    {
-        //开始动作（一段文字包含多个音频，第一个音频开始时设置）
-         [[GJLDigitalManager manager] toRandomMotion];
-         [[GJLDigitalManager manager] toStartMotion];
-    }
-    self.playCurrentState = 1;
-    [[GJLDigitalManager manager] toSpeakWithPath:answerModel.localPath];
-    if(answerModel.answer.length>0)
-    {
-        dispatch_async(dispatch_get_main_queue(), ^{
-         //   DLog(@"表示一次任务生命周期结束，可以开始新的识别");
-            NSLog(@"answerModel.answer:%@",answerModel.answer);
-            self.answerLabel.text=[answerModel.answer stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-        });
-        
-    }
-}
-- (void)moviePlayDidEnd
-{
-    self.playAudioIndex ++;
+    
 
-    self.playCurrentState = 0;
-    NSLog(@" self.playAudioIndex :%ld", self.playAudioIndex );
-  
-    if (self.answerArr.count > self.playAudioIndex) {
-     
-      
-            GJLDigitalAnswerModel *answerModel = [self.answerArr objectAtIndex:self.playAudioIndex];
-            if (answerModel.localPath.length == 0 && answerModel.download) {
-                NSLog(@"error=====moviePlayDidEnd--下载失败了");
-                [self moviePlayDidEnd];
-            } else {
-                [self playWithModel:answerModel];
-            }
-      
-    }
-    else
-    {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.questionLabel.text=@"";
-            self.answerLabel.text=@"";
-        });
-            [[GJLDigitalManager manager] toSopMotion:NO];
-       
-    }
 }
-- (void)playWithModel:(GJLDigitalAnswerModel *)answerModel {
 
-    //    DLog(@"播放playUrl==%ld=播放==%@\n本地路径=%@",self.playState,answerModel.filePath,answerModel.localPath);
-    if (self.recording ) {
+-(void)toStartWav
+{
+    if(![self isFileExit])
+    {
         return;
     }
-    __weak typeof(self)weakSelf = self;
-    if (answerModel.localPath.length > 0) {
+    ReadWavPCMViewController * vc=[[ReadWavPCMViewController alloc] init];
+    vc.basePath=self.basePath;
+    vc.digitalPath=self.digitalPath;
+ 
+    vc.modalPresentationStyle=UIModalPresentationFullScreen;
+    [self presentViewController:vc animated:YES completion:^{
+        
+    }];
+}
 
-        [self toSpeakWithPath:answerModel];
-    
-    
+-(BOOL)isFileExit
+{
+    if(![[NSFileManager defaultManager] fileExistsAtPath:self.basePath]||self.baseTextView.text.length==0)
+    {
+        NSLog(@"基础模型不存在");
+        [SVProgressHUD showInfoWithStatus:@"基础模型不存在"];
+        return NO;
     }
-}
-- (NSMutableArray *)answerArr {
     
-    if (nil == _answerArr) {
-        _answerArr = [NSMutableArray array];
+    if(![[NSFileManager defaultManager] fileExistsAtPath:self.digitalPath]||self.digitalTextView.text.length==0)
+    {
+        NSLog(@"模版不存在");
+        [SVProgressHUD showInfoWithStatus:@"模版不存在"];
+        return NO;
     }
-    return _answerArr;
+//    if(self.appIDTextField.text.length==0)
+//    {
+//        return NO;
+//    }
+//    if(self.appkeyTextField.text.length==0)
+//    {
+//        return NO;
+//    }
+    
+    return YES;
 }
+
+
 -(void)isDownModel
 {
     NSString *unzipPath = [self getHistoryCachePath:@"unZipCache"];
-    NSString * baseName=[[BASEMODELURL lastPathComponent] stringByDeletingPathExtension];
+    NSString * baseName=[[self.baseTextView.text lastPathComponent] stringByDeletingPathExtension];
     self.basePath=[NSString stringWithFormat:@"%@/%@",unzipPath,baseName];
     
-    NSString * digitalName=[[DIGITALMODELURL lastPathComponent] stringByDeletingPathExtension];
+    NSString * digitalName=[[self.digitalTextView.text lastPathComponent] stringByDeletingPathExtension];
     self.digitalPath=[NSString stringWithFormat:@"%@/%@",unzipPath,digitalName];
+
     NSFileManager * fileManger=[NSFileManager defaultManager];
     if((![fileManger fileExistsAtPath:self.basePath])&&(![fileManger fileExistsAtPath:self.digitalPath]))
     {
@@ -314,7 +218,7 @@
     __weak typeof(self)weakSelf = self;
     NSString *zipPath = [self getHistoryCachePath:@"ZipCache"];
     //下载基础模型
-    [[HttpClient manager] downloadWithURL:BASEMODELURL savePathURL:[NSURL fileURLWithPath:zipPath] pathExtension:nil progress:^(NSProgress * progress) {
+    [[HttpClient manager] downloadWithURL:self.baseTextView.text savePathURL:[NSURL fileURLWithPath:zipPath] pathExtension:nil progress:^(NSProgress * progress) {
         double down_progress=(double)progress.completedUnitCount/(double)progress.totalUnitCount*0.5;
         [SVProgressHUD showProgress:down_progress status:@"正在下载基础模型"];
     } success:^(NSURLResponse *response, NSURL *filePath) {
@@ -348,7 +252,7 @@
 {
     __weak typeof(self)weakSelf = self;
     NSString *zipPath = [self getHistoryCachePath:@"ZipCache"];
-    [[HttpClient manager] downloadWithURL:DIGITALMODELURL savePathURL:[NSURL fileURLWithPath:zipPath] pathExtension:nil progress:^(NSProgress * progress) {
+    [[HttpClient manager] downloadWithURL:self.digitalTextView.text savePathURL:[NSURL fileURLWithPath:zipPath] pathExtension:nil progress:^(NSProgress * progress) {
         double down_progress=0.5+(double)progress.completedUnitCount/(double)progress.totalUnitCount*0.5;
         [SVProgressHUD showProgress:down_progress status:@"正在下载数字人模型"];
     } success:^(NSURLResponse *response, NSURL *filePath) {
@@ -359,76 +263,8 @@
         [SVProgressHUD showErrorWithStatus:error.localizedDescription];
     }];
 }
--(void)toStart
-{
-    __weak typeof(self)weakSelf = self;
-    //授权
-    self.isStop=NO;
-//    [GJLDigitalManager manager].modeType=2;
-//    [GJLDigitalManager manager].backType=1;
- 
-           NSInteger result=   [[GJLDigitalManager manager] initBaseModel:weakSelf.basePath digitalModel:self.digitalPath showView:weakSelf.showView];
-            if(result==1)
-            {
-               //开始
-//                NSString *bgpath =[NSString stringWithFormat:@"%@/%@",[[NSBundle mainBundle] bundlePath],@"bg2.jpg"];
-//                [[GJLDigitalManager manager] toChangeBBGWithPath:bgpath];
-                [[GJLDigitalManager manager] toStart:^(BOOL isSuccess, NSString *errorMsg) {
-                    if(!isSuccess)
-                    {
-                        [SVProgressHUD showInfoWithStatus:errorMsg];
-                    }
-                }];
-            }
-   
-  
-}
 
 
-//播放音频
--(void)toRecord
-{
-//    [[GJLDigitalManager manager] toRandomMotion];
-//    [[GJLDigitalManager manager] toStartMotion];
-     NSString * filepath=[[NSBundle mainBundle] pathForResource:@"3.wav" ofType:nil];
-     [[GJLDigitalManager manager] toSpeakWithPath:filepath];
-
-
-    
-}
-
-#pragma mark ------------回调----------------
--(void)toDigitalBlock
-{
-    
-    __weak typeof(self)weakSelf = self;
-    [GJLDigitalManager manager].playFailed = ^(NSInteger code, NSString *errorMsg) {
-
-            [SVProgressHUD showInfoWithStatus:errorMsg];
-
-      
-    };
-    [GJLDigitalManager manager].audioPlayEnd = ^{
-        [weakSelf moviePlayDidEnd];
-
-     
-    };
-    
-    [GJLDigitalManager manager].audioPlayProgress = ^(float current, float total) {
-        
-    };
- 
-}
-
-#pragma mark ------------结束所有----------------
--(void)toStop
-{
-    self.isStop=YES;
-
-
-    //停止绘制
-    [[GJLDigitalManager manager] toStop];
-}
 
 -(NSString *)getHistoryCachePath:(NSString*)pathName
 {
@@ -460,34 +296,25 @@
     return folderPath;
 }
 
--(UILabel*)questionLabel
-{
-    if(nil==_questionLabel)
-    {
-        _questionLabel=[[UILabel alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-220, self.view.frame.size.width-40, 40)];
-        _questionLabel.backgroundColor=[UIColor redColor];
-        _questionLabel.numberOfLines=0;
-        _questionLabel.textColor=[UIColor whiteColor];
-        _questionLabel.font=[UIFont systemFontOfSize:12];
-        _questionLabel.textAlignment=NSTextAlignmentLeft;
-        _questionLabel.hidden=YES;
-    }
-    return _questionLabel;
-}
--(UILabel*)answerLabel
-{
-    if(nil==_answerLabel)
-    {
-        _answerLabel=[[UILabel alloc] initWithFrame:CGRectMake(40, self.view.frame.size.height-160, self.view.frame.size.width-40, 40)];
-        _answerLabel.backgroundColor=[UIColor redColor];
-        _answerLabel.numberOfLines=0;
-        _answerLabel.textColor=[UIColor whiteColor];
-        _answerLabel.font=[UIFont systemFontOfSize:12];
-        _answerLabel.textAlignment=NSTextAlignmentLeft;
-        _answerLabel.hidden=YES;
-    }
-    return _answerLabel;
-}
 
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if ([text isEqualToString:@"\n"]) {
+        NSUserDefaults * defaults=[NSUserDefaults standardUserDefaults];
+        // 如果你想在按下 return 后不换行，可以返回 NO
+        // return NO;
+         if(textView==self.baseTextView)
+        {
+            [defaults setObject:textView.text forKey:@"BASEMODELURL"];
+        }
+        else if(textView==self.digitalTextView)
+        {
+            [defaults setObject:textView.text forKey:@"DIGITALMODELURLKEY"];
+        }
+        [defaults synchronize];
+        [textView resignFirstResponder];
+        [self isDownModel];
+    }
+    return YES; // 允许其他文本更改
+}
 
 @end

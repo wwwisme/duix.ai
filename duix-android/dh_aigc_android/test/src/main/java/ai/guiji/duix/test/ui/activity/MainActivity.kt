@@ -1,35 +1,39 @@
 package ai.guiji.duix.test.ui.activity
 
 import ai.guiji.duix.sdk.client.BuildConfig
+import ai.guiji.duix.sdk.client.VirtualModelUtil
 import ai.guiji.duix.test.R
 import ai.guiji.duix.test.databinding.ActivityMainBinding
-import ai.guiji.duix.test.service.StorageService
+import ai.guiji.duix.test.ui.dialog.LoadingDialog
+import ai.guiji.duix.test.ui.dialog.ModelSelectorDialog
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 import android.widget.Toast
-import java.io.BufferedReader
 import java.io.File
-import java.io.FileInputStream
-import java.io.InputStreamReader
 
 
 class MainActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private var mLoadingDialog: LoadingDialog?=null
+    private var mLastProgress = 0
 
-    private val baseConfigUrl =
-        "https://github.com/GuijiAI/duix.ai/releases/download/v1.0.0/gj_dh_res.zip"
-    private lateinit var baseDir: File
-    private val baseConfigUUID = "d39caddd-488b-4682-b6d1-13549b135dd1"
-    private var baseConfigReady = false
+    val models = arrayListOf(
+        "https://github.com/duixcom/Duix-Mobile/releases/download/v1.0.0/bendi3_20240518.zip",
+        "https://github.com/duixcom/Duix-Mobile/releases/download/v1.0.0/airuike_20240409.zip",
+        "https://github.com/duixcom/Duix-Mobile/releases/download/v1.0.0/675429759852613_7f8d9388a4213080b1820b83dd057cfb_optim_m80.zip",
+        "https://github.com/duixcom/Duix-Mobile/releases/download/v1.0.0/674402003804229_f6e86fb375c4f1f1b82b24f7ee4e7cb4_optim_m80.zip",
+        "https://github.com/duixcom/Duix-Mobile/releases/download/v1.0.0/674400178376773_3925e756433c5a9caa9b9d54147ae4ab_optim_m80.zip",
+        "https://github.com/duixcom/Duix-Mobile/releases/download/v1.0.0/674397294927941_6e297e18a4bdbe35c07a6ae48a1f021f_optim_m80.zip",
+        "https://github.com/duixcom/Duix-Mobile/releases/download/v1.0.0/674393494597701_f49fcf68f5afdb241d516db8a7d88a7b_optim_m80.zip",
+        "https://github.com/duixcom/Duix-Mobile/releases/download/v1.0.0/651705983152197_ccf3256b2449c76e77f94276dffcb293_optim_m80.zip",
+        "https://github.com/duixcom/Duix-Mobile/releases/download/v1.0.0/627306542239813_1871244b5e6912efc636ba31ea4c5c6d_optim_m80.zip",
+    )
 
-    private val modelUrl =
-        "https://github.com/GuijiAI/duix.ai/releases/download/v1.0.0/627306542239813_1871244b5e6912efc636ba31ea4c5c6d_optim_m80.zip"   // ** 在这里更新模型地址 **
-    private lateinit var modelDir: File
-    private val liangweiUUID = "d39caddd-488b-4682-b6d1-13549b135dd1"
-    private var modelReady = false
-
+    private var mBaseConfigUrl = ""
+    private var mModelUrl = ""
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,161 +43,161 @@ class MainActivity : BaseActivity() {
 
         binding.tvSdkVersion.text = "SDK Version: ${BuildConfig.VERSION_NAME}"
 
-        val duixDir = mContext.getExternalFilesDir("duix")
-        if (!duixDir!!.exists()) {
-            duixDir.mkdirs()
-        }
-        baseDir = File(
-            duixDir,
-            baseConfigUrl.substring(baseConfigUrl.lastIndexOf("/") + 1).replace(".zip", "")
-        )
-        modelDir = File(
-            duixDir,
-            modelUrl.substring(modelUrl.lastIndexOf("/") + 1).replace(".zip", "")
-        )
 
-        binding.btnBaseConfigDownload.setOnClickListener {
-            downloadBaseConfig()
+        binding.btnMoreModel.setOnClickListener {
+            val modelSelectorDialog = ModelSelectorDialog(mContext, models, object : ModelSelectorDialog.Listener{
+                override fun onSelect(url: String) {
+                    binding.etUrl.setText(url)
+                }
+            })
+            modelSelectorDialog.show()
         }
-        binding.btnModelPlay.setOnClickListener {
-            tryPlay()
+        binding.btnPlay.setOnClickListener {
+            play()
         }
-
-        checkFile()
     }
 
-    private fun tryPlay() {
-        if (!modelReady) {
-            downloadModel()
-        } else if (!baseConfigReady) {
-            Toast.makeText(mContext, "You must install the basic configuration file correctly", Toast.LENGTH_SHORT).show()
+    private fun play(){
+        mBaseConfigUrl = binding.etBaseConfig.text.toString()
+        mModelUrl = binding.etUrl.text.toString()
+        if (TextUtils.isEmpty(mBaseConfigUrl)){
+            Toast.makeText(mContext, R.string.base_config_cannot_be_empty, Toast.LENGTH_SHORT).show()
+            return
+        }
+        if (TextUtils.isEmpty(mModelUrl)){
+            Toast.makeText(mContext, R.string.model_url_cannot_be_empty, Toast.LENGTH_SHORT).show()
+            return
+        }
+        checkBaseConfig()
+    }
+
+    private fun checkBaseConfig(){
+        if (VirtualModelUtil.checkBaseConfig(mContext)){
+            checkModel()
         } else {
-            val intent = Intent(mContext, CallActivity::class.java)
-            intent.putExtra("baseDir", baseDir.absolutePath)
-            intent.putExtra("modelDir", modelDir.absolutePath)
-            startActivity(intent)
+            baseConfigDownload()
         }
     }
 
-    private fun downloadBaseConfig() {
-        binding.btnBaseConfigDownload.isEnabled = false
-        binding.progressBaseConfig.progress = 0
-        StorageService.downloadAndUnzip(
-            mContext,
-            baseConfigUrl,
-            baseDir.absolutePath,
-            baseConfigUUID,
-            object : StorageService.Callback {
-                override fun onDownloadProgress(progress: Int) {
-                    runOnUiThread {
-                        binding.progressBaseConfig.progress = progress / 2
-                    }
-                }
-
-                override fun onUnzipProgress(progress: Int) {
-                    runOnUiThread {
-                        binding.progressBaseConfig.progress = 50 + progress / 2
-                    }
-                }
-
-                override fun onComplete(path: String?) {
-                    runOnUiThread {
-                        binding.btnBaseConfigDownload.isEnabled = false
-                        binding.btnBaseConfigDownload.text = getString(R.string.ready)
-                        binding.progressBaseConfig.progress = 100
-                        baseConfigReady = true
-                    }
-                }
-
-                override fun onError(msg: String?) {
-                    runOnUiThread {
-                        binding.btnBaseConfigDownload.isEnabled = true
-                        binding.progressBaseConfig.progress = 0
-                        Toast.makeText(mContext, "File download exception: $msg", Toast.LENGTH_SHORT).show()
-                    }
-                }
-            }, true
-        )
-    }
-
-    private fun downloadModel() {
-        binding.btnModelPlay.isEnabled = false
-        binding.btnModelPlay.text = getString(R.string.download)
-        binding.progressModel.progress = 0
-        StorageService.downloadAndUnzip(
-            mContext,
-            modelUrl,
-            modelDir.absolutePath,
-            liangweiUUID,
-            object : StorageService.Callback {
-                override fun onDownloadProgress(progress: Int) {
-                    runOnUiThread {
-                        binding.progressModel.progress = progress / 2
-                    }
-                }
-
-                override fun onUnzipProgress(progress: Int) {
-                    runOnUiThread {
-                        binding.progressModel.progress = 50 + progress / 2;
-                    }
-                }
-
-                override fun onComplete(path: String?) {
-                    runOnUiThread {
-                        binding.btnModelPlay.isEnabled = true
-                        binding.btnModelPlay.text = getString(R.string.play)
-                        binding.progressModel.progress = 100
-                        modelReady = true
-                    }
-                }
-
-                override fun onError(msg: String?) {
-                    runOnUiThread {
-                        binding.btnModelPlay.isEnabled = true
-                        binding.btnModelPlay.text = getString(R.string.download)
-                        binding.progressModel.progress = 0
-                        Toast.makeText(mContext, "File download exception: $msg", Toast.LENGTH_SHORT).show()
-                    }
-                }
-            }, false        // for debug
-        )
-    }
-
-    private fun checkFile() {
-        if (baseDir.exists() && File(baseDir, "/uuid").exists() && baseConfigUUID == BufferedReader(
-                InputStreamReader(
-                    FileInputStream(
-                        File(baseDir, "/uuid")
-                    )
-                )
-            ).readLine()
-        ) {
-            binding.btnBaseConfigDownload.isEnabled = false
-            binding.btnBaseConfigDownload.text = getString(R.string.ready)
-            binding.progressBaseConfig.progress = 100
-            baseConfigReady = true
+    private fun checkModel(){
+        if (VirtualModelUtil.checkModel(mContext, mModelUrl)){
+            jumpPlayPage()
         } else {
-            binding.btnBaseConfigDownload.isEnabled = true
-            binding.progressBaseConfig.progress = 0
-        }
-        if (modelDir.exists() && File(modelDir, "/uuid").exists() && liangweiUUID == BufferedReader(
-                InputStreamReader(
-                    FileInputStream(
-                        File(modelDir, "/uuid")
-                    )
-                )
-            ).readLine()
-        ) {
-            binding.btnModelPlay.isEnabled = true
-            binding.btnModelPlay.text = getString(R.string.play)
-            binding.progressModel.progress = 100
-            modelReady = true
-        } else {
-            binding.btnModelPlay.isEnabled = true
-            binding.btnModelPlay.text = getString(R.string.download)
-            binding.progressModel.progress = 0
+            modelDownload()
         }
     }
 
+    private fun jumpPlayPage(){
+        val intent = Intent(mContext, CallActivity::class.java)
+        intent.putExtra("modelUrl", mModelUrl)
+        val debug = binding.switchDebug.isChecked
+        intent.putExtra("debug", debug)
+        startActivity(intent)
+    }
+
+    private fun baseConfigDownload(){
+        mLoadingDialog?.dismiss()
+        mLoadingDialog = LoadingDialog(mContext, "Start downloading")
+        mLoadingDialog?.show()
+        VirtualModelUtil.baseConfigDownload(mContext, mBaseConfigUrl, object :
+            VirtualModelUtil.ModelDownloadCallback {
+            override fun onDownloadProgress(url: String?, current: Long, total: Long) {
+                val progress = (current * 100 / total).toInt()
+                if (progress != mLastProgress){
+                    mLastProgress = progress
+                    runOnUiThread {
+                        if (mLoadingDialog?.isShowing == true){
+                            mLoadingDialog?.setContent("Config download(${progress}%)")
+                        }
+                    }
+                }
+            }
+
+            override fun onUnzipProgress(url: String?, current: Long, total: Long) {
+                val progress = (current * 100 / total).toInt()
+                if (progress != mLastProgress){
+                    mLastProgress = progress
+                    runOnUiThread {
+                        if (mLoadingDialog?.isShowing == true){
+                            mLoadingDialog?.setContent("Config unzip(${progress}%)")
+                        }
+                    }
+                }
+            }
+
+            override fun onDownloadComplete(url: String?, dir: File?) {
+                runOnUiThread {
+                    mLoadingDialog?.dismiss()
+                    checkModel()
+                }
+            }
+
+            override fun onDownloadFail(url: String?, code: Int, msg: String?) {
+                runOnUiThread {
+                    mLoadingDialog?.dismiss()
+                    Toast.makeText(mContext, "BaseConfig download error: $msg", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+        })
+    }
+
+    private fun modelDownload(){
+        mLoadingDialog?.dismiss()
+        mLoadingDialog = LoadingDialog(mContext, "Start downloading")
+        mLoadingDialog?.show()
+        VirtualModelUtil.modelDownload(mContext, mModelUrl, object : VirtualModelUtil.ModelDownloadCallback{
+            override fun onDownloadProgress(
+                url: String?,
+                current: Long,
+                total: Long,
+            ) {
+                val progress = (current * 100 / total).toInt()
+                if (progress != mLastProgress){
+                    mLastProgress = progress
+                    runOnUiThread {
+                        if (mLoadingDialog?.isShowing == true){
+                            mLoadingDialog?.setContent("Model download(${progress}%)")
+                        }
+                    }
+                }
+            }
+
+            override fun onUnzipProgress(
+                url: String?,
+                current: Long,
+                total: Long,
+            ) {
+                val progress = (current * 100 / total).toInt()
+                if (progress != mLastProgress){
+                    mLastProgress = progress
+                    runOnUiThread {
+                        if (mLoadingDialog?.isShowing == true){
+                            mLoadingDialog?.setContent("Model unzip(${progress}%)")
+                        }
+                    }
+                }
+            }
+
+            override fun onDownloadComplete(url: String?, dir: File?) {
+                runOnUiThread {
+                    mLoadingDialog?.dismiss()
+                    jumpPlayPage()
+                }
+            }
+
+            override fun onDownloadFail(
+                url: String?,
+                code: Int,
+                msg: String?,
+            ) {
+                runOnUiThread {
+                    mLoadingDialog?.dismiss()
+                    Toast.makeText(mContext, "Model download error: $msg", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+        })
+    }
 
 }

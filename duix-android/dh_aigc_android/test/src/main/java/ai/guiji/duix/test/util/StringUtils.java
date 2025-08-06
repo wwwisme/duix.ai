@@ -191,6 +191,12 @@ public class StringUtils {
         return format.format(dt);
     }
 
+    public static String dateToStringMS4() {
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss.SSS");
+        Date dt = new Date();
+        return format.format(dt);
+    }
+
     //去除数字结尾无用的0
     public static String filterUnUselessZero(String str) {
         String value = "";

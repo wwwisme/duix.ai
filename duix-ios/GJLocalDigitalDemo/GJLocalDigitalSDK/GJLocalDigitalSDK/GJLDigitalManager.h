@@ -7,14 +7,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
-//#import "GJLDigitalAnswerModel.h"
+#import <AVFoundation/AVFoundation.h>
 @interface GJLDigitalManager : NSObject
 
-/*
- modeType 0 默认生产  1测试  2开发
- */
-@property (nonatomic, assign) NSInteger modeType;
+
 
 /*
  backType 0 背景透明   1 使用背景渲染
@@ -22,8 +18,23 @@
 @property (nonatomic, assign) NSInteger backType;
 
 
+@property (nonatomic, assign)NSInteger dataLength;
+
+/*
+ pcmType 0 默认 wav to pcm  1 pcm
+ */
+@property (nonatomic, assign)NSInteger pcmType;
+
+/*
+ isVoiceProcessingIO 1回声消除  0 未启用回声消除 默认 1 启用回声消除
+ */
+@property (nonatomic, assign) BOOL isVoiceProcessingIO;
 
 
+/*
+ isFadeInOut YES 启用音量淡入淡出 NO 关闭音量淡入淡出  默认为YES
+ */
+@property (nonatomic, assign) BOOL isFadeInOut;
 
 /*
 *数字人渲染报错回调
@@ -41,8 +52,26 @@
 */
 @property (nonatomic, copy) void (^audioPlayProgress)(float current,float total);
 
+/*
+*音频采集数据回调。 0 录音回调 1播放回调
+*/
+@property (nonatomic, copy) void (^sampleBufferOutputCallBack)(CMSampleBufferRef sample,NSInteger type);
+
+/*
+*音频流准备好开始播放音频流
+*/
+@property (nonatomic, copy)void (^pcmReadyBlock)(void);
+
+/*
+* 帧渲染计算统计
+* @param resultCode 是否正常返回帧数据, <0 则说明帧数据异常
+* @param isLip      是否计算唇形
+* @param useTime    帧计算消耗的时间
+*/
+@property (nonatomic, copy)void (^onRenderReportBlock)(int resultCode, BOOL isLip, float useTime);
 
 + (GJLDigitalManager*)manager;
+
 
 
 
@@ -61,11 +90,7 @@
  */
 -(void)toChangeBBGWithPath:(NSString*)bbgPath;
 
-/*
- wavPath 音频的本地路径 
- *1通道 16位深 16000采样率的wav本地文件
- */
--(void)toSpeakWithPath:(NSString*)wavPath;
+
 
 
 
@@ -85,10 +110,7 @@
 */
 -(CGSize)getDigitalSize;
 
-/*
-*取消播放音频
-*/
--(void)cancelAudioPlay;
+
 
 
 /*
@@ -97,6 +119,12 @@
 * return 0 数字人模型不支持随机动作 1 数字人模型支持随机动作
 */
 -(NSInteger)toRandomMotion;
+
+/*
+* 一个动作区间来回震荡
+* 1 数字人模型支持随机动作 0 数字人模型不支持随机动作
+*/
+-(NSInteger)toActRangeMinAndMax;
 
 /*
 * 开始动作 （一段文字包含多个音频，第一个音频开始时设置）
@@ -112,6 +140,8 @@
 */
 -(NSInteger)toSopMotion:(BOOL)isQuickly;
 
+//
+-(BOOL)toMotionByName:(NSString*)name;
 
 
 /*
@@ -120,9 +150,98 @@
 -(void)toPlay;
 
 /*
-*暂停数字人播放
+*暂停数字人渲染
 */
 -(void)toPause;
+
+
+//-------------PCM流式--------------
+/*
+*开始录音和播放
+*/
+-(void)toStartRuning;
+
+
+/*
+*一句话或一段话的初始化session
+*/
+-(void)newSession;
+
+/*
+*一句话或一段话的推流结束调用finishSession 而非播放结束调用
+*/
+-(void)finishSession;
+
+
+/*
+*finishSession 结束后调用续上continueSession
+*/
+-(void)continueSession;
+
+/*
+*是否静音
+*/
+-(void)toMute:(BOOL)isMute;
+
+/*
+*audioData 单声道 16000采样率
+* 参考toSpeakWithPath 转换成pcm的代码
+*/
+-(void)toWavPcmData:(NSData*)audioData;
+
+/*
+*pcm 单声道 16000采样率
+*size
+* 参考toSpeakWithPath 转换成pcm的代码
+*/
+-(void)wavPCM:(uint8_t*)pcm size:(int)size;
+
+/*
+*清空buffer
+*/
+-(void)clearAudioBuffer;
+
+/*
+*暂停播放音频流
+*/
+-(void)toPausePcm;
+
+/*
+*恢复播放音频流
+*/
+-(void)toResumePcm;
+
+
+/*
+* 是否启用录音
+ */
+-(void)toEnableRecord:(BOOL)isEnable;
+
+/*
+* 录音是否静音
+ */
+-(void)toMuteRecord:(BOOL)isMute;
+
+/*
+* 开始音频流播放
+*/
+- (void)startPlaying;
+/*
+* 结束音频流播放
+*/
+- (void)stopPlaying:(void (^)( BOOL isSuccess))success;
+/*
+*是否授权成功
+*/
+-(NSInteger)isGetAuth;
+
+/*
+*设置音量 参数范围 (0.0F~1.0F)
+*/
+-(void)toSetVolume:(float)volume;
+
+-(void)toStopRunning;
+
 @end
 
 

@@ -87,16 +87,4 @@
 #以下针对App本身设置
 
 
--keep class com.btows.ncnntest.**{*; }
-
--keep class ai.guiji.duix.sdk.client.render.** {*;}
--keep class ai.guiji.duix.sdk.client.render.**$* {*;}
--keep class ai.guiji.duix.sdk.client.bean.** {*;}
--keep class ai.guiji.duix.sdk.client.DUIX{*; }
--keep class ai.guiji.duix.sdk.client.DUIX$* {*;}
--keep class ai.guiji.duix.sdk.client.Constant{*; }
--keep class ai.guiji.duix.sdk.client.Constant* {*;}
--keep class ai.guiji.duix.sdk.client.Callback{*; }
--keep class ai.guiji.duix.sdk.client.Callback* {*;}
--keep class ai.guiji.duix.sdk.client.render.DUIXTextureView{*; }
--keep class ai.guiji.duix.sdk.client.render.DUIXTextureView$* {*;}
+-keep class ai.guiji.duix.DuixNcnn{*; }

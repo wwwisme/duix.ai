@@ -43,7 +43,7 @@ g++ -g  \
     base/dh_mem.c \
     digit/grtcfg.c \
     base/LoopThreadHelper.cpp \
-    linux/ssat.cpp \
+    linux/linuxtest.cpp \
     lib/libpplcv_static.a \
     lib/libpplcommon_static.a \
     -fpermissive   -Wwrite-strings \

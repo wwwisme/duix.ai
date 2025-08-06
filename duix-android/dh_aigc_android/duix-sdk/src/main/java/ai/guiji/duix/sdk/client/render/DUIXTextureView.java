@@ -29,7 +29,7 @@ public class DUIXTextureView
         implements TextureView.SurfaceTextureListener,
         View.OnLayoutChangeListener {
 
-    private final static boolean DEBUG = BuildConfig.DEBUG;
+    private final static boolean DEBUG = false;
 
     private final static String TAG = "DUIXTextureView";
     private final static boolean LOG_ATTACH_DETACH = DEBUG;

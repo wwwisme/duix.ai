@@ -18,6 +18,9 @@
         self.res_fmt=@"";
         self.ranges=[[NSMutableArray alloc] init];
         self.reverses=[[NSMutableArray alloc] init];
+        self.silences=[[NSMutableArray alloc] init];
+        
+        self.actions=[[NSMutableArray alloc] init];
 //        self.mat_type=0;
     }
     return self;
@@ -50,6 +53,18 @@
         self.max=0;
         self.type=0;
 
+//        self.mat_type=0;
+    }
+    return self;
+}
+@end
+@implementation DigitalSpecialModel
+-(id)init
+{
+    self=[super init];
+    if(self)
+    {
+    
 //        self.mat_type=0;
     }
     return self;

@@ -76,12 +76,22 @@ typedef NS_ENUM(NSInteger, JPMetalViewContentMode) {
         [self addSubview:self.mtkView];
         self.mtkView.delegate = self;
         self.viewportSize = (vector_uint2){static_cast<unsigned int>(self.mtkView.drawableSize.width), static_cast<unsigned int>(self.mtkView.drawableSize.height)};
-        NSLog(@"mtkView=drawableSize==%f,%f",  self.mtkView.drawableSize.width,self.mtkView.drawableSize.height);
+//        NSLog(@"mtkView=drawableSize==%f,%f",  self.mtkView.drawableSize.width,self.mtkView.drawableSize.height);
         //         CVMetalTextureCacheCreate(NULL, NULL, self.mtkView.device, NULL, &_textureCache);
         [self customInit];
     }
     return self;
 }
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    self.mtkView.frame=self.frame;
+    self.viewportSize = (vector_uint2){static_cast<unsigned int>(self.mtkView.drawableSize.width), static_cast<unsigned int>(self.mtkView.drawableSize.height)};
+//    NSLog(@"111:%f,%f,%f,%f",self.frame.origin.x,self.frame.origin.y,self.frame.size.width,self.frame.size.height);
+    // 在此处获取最新frame并调整子视图:ml-citation{ref="8,12" data="citationList"}
+    [self setupVertex];
+}
+
 -(float)getMetalHeight
 {
     return  self.mtkView.frame.size.height;

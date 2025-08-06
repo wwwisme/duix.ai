@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7FA77A706ADB2579D0F321CD /* Pods_GJLocalDigitalDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9463708D551DF8AC78746988 /* Pods_GJLocalDigitalDemo.framework */; };
 		A037D5F12B3D0B1800E1AF98 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A037D5F02B3D0B1800E1AF98 /* AVFoundation.framework */; };
+		A03914402DD72612009FBE81 /* UIColor+Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = A039143E2DD72612009FBE81 /* UIColor+Expanded.m */; };
 		A04821D12B2C48BC005E06BD /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A04821CD2B2C48BC005E06BD /* HttpClient.m */; };
 		A04821D92B2C49CC005E06BD /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = A04821D62B2C49CC005E06BD /* OpenUDID.m */; };
 		A04821E42B2C4EC8005E06BD /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A04821DB2B2C4EC8005E06BD /* SVRadialGradientLayer.m */; };
@@ -19,13 +20,18 @@
 		A04821F12B2C5650005E06BD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A04821E92B2C5429005E06BD /* Security.framework */; };
 		A04821F42B2C5695005E06BD /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A04821EF2B2C5608005E06BD /* libz.tbd */; };
 		A04822222B2C5FF6005E06BD /* GJCheckNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = A04822212B2C5FF6005E06BD /* GJCheckNetwork.m */; };
-		A06A8E6F2DB9CEF600AA3F07 /* GJLocalDigitalSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FBC80C2BF5B34600C77AFB /* GJLocalDigitalSDK.framework */; };
-		A06A8E702DB9CEF600AA3F07 /* GJLocalDigitalSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0FBC80C2BF5B34600C77AFB /* GJLocalDigitalSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A0AC919F2E00197A00396736 /* GJLAudioPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC919D2E00197A00396736 /* GJLAudioPlayerView.m */; };
 		A0B1C4362B29C1F2009E0716 /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = A0B1C4352B29C1F2009E0716 /* 1.wav */; };
 		A0BB09402B3C34A700BF0CC1 /* GJLDigitalAnswerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB093F2B3C34A700BF0CC1 /* GJLDigitalAnswerModel.m */; };
 		A0BB09432B3C34B800BF0CC1 /* GJDownWavTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB09422B3C34B800BF0CC1 /* GJDownWavTool.m */; };
+		A0C35D202DDB2E9700FA89D5 /* GJLocalDigitalSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05E0FE62DCC7FF00057BEC4 /* GJLocalDigitalSDK.framework */; };
+		A0C35D212DDB2E9700FA89D5 /* GJLocalDigitalSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A05E0FE62DCC7FF00057BEC4 /* GJLocalDigitalSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A0C35E012DDC5E6000FA89D5 /* ReadWavPCMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C35E002DDC5E6000FA89D5 /* ReadWavPCMViewController.m */; };
 		A0D3B8A52B3D740500983153 /* GYAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D3B8A42B3D740500983153 /* GYAccess.m */; };
 		A0D81D9B2B299568002F98C1 /* bg2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0D81D9A2B299568002F98C1 /* bg2.jpg */; };
+		A0DDAA8E2DD192DD005C5430 /* GJLPLAssetReader.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DDAA8C2DD192DD005C5430 /* GJLPLAssetReader.m */; };
+		A0DDAA912DD1932D005C5430 /* GJLPCMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DDAA902DD1932D005C5430 /* GJLPCMManager.m */; };
+		A0DDAA952DD19499005C5430 /* GJLGCDNEWTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DDAA932DD19499005C5430 /* GJLGCDNEWTimer.m */; };
 		A0F908C32B32E97500962346 /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A0F908C02B32E97500962346 /* 2.wav */; };
 		A0F908C42B32E97500962346 /* 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = A0F908C22B32E97500962346 /* 3.wav */; };
 		A0FC3DA02B282F1B0069EA0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FC3D9F2B282F1B0069EA0E /* AppDelegate.m */; };
@@ -37,9 +43,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A0FBC80B2BF5B34600C77AFB /* PBXContainerItemProxy */ = {
+		A05E0FE52DCC7FF00057BEC4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A0FBC8072BF5B34600C77AFB /* GJLocalDigitalSDK.xcodeproj */;
+			containerPortal = A05E0FE12DCC7FF00057BEC4 /* GJLocalDigitalSDK.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = A0FC3D822B282DC40069EA0E;
 			remoteInfo = GJLocalDigitalSDK;
@@ -47,13 +53,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A0B1C4282B299D66009E0716 /* Embed Frameworks */ = {
+		A0C35D222DDB2E9700FA89D5 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A06A8E702DB9CEF600AA3F07 /* GJLocalDigitalSDK.framework in Embed Frameworks */,
+				A0C35D212DDB2E9700FA89D5 /* GJLocalDigitalSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +69,9 @@
 /* Begin PBXFileReference section */
 		9463708D551DF8AC78746988 /* Pods_GJLocalDigitalDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GJLocalDigitalDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A037D5F02B3D0B1800E1AF98 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A039143D2DD72612009FBE81 /* UIColor+Expanded.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Expanded.h"; sourceTree = "<group>"; };
+		A039143E2DD72612009FBE81 /* UIColor+Expanded.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Expanded.m"; sourceTree = "<group>"; };
+		A03B3DA52E151D3C0000A423 /* GJLocalDigitalDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GJLocalDigitalDemo.entitlements; sourceTree = "<group>"; };
 		A04821CD2B2C48BC005E06BD /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
 		A04821CF2B2C48BC005E06BD /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
 		A04821D62B2C49CC005E06BD /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
@@ -83,19 +92,30 @@
 		A04821F22B2C567E005E06BD /* libz.1.2.8.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.8.tbd; path = usr/lib/libz.1.2.8.tbd; sourceTree = SDKROOT; };
 		A04822202B2C5FF6005E06BD /* GJCheckNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCheckNetwork.h; sourceTree = "<group>"; };
 		A04822212B2C5FF6005E06BD /* GJCheckNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCheckNetwork.m; sourceTree = "<group>"; };
-		A06A8F3C2DBE276F00AA3F07 /* GJLDecry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GJLDecry.framework; path = GJLocalDigitalSDK/GJLocalDigitalSDK/GJFrameWork/GJLDecry.framework; sourceTree = "<group>"; };
+		A05E0FDE2DCC7FA40057BEC4 /* GJLocalDigitalSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GJLocalDigitalSDK.framework; path = "../../Library/Developer/Xcode/DerivedData/GJLocalDigitalSDK-gilnwnvtuzpumreenipkkbltstve/Build/Products/Release-iphoneos/GJLocalDigitalSDK.framework"; sourceTree = "<group>"; };
+		A05E0FE12DCC7FF00057BEC4 /* GJLocalDigitalSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GJLocalDigitalSDK.xcodeproj; path = GJLocalDigitalSDK/GJLocalDigitalSDK.xcodeproj; sourceTree = "<group>"; };
+		A05E0FEA2DCC80730057BEC4 /* GJLDecry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GJLDecry.framework; path = GJLocalDigitalSDK/GJLocalDigitalSDK/GJFrameWork/GJLDecry.framework; sourceTree = "<group>"; };
+		A0AC919C2E00197A00396736 /* GJLAudioPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJLAudioPlayerView.h; sourceTree = "<group>"; };
+		A0AC919D2E00197A00396736 /* GJLAudioPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJLAudioPlayerView.m; sourceTree = "<group>"; };
 		A0B1C4352B29C1F2009E0716 /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
 		A0BB093E2B3C34A700BF0CC1 /* GJLDigitalAnswerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJLDigitalAnswerModel.h; sourceTree = "<group>"; };
 		A0BB093F2B3C34A700BF0CC1 /* GJLDigitalAnswerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJLDigitalAnswerModel.m; sourceTree = "<group>"; };
 		A0BB09412B3C34B800BF0CC1 /* GJDownWavTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJDownWavTool.h; sourceTree = "<group>"; };
 		A0BB09422B3C34B800BF0CC1 /* GJDownWavTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJDownWavTool.m; sourceTree = "<group>"; };
+		A0C35DFF2DDC5E6000FA89D5 /* ReadWavPCMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadWavPCMViewController.h; sourceTree = "<group>"; };
+		A0C35E002DDC5E6000FA89D5 /* ReadWavPCMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReadWavPCMViewController.m; sourceTree = "<group>"; };
 		A0D3B8A32B3D740500983153 /* GYAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYAccess.h; sourceTree = "<group>"; };
 		A0D3B8A42B3D740500983153 /* GYAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYAccess.m; sourceTree = "<group>"; };
 		A0D81D7F2B29915D002F98C1 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		A0D81D9A2B299568002F98C1 /* bg2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg2.jpg; sourceTree = "<group>"; };
+		A0DDAA8B2DD192DD005C5430 /* GJLPLAssetReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJLPLAssetReader.h; sourceTree = "<group>"; };
+		A0DDAA8C2DD192DD005C5430 /* GJLPLAssetReader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJLPLAssetReader.m; sourceTree = "<group>"; };
+		A0DDAA8F2DD1932D005C5430 /* GJLPCMManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJLPCMManager.h; sourceTree = "<group>"; };
+		A0DDAA902DD1932D005C5430 /* GJLPCMManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJLPCMManager.m; sourceTree = "<group>"; };
+		A0DDAA922DD19499005C5430 /* GJLGCDNEWTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJLGCDNEWTimer.h; sourceTree = "<group>"; };
+		A0DDAA932DD19499005C5430 /* GJLGCDNEWTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJLGCDNEWTimer.m; sourceTree = "<group>"; };
 		A0F908C02B32E97500962346 /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
 		A0F908C22B32E97500962346 /* 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3.wav; sourceTree = "<group>"; };
-		A0FBC8072BF5B34600C77AFB /* GJLocalDigitalSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GJLocalDigitalSDK.xcodeproj; path = GJLocalDigitalSDK/GJLocalDigitalSDK.xcodeproj; sourceTree = "<group>"; };
 		A0FC3D9B2B282F1B0069EA0E /* GJLocalDigitalDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GJLocalDigitalDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0FC3D9E2B282F1B0069EA0E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A0FC3D9F2B282F1B0069EA0E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -120,13 +140,22 @@
 				A04821F42B2C5695005E06BD /* libz.tbd in Frameworks */,
 				A04821F12B2C5650005E06BD /* Security.framework in Frameworks */,
 				7FA77A706ADB2579D0F321CD /* Pods_GJLocalDigitalDemo.framework in Frameworks */,
-				A06A8E6F2DB9CEF600AA3F07 /* GJLocalDigitalSDK.framework in Frameworks */,
+				A0C35D202DDB2E9700FA89D5 /* GJLocalDigitalSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A039143F2DD72612009FBE81 /* UIColor+Expanded */ = {
+			isa = PBXGroup;
+			children = (
+				A039143D2DD72612009FBE81 /* UIColor+Expanded.h */,
+				A039143E2DD72612009FBE81 /* UIColor+Expanded.m */,
+			);
+			path = "UIColor+Expanded";
+			sourceTree = "<group>";
+		};
 		A04821CC2B2C48BC005E06BD /* HttpClient */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +199,23 @@
 			path = GJCheckNetwork;
 			sourceTree = "<group>";
 		};
+		A05E0FE22DCC7FF00057BEC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A05E0FE62DCC7FF00057BEC4 /* GJLocalDigitalSDK.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A0AC919E2E00197A00396736 /* AudioPlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				A0AC919C2E00197A00396736 /* GJLAudioPlayerView.h */,
+				A0AC919D2E00197A00396736 /* GJLAudioPlayerView.m */,
+			);
+			path = AudioPlayerView;
+			sourceTree = "<group>";
+		};
 		A0BB093D2B3C34A700BF0CC1 /* DigitalAnswerModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,18 +247,30 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		A0FBC8082BF5B34600C77AFB /* Products */ = {
+		A0DDAA8D2DD192DD005C5430 /* GJLPLAssetReader */ = {
 			isa = PBXGroup;
 			children = (
-				A0FBC80C2BF5B34600C77AFB /* GJLocalDigitalSDK.framework */,
+				A0DDAA8B2DD192DD005C5430 /* GJLPLAssetReader.h */,
+				A0DDAA8C2DD192DD005C5430 /* GJLPLAssetReader.m */,
+				A0DDAA8F2DD1932D005C5430 /* GJLPCMManager.h */,
+				A0DDAA902DD1932D005C5430 /* GJLPCMManager.m */,
 			);
-			name = Products;
+			path = GJLPLAssetReader;
+			sourceTree = "<group>";
+		};
+		A0DDAA942DD19499005C5430 /* GCDTimer */ = {
+			isa = PBXGroup;
+			children = (
+				A0DDAA922DD19499005C5430 /* GJLGCDNEWTimer.h */,
+				A0DDAA932DD19499005C5430 /* GJLGCDNEWTimer.m */,
+			);
+			path = GCDTimer;
 			sourceTree = "<group>";
 		};
 		A0FC3D922B282F1B0069EA0E = {
 			isa = PBXGroup;
 			children = (
-				A0FBC8072BF5B34600C77AFB /* GJLocalDigitalSDK.xcodeproj */,
+				A05E0FE12DCC7FF00057BEC4 /* GJLocalDigitalSDK.xcodeproj */,
 				A0FC3D9D2B282F1B0069EA0E /* GJLocalDigitalDemo */,
 				A0FC3D9C2B282F1B0069EA0E /* Products */,
 				A0FC3EAC2B2855AC0069EA0E /* Frameworks */,
@@ -231,7 +289,11 @@
 		A0FC3D9D2B282F1B0069EA0E /* GJLocalDigitalDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A03B3DA52E151D3C0000A423 /* GJLocalDigitalDemo.entitlements */,
 				A0D3B8A22B3D740500983153 /* GYAccess */,
+				A039143F2DD72612009FBE81 /* UIColor+Expanded */,
+				A0DDAA942DD19499005C5430 /* GCDTimer */,
+				A0DDAA8D2DD192DD005C5430 /* GJLPLAssetReader */,
 				A0BB093D2B3C34A700BF0CC1 /* DigitalAnswerModel */,
 				A048221F2B2C5FF6005E06BD /* GJCheckNetwork */,
 				A04821DA2B2C4EC8005E06BD /* SVProgressHUD */,
@@ -242,6 +304,9 @@
 				A0FC3D9F2B282F1B0069EA0E /* AppDelegate.m */,
 				A0FC3DA42B282F1B0069EA0E /* ViewController.h */,
 				A0FC3DA52B282F1B0069EA0E /* ViewController.mm */,
+				A0C35DFF2DDC5E6000FA89D5 /* ReadWavPCMViewController.h */,
+				A0C35E002DDC5E6000FA89D5 /* ReadWavPCMViewController.m */,
+				A0AC919E2E00197A00396736 /* AudioPlayerView */,
 				A0FC3DA72B282F1B0069EA0E /* Main.storyboard */,
 				A0FC3DAA2B282F1D0069EA0E /* Assets.xcassets */,
 				A0FC3DAC2B282F1D0069EA0E /* LaunchScreen.storyboard */,
@@ -254,7 +319,8 @@
 		A0FC3EAC2B2855AC0069EA0E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A06A8F3C2DBE276F00AA3F07 /* GJLDecry.framework */,
+				A05E0FEA2DCC80730057BEC4 /* GJLDecry.framework */,
+				A05E0FDE2DCC7FA40057BEC4 /* GJLocalDigitalSDK.framework */,
 				A037D5F02B3D0B1800E1AF98 /* AVFoundation.framework */,
 				A04821F22B2C567E005E06BD /* libz.1.2.8.tbd */,
 				A04821EF2B2C5608005E06BD /* libz.tbd */,
@@ -288,8 +354,8 @@
 				A0FC3D972B282F1B0069EA0E /* Sources */,
 				A0FC3D982B282F1B0069EA0E /* Frameworks */,
 				A0FC3D992B282F1B0069EA0E /* Resources */,
-				A0B1C4282B299D66009E0716 /* Embed Frameworks */,
 				AEFFC1C636473627C8C0E111 /* [CP] Embed Pods Frameworks */,
+				A0C35D222DDB2E9700FA89D5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -327,8 +393,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = A0FBC8082BF5B34600C77AFB /* Products */;
-					ProjectRef = A0FBC8072BF5B34600C77AFB /* GJLocalDigitalSDK.xcodeproj */;
+					ProductGroup = A05E0FE22DCC7FF00057BEC4 /* Products */;
+					ProjectRef = A05E0FE12DCC7FF00057BEC4 /* GJLocalDigitalSDK.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -339,11 +405,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		A0FBC80C2BF5B34600C77AFB /* GJLocalDigitalSDK.framework */ = {
+		A05E0FE62DCC7FF00057BEC4 /* GJLocalDigitalSDK.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = GJLocalDigitalSDK.framework;
-			remoteRef = A0FBC80B2BF5B34600C77AFB /* PBXContainerItemProxy */;
+			remoteRef = A05E0FE52DCC7FF00057BEC4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -419,7 +485,12 @@
 			files = (
 				A04821E42B2C4EC8005E06BD /* SVRadialGradientLayer.m in Sources */,
 				A0FC3DA62B282F1B0069EA0E /* ViewController.mm in Sources */,
+				A0AC919F2E00197A00396736 /* GJLAudioPlayerView.m in Sources */,
 				A0BB09402B3C34A700BF0CC1 /* GJLDigitalAnswerModel.m in Sources */,
+				A0DDAA8E2DD192DD005C5430 /* GJLPLAssetReader.m in Sources */,
+				A03914402DD72612009FBE81 /* UIColor+Expanded.m in Sources */,
+				A0DDAA952DD19499005C5430 /* GJLGCDNEWTimer.m in Sources */,
+				A0C35E012DDC5E6000FA89D5 /* ReadWavPCMViewController.m in Sources */,
 				A0FC3DA02B282F1B0069EA0E /* AppDelegate.m in Sources */,
 				A04821D12B2C48BC005E06BD /* HttpClient.m in Sources */,
 				A04821D92B2C49CC005E06BD /* OpenUDID.m in Sources */,
@@ -430,6 +501,7 @@
 				A04822222B2C5FF6005E06BD /* GJCheckNetwork.m in Sources */,
 				A0FC3DB12B282F1D0069EA0E /* main.m in Sources */,
 				A04821E52B2C4EC8005E06BD /* SVProgressAnimatedView.m in Sources */,
+				A0DDAA912DD1932D005C5430 /* GJLPCMManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +649,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GJLocalDigitalDemo/GJLocalDigitalDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RHWTKM535Q;
@@ -588,7 +661,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GJLocalDigitalDemo/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = SDKDemo1.0.2;
+				INFOPLIST_KEY_CFBundleDisplayName = SDKDemo1.2.2;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "需要录音权限来语音识别";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -599,10 +672,15 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GJLocalDigitalSDK/GJLocalDigitalSDK/libjpeg-turbo/libs",
+				);
+				MARKETING_VERSION = 1.2.2;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wanruyi.sdkdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -614,6 +692,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GJLocalDigitalDemo/GJLocalDigitalDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RHWTKM535Q;
@@ -625,7 +704,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GJLocalDigitalDemo/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = SDKDemo1.0.2;
+				INFOPLIST_KEY_CFBundleDisplayName = SDKDemo1.2.2;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "需要录音权限来语音识别";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -636,10 +715,15 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GJLocalDigitalSDK/GJLocalDigitalSDK/libjpeg-turbo/libs",
+				);
+				MARKETING_VERSION = 1.2.2;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wanruyi.sdkdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

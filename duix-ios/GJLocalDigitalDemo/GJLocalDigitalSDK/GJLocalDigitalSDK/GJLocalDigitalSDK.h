@@ -21,3 +21,4 @@ FOUNDATION_EXPORT const unsigned char GJLocalDigitalSDKVersionString[];
 
 
 
+#import <GJLocalDigitalSDK/GJLDigitalConfig.h>

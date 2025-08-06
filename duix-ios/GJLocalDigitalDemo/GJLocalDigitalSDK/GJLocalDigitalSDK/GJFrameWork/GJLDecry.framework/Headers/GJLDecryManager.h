@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSString * paramPath;
 @property(nonatomic,strong)NSString * binPath;
 @property(nonatomic,strong)NSString * weight_168u_path;
+@property(nonatomic,strong)NSString * sepicalJson;
 
 
 -(NSInteger)initBaseModel:(NSString*)basePath digitalModel:(NSString*)digitalPath;

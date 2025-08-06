@@ -9,6 +9,7 @@ import java.nio.FloatBuffer;
 import ai.guiji.duix.sdk.client.bean.ImageFrame;
 import ai.guiji.duix.sdk.client.util.OpenGLUtil;
 
+
 public class ImageDrawer {
 
     protected int mImageTexId;
@@ -27,7 +28,7 @@ public class ImageDrawer {
 
     private final String fragmentShaderCode =
             "precision mediump float;\n" +
-            "varying vec2 textureCoordinate;\n" +
+                    "varying vec2 textureCoordinate;\n" +
                     "uniform sampler2D inputImageTexture;\n" +
                     "uniform sampler2D inputImageTexture2;\n" +
                     "vec4 imageColor;\n" +
@@ -125,6 +126,7 @@ public class ImageDrawer {
 
         GLES20.glActiveTexture(GLES20.GL_TEXTURE0);
         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, mImageTexId);
+        GLES20.glPixelStorei(GLES20.GL_UNPACK_ALIGNMENT, 1); // 设置1字节对齐
 //        GLUtils.texImage2D(GLES20.GL_TEXTURE_2D, 0, imageFrame.bitmap, 0);
         GLES20.glTexImage2D(GLES20.GL_TEXTURE_2D, 0, GLES20.GL_RGB, imageFrame.width, imageFrame.height, 0,
                 GLES20.GL_RGB, GLES20.GL_UNSIGNED_BYTE, imageFrame.rawBuffer);

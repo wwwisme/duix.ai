@@ -8,16 +8,26 @@
 #import "DigitalHumanDriven.h"
 #import <UIKit/UIKit.h>
 
-#import "gjdigit.h"
+//#import "gjduix.h"
 #include <stdio.h>
 #include "jmat.h"
-
+#import "gjsimp.h"
+#import "GJLAudioPlayer.h"
 //#import "MHCVPixelBuffer.h"
 static DigitalHumanDriven *manager = nil;
-static dispatch_once_t onceToken;
+
 
 @interface DigitalHumanDriven () {
-    gjdigit_t* gjdigit;
+//    gjdigit_t* gjdigit;
+//    dhmfcc_s* gjmfcc;
+//    dhunet_s *gjunet;
+    
+    dhduix_s *  gjduix_s;
+    uint64_t sessid;
+//    int pcmsize;
+//    int bnfsize;
+//    char* bnf;
+//    char* pcm;
 }
 
 
@@ -26,6 +36,7 @@ static dispatch_once_t onceToken;
 
 
 + (instancetype)manager {
+    static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         manager = [[DigitalHumanDriven alloc] init];
        // [manager initGJDigital];
@@ -40,32 +51,83 @@ static dispatch_once_t onceToken;
         self.configModel=[[DigitalConfigModel alloc] init];
         self.metal_type=0;
         self.back_type=0;
-
+        self.audio_ready_timer_queue=dispatch_queue_create("com.digitalsdk.audio_ready_timer_queue", DISPATCH_QUEUE_SERIAL);
+        self.playAuidoQueue= dispatch_queue_create("com.digitalsdk.playAuidoQueue", DISPATCH_QUEUE_SERIAL);
+   
 //        self.mat_type=0;
     }
     return self;
 }
-- (int)initGJDigital {
+- (int)initGJStream{
 //    self.isStop=YES;
     // 在这里实现对应的功能
-    gjdigit_t* gd = NULL;
+    dhduix_s* dg = NULL;
     int rst = 0;
-    rst = gjdigit_alloc(&gd);
-    gjdigit = gd;
+    rst = dhduix_alloc(&dg,100,(int)self.configModel.width,(int)self.configModel.height);
+    rst = dhduix_initPcmex(dg,0,10,20,50,0);
+
+    gjduix_s = dg;
+   
     return rst;
 }
+
+-(void)newSession
+{
+    [self toStopAudioReadyTimer];
+    
+    sessid = dhduix_newsession(gjduix_s);
+//    NSLog(@"sessid:%llu",sessid);
+
+    __weak typeof(self)weakSelf = self;
   
+    
+    self.audioReadyTimer =[GJLGCDTimer scheduledTimerWithTimeInterval:0.04 repeats:YES queue:self.audio_ready_timer_queue block:^{
+        [weakSelf toFirstReady];
+    }];
+
+
+}
+-(void)toFirstReady
+{
+    __weak typeof(self)weakSelf = self;
+    dispatch_async(weakSelf.playAuidoQueue, ^{
+        weakSelf.isAudioReady = dhduix_readycnt(self->gjduix_s,self->sessid);
+//                NSLog(@"isAudioReady:%d",self.isAudioReady);
+        if(weakSelf.isAudioReady>0)
+        {
+            [weakSelf toStopAudioReadyTimer];
+            if(weakSelf.pcmReadyBlock)
+            {
+                weakSelf.pcmReadyBlock();
+            }
+        }
+        
+    });
+    //
+}
+ 
+
+-(void)toStopAudioReadyTimer
+{
+    if(self.audioReadyTimer!=nil) {
+        [self.audioReadyTimer invalidate];
+        self.audioReadyTimer = nil;
+    }
+}
+
+
 - (int)initWenetWithPath:(NSString*)path {
     
     int rst = 0;
     const char *cStr = [path UTF8String];
     char *charStr = (char *)cStr;
-    rst = gjdigit_initWenet(gjdigit,charStr);
+    rst = dhduix_initWenet(gjduix_s,charStr);
     return rst;
 }
   
-- (int)initMunetWithParamPath:(NSString*)paramPath binPath:(NSString*)binPath binPath2:(NSString*)binPath2 {
-    
+
+- (int)initUnetPcmWithParamPath:(NSString*)paramPath binPath:(NSString*)binPath binPath2:(NSString*)binPath2
+{
     int rst = 0;
     const char *cParamPath = [paramPath UTF8String];
     char *paramPathStr = (char *)cParamPath;
@@ -76,108 +138,16 @@ static dispatch_once_t onceToken;
     const char *cBinPath2 = [binPath2 UTF8String];
     char *binPathStr2 = (char *)cBinPath2;
     
-    rst = gjdigit_initMunet(gjdigit,paramPathStr,binPathStr,binPathStr2);
+    rst = dhduix_initMunet(gjduix_s,paramPathStr,binPathStr,binPathStr2);
     return rst;
 }
 
-- (int)initAlphaWithParamPath:(NSString*)paramPath binPath:(NSString*)binPath {
-    
-    int rst = 0;
-    const char *cParamPath = [paramPath UTF8String];
-    char *paramPathStr = (char *)cParamPath;
-    
-    const char *cBinPath = [binPath UTF8String];
-    char *binPathStr = (char *)cBinPath;
-
-    
-    rst = gjdigit_initMalpha(gjdigit,paramPathStr,binPathStr);
-    return rst;
-}
-  
-- (AVURLAsset*)onewavWithPath:(NSString*)path
-{
-    
-
-    const char *cStr = [path UTF8String];
-//    char *charStr = (char *)cStr;
-    AVURLAsset *audioAsset = nil;
-  //  NSDictionary *dic = @{AVURLAssetPreferPreciseDurationAndTimingKey:@(YES)};
-//    double time1=[[NSDate date] timeIntervalSince1970];
-    if ([path hasPrefix:@"http://"]) {
-        audioAsset = [AVURLAsset URLAssetWithURL:[NSURL URLWithString:path] options:nil];
-    }else {
-        audioAsset = [AVURLAsset URLAssetWithURL:[NSURL fileURLWithPath:path] options:nil];
-    }
-
-    CMTime audioDuration = audioAsset.duration;
-    float audioDurationSeconds = CMTimeGetSeconds(audioDuration);
-    float duration=audioDurationSeconds;
-//    double time2=[[NSDate date] timeIntervalSince1970];
-  //  NSLog(@"加载音频:%f",time2-time1);
-    
-    int wavframe = gjdigit_onewav(gjdigit,cStr,duration);
-    self.wavframe = wavframe;
-    return audioAsset;
-   
 
 
-//    NSLog(@"time2%f",time2-time);
-  
-}
-
-- (int)matrstWithData:(uint8_t*)data width:(int)width height:(int)height boxs: (int*)boxs index: (int)index {
-    
-    int rst = 0;
-    rst = gjdigit_matrst(gjdigit,data,width,height,boxs,index);
-    return rst;
-}
-
-- (void)matrstWithPath:(NSString *)imagePath index:(int)index array:(NSArray *)array {
-    
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        double time1=[[NSDate date] timeIntervalSince1970];
-      
-//        char *charStr = (char *) [imagePath UTF8String];
-//        std::string fn = charStr;
-        JMat mat;
-        int mat_result=mat.load([imagePath UTF8String]);
-        int boxs[4];
-        if (array.count == 4) {
-            boxs[0]= [[NSString stringWithFormat:@"%@",[array objectAtIndex:0]] intValue];
-            boxs[2]= [[NSString stringWithFormat:@"%@",[array objectAtIndex:1]] intValue];
-            boxs[1]= [[NSString stringWithFormat:@"%@",[array objectAtIndex:2]] intValue];
-            boxs[3]= [[NSString stringWithFormat:@"%@",[array objectAtIndex:3]] intValue];
-        }
-        
-        int rst = gjdigit_matrst(self->gjdigit,mat.udata(),mat.width(),mat.height(),boxs,index);
-        double time2=[[NSDate date] timeIntervalSince1970];
-//        NSLog(@"处理图片:%f",time2-time1);
-        if (rst >= 0) {
-//            CVPixelBufferRef cvPixelBuffer=getImageBufferFromMat(mat.cvmat());
-//            if(self.pixerBlock)
-//            {
-//                self.pixerBlock(cvPixelBuffer);
-//            }
-            
-//            if(self.matBlock)
-//                     {
-//                         self.matBlock(mat.cvmat());
-//                     }
-        }
-//        if(self.imageBlock)
-//        {
-//            CVPixelBufferRef cvPixelBuffer=getImageBufferFromMat(mat.cvmat());
-//            UIImage *image = [self getUIImageFromCVPixelBuffer:cvPixelBuffer];
-//            self.imageBlock(image);
-//        }
-        //usleep(40000);
-    });
-}
-  
-- (void)maskrstWithPath:(NSString *)imagePath index:(int)index array:(NSArray *)array mskPath:(NSString*)maskPath bfgPath:(NSString*)bfgPath bbgPath:(NSString*)bbgPath  {
+- (void)maskrstPcmWithPath:(NSString *)imagePath index:(int)index array:(NSArray *)array mskPath:(NSString*)maskPath bfgPath:(NSString*)bfgPath bbgPath:(NSString*)bbgPath  {
 
        
-          
+        double time1=[[NSDate date] timeIntervalSince1970];
           JMat mat;
           int mat_result=mat.load([imagePath UTF8String]);
           JMat maskMat;
@@ -209,32 +179,32 @@ static dispatch_once_t onceToken;
         }
 //        self.isStop=NO;
         
-        int rst;
-        if (index > 0) {
-            if(self.wavframe==0)
-            {
-                rst=gjdigit_maskrst(self->gjdigit, mat.udata(), mat.width(), mat.height(), boxs, maskMat.udata(),bfgMat.udata(),NULL, 0);
-            }
-            else
-            {
-                if (index > self.wavframe) {
-                    rst=gjdigit_maskrst(self->gjdigit, mat.udata(), mat.width(), mat.height(), boxs, maskMat.udata(),bfgMat.udata(),NULL, self.wavframe);
-                } else {
-               
-                    rst=gjdigit_maskrst(self->gjdigit, mat.udata(), mat.width(), mat.height(), boxs, maskMat.udata(),bfgMat.udata(),NULL, index);
-               
-                   
-                }
-            }
+        int rst=0;
+        BOOL isLip=NO;
+        if(![GJLAudioPlayer manager].isMute&&index>0&&[GJLAudioPlayer manager].isPlayMutePcm==NO)
+       {
+  
+//          double time1=[[NSDate date] timeIntervalSince1970];
+
+           
+      
+      
+               rst = dhduix_simpinx(self->gjduix_s,sessid,mat.udata(),mat.width(),mat.height(),boxs,maskMat.udata(),bfgMat.udata(),index);
+           
+              isLip=YES;
           
-        } else {
-            
-            rst=0;
-        }
-       
+     
+      
+      }
+       double time2=[[NSDate date] timeIntervalSince1970];
+       float useTime=time2-time1;
+       if(self.onRenderReportBlock)
+       {
+          self.onRenderReportBlock(rst, isLip, useTime);
+       }
 
      
-        if (rst >= 0) {
+       
 
          
             if(self.metal_type==0)
@@ -297,20 +267,19 @@ static dispatch_once_t onceToken;
             }
          
             
-            
-        }
+
     
   
 
 }
-- (void)simprstWithPath:(NSString *)imagePath index:(int)index array:(NSArray *)array
+- (void)simprstPcmWithPath:(NSString *)imagePath index:(int)index array:(NSArray *)array
 {
-
-       
-          
+       double time1=[[NSDate date] timeIntervalSince1970];
         JMat mat;
         int mat_result=mat.load([imagePath UTF8String]);
         
+
+
         if(mat_result<0)
         {
            return;
@@ -327,34 +296,23 @@ static dispatch_once_t onceToken;
         }
 //        self.isStop=NO;
         
-        int rst;
-        if (index > 0) {
-            if(self.wavframe==0)
-            {
-                rst=gjdigit_simprst(self->gjdigit, mat.udata(), mat.width(), mat.height(), boxs, 0);
-            }
-            else
-            {
-                if (index > self.wavframe) {
-                    rst=gjdigit_simprst(self->gjdigit, mat.udata(), mat.width(), mat.height(), boxs, self.wavframe);
-                } else {
-               
-                    rst=gjdigit_simprst(self->gjdigit, mat.udata(), mat.width(), mat.height(), boxs, index);
-               
-                   
-                }
-            }
-          
-        } else {
-            
-            rst=0;
-        }
-       
-
+        int rst=0;
+         BOOL isLip=NO;
+        if (![GJLAudioPlayer manager].isMute&&index>0&&[GJLAudioPlayer manager].isPlayMutePcm==NO) {
      
-        if (rst >= 0) {
-
-         
+     
+            rst = dhduix_simpinx(self->gjduix_s,sessid,mat.udata(),mat.width(),mat.height(),boxs,NULL,NULL,index);
+            isLip=YES;
+//            NSLog(@"isAudioReady:%d,index:%d,rst:%d",self.isAudioReady,index,rst);
+//            double time2=[[NSDate date] timeIntervalSince1970];
+          
+        }
+          double time2=[[NSDate date] timeIntervalSince1970];
+          float useTime=time2-time1;
+          if(self.onRenderReportBlock)
+          {
+             self.onRenderReportBlock(rst, isLip, useTime);
+          }
             if(self.metal_type==0)
             {
                 
@@ -379,9 +337,7 @@ static dispatch_once_t onceToken;
                     {
                         reuslt_mat_uint8=[self convertedRawImage:reuslt_mat];
                     }
-                    
-                   
-            
+                
                     self.uint8Block2(reuslt_mat_uint8, mat.width(), mat.height());
                     reuslt_mat.release();
                     mat.cvmat().release();
@@ -390,7 +346,7 @@ static dispatch_once_t onceToken;
          
             
             
-        }
+     
     
   
 
@@ -418,23 +374,61 @@ static dispatch_once_t onceToken;
     
 
 }
-//-(int)processmd5WithPath:(NSString*)inputPath outPath:(NSString*)outPath
-//{
-//    //(self->gjdigit,mat.udata(),mat.width(),mat.height(),boxs,index);
-//    int rst = gjdigit_processmd5(self->gjdigit,0,[inputPath UTF8String],[outPath UTF8String]);
-//    
-//    return rst;
-//    
-//}
-- (void)free {
-    if(gjdigit!=nil)
+-(void)wavPCM:(uint8_t*)pcm size:(int)size
+{
+//    NSLog(@"wavPCM:%d",size);
+    if(sessid>0&&size>0)
     {
-        gjdigit_free(&gjdigit);
+     
+            uint64_t rst = dhduix_pushpcm(gjduix_s, sessid, (char*)pcm, size, 0);
+       
+       
+      
+        
     }
+}
+-(void)finishSession
+{
+    if(sessid>0)
+    {
+        dhduix_finsession(gjduix_s, sessid);
+    }
+
+}
+//finishSession 结束后调用续上continueSession
+-(void)continueSession
+{
+    if(sessid>0)
+    {
+        dhduix_consession(gjduix_s, sessid);
+    }
+}
+- (void)free
+{
+    
+    [self toStopAudioReadyTimer];
+    if(gjduix_s!=nil)
+    {
+        dhduix_free(gjduix_s);
+        gjduix_s=nil;
+    }
+ 
 
 }
 
 
+/*
+*生成一个新的问答会话id
+*/
+- (NSString *)getNewChatSessionId
+{
+    CFUUIDRef uuid_ref = CFUUIDCreate(NULL);
+    CFStringRef uuid_string_ref= CFUUIDCreateString(NULL, uuid_ref);
+    NSString *uuid = [NSString stringWithString:(__bridge NSString *)uuid_string_ref];
+    CFRelease(uuid_ref);
+    CFRelease(uuid_string_ref);
+    return [uuid lowercaseString];
+}
 
 
 

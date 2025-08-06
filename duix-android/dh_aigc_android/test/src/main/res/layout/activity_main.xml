@@ -35,68 +35,86 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/tv_base_config_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:text="@string/base_config_title"
+                android:id="@+id/tvDownloadTips"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/main_download_tips"
                 android:textSize="13sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/btn_base_config_download"
-                android:layout_width="120dp"
-                android:layout_height="48dp"
-                android:enabled="false"
-                android:text="@string/download"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_base_config_title" />
-
-            <ProgressBar
-                android:id="@+id/progress_base_config"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_marginEnd="12dp"
-                android:max="100"
-                android:progress="0"
-                app:layout_constraintBottom_toBottomOf="@+id/btn_base_config_download"
-                app:layout_constraintEnd_toStartOf="@+id/btn_base_config_download"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/btn_base_config_download" />
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
             <TextView
-                android:id="@+id/tv_model_title"
+                android:id="@+id/tvBaseConfig"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="@string/model_download_title"
+                android:text="@string/base_config_url"
+                android:textSize="13sp"
+                app:layout_constraintTop_toBottomOf="@+id/tvDownloadTips"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <EditText
+                android:id="@+id/etBaseConfig"
+                android:layout_marginTop="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="https://github.com/duixcom/Duix-Mobile/releases/download/v1.0.0/gj_dh_res.zip"
+                android:textSize="13sp"
+                app:layout_constraintTop_toBottomOf="@+id/tvBaseConfig"
+                />
+
+            <TextView
+                android:id="@+id/tvModelUrl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/model_url"
                 android:textSize="13sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_base_config_download" />
+                app:layout_constraintTop_toBottomOf="@+id/etBaseConfig"  />
 
             <Button
-                android:id="@+id/btn_model_play"
-                android:layout_width="120dp"
+                android:id="@+id/btnMoreModel"
+                android:text="@string/more"
+                android:layout_marginTop="12dp"
+                android:layout_width="wrap_content"
                 android:layout_height="48dp"
-                android:enabled="false"
-                android:text="@string/play"
+                app:layout_constraintTop_toBottomOf="@+id/tvModelUrl"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_model_title" />
+                />
 
-            <ProgressBar
-                android:id="@+id/progress_model"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            <EditText
+                android:id="@+id/etUrl"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
-                android:layout_marginEnd="12dp"
-                android:max="100"
-                android:progress="0"
-                app:layout_constraintBottom_toBottomOf="@+id/btn_model_play"
-                app:layout_constraintEnd_toStartOf="@+id/btn_model_play"
+                android:text="https://github.com/duixcom/Duix-Mobile/releases/download/v1.0.0/bendi3_20240518.zip"
+                android:textSize="13sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/btn_model_play" />
+                app:layout_constraintTop_toTopOf="@+id/btnMoreModel"
+                app:layout_constraintEnd_toStartOf="@+id/btnMoreModel"
+                />
+
+            <Button
+                android:id="@+id/btnPlay"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/play"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etUrl" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchDebug"
+                android:text="@string/debug_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:layout_margin="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnPlay"
+                />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

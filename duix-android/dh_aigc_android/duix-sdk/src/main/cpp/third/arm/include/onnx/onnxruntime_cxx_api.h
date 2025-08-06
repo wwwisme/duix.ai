@@ -23,6 +23,7 @@
 // have to fallback to C types and the API with the usual pitfalls. In general, do not use C API from your C++ code.
 
 #pragma once
+#define ORT_NO_EXCEPTIONS TRUE
 #include "onnxruntime_c_api.h"
 #include "onnxruntime_float16.h"
 
@@ -60,7 +61,8 @@ struct Exception : std::exception {
   std::string message_;
   OrtErrorCode code_;
 };
-#define ORT_NO_EXCEPTIONS
+
+//#define ORT_NO_EXCEPTIONS
 #ifdef ORT_NO_EXCEPTIONS
 // The #ifndef is for the very special case where the user of this library wants to define their own way of handling errors.
 // NOTE: This header expects control flow to not continue after calling ORT_CXX_API_THROW

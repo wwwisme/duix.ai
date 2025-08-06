@@ -37,7 +37,7 @@
 */
 
 #if __has_feature(objc_arc)
-//#error This file uses the classic non-ARC retain/release model; hints below... 
+//#error This file uses the classic non-ARC retain/release model; hints below...
     // to selectively compile this file as non-ARC, do as follows:
     // https://img.skitch.com/20120717-g3ag5h9a6ehkgpmpjiuen3qpwp.png
 #endif
@@ -52,6 +52,8 @@
 #else
 #import <AppKit/NSPasteboard.h>
 #endif
+
+NSString * const kUUIDKey = @"com.guiji.duixSDK";
 
 #define OpenUDIDLog(fmt, ...)
 //#define OpenUDIDLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
@@ -79,7 +81,7 @@ static int const kOpenUDIDRedundancySlots = 100;
 // Convenience method to support iOS & Mac OS X
 //
 + (void) _setDict:(id)dict forPasteboard:(id)pboard {
-#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR		
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
     [pboard setData:[NSKeyedArchiver archivedDataWithRootObject:dict] forPasteboardType:kOpenUDIDDomain];
 #else
     [pboard setData:[NSKeyedArchiver archivedDataWithRootObject:dict] forType:kOpenUDIDDomain];
@@ -90,11 +92,11 @@ static int const kOpenUDIDRedundancySlots = 100;
 // Convenience method to support iOS & Mac OS X
 //
 + (NSMutableDictionary*) _getDictFromPasteboard:(id)pboard {
-#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR	
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
     id item = [pboard dataForPasteboardType:kOpenUDIDDomain];
 #else
-	id item = [pboard dataForType:kOpenUDIDDomain];
-#endif	
+    id item = [pboard dataForType:kOpenUDIDDomain];
+#endif
     if (item) {
         @try{
             item = [NSKeyedUnarchiver unarchiveObjectWithData:item];
@@ -104,7 +106,7 @@ static int const kOpenUDIDRedundancySlots = 100;
         }
     }
     
-    // return an instance of a MutableDictionary 
+    // return an instance of a MutableDictionary
     return [NSMutableDictionary dictionaryWithDictionary:(item == nil || [item isKindOfClass:[NSDictionary class]]) ? item : nil];
 }
 
@@ -119,7 +121,7 @@ static int const kOpenUDIDRedundancySlots = 100;
     // August 2011: One day, this may no longer be allowed in iOS. When that is, just comment this line out.
     // March 25th 2012: this day has come, let's remove this "outlawed" call...
     // August 2012: well, perhaps much ado about nothing; in any case WWDC2012 gave us something to work with; read below
-#if TARGET_OS_IPHONE	
+#if TARGET_OS_IPHONE
 //    if([UIDevice instancesRespondToSelector:@selector(uniqueIdentifier)]){
 //        _openUDID = [[UIDevice currentDevice] uniqueIdentifier];
 //    }
@@ -165,9 +167,9 @@ static int const kOpenUDIDRedundancySlots = 100;
     
     // Next we generate a UUID.
     // UUIDs (Universally Unique Identifiers), also known as GUIDs (Globally Unique Identifiers) or IIDs
-    // (Interface Identifiers), are 128-bit values guaranteed to be unique. A UUID is made unique over 
+    // (Interface Identifiers), are 128-bit values guaranteed to be unique. A UUID is made unique over
     // both space and time by combining a value unique to the computer on which it was generated—usually the
-    // Ethernet hardware address—and a value representing the number of 100-nanosecond intervals since 
+    // Ethernet hardware address—and a value representing the number of 100-nanosecond intervals since
     // October 15, 1582 at 00:00:00.
     // We then hash this UUID with md5 to get 32 bytes, and then add 4 extra random bytes
     // Collision is possible of course, but unlikely and suitable for most industry needs (e.g. aggregate tracking)
@@ -183,7 +185,7 @@ static int const kOpenUDIDRedundancySlots = 100;
 
         _openUDID = [NSString stringWithFormat:
                 @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%08lx",
-                result[0], result[1], result[2], result[3], 
+                result[0], result[1], result[2], result[3],
                 result[4], result[5], result[6], result[7],
                 result[8], result[9], result[10], result[11],
                 result[12], result[13], result[14], result[15],
@@ -195,7 +197,7 @@ static int const kOpenUDIDRedundancySlots = 100;
     // feel free to suggest better or alternative "UDID" generation code above.
     // NOTE that the goal is NOT to find a better hash method, but rather, find a decentralized (i.e. not web-based)
     // 160 bits / 20 bytes random string generator with the fewest possible collisions.
-    // 
+    //
 
     return _openUDID;
 }
@@ -207,7 +209,13 @@ static int const kOpenUDIDRedundancySlots = 100;
 // Otherwise, it will register the current app and return the OpenUDID
 //
 + (NSString*) value {
-    return [GJLOpenUDID valueWithError:nil];
+    
+    NSString *getUDIDInKeychain = (NSString *)[GJLOpenUDID load:kUUIDKey];
+    if (!getUDIDInKeychain || [getUDIDInKeychain isEqualToString:@""] || [getUDIDInKeychain isKindOfClass:[NSNull class]]) {
+        return [GJLOpenUDID valueWithError:nil];
+    } else {
+        return getUDIDInKeychain;
+    }
 }
 
 + (NSString*) valueWithError:(NSError **)error {
@@ -220,7 +228,7 @@ static int const kOpenUDIDRedundancySlots = 100;
         return kOpenUDIDSessionCache;
     }
     
-  	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+      NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     // The AppUID will uniquely identify this app within the pastebins
     //
@@ -290,7 +298,7 @@ static int const kOpenUDIDRedundancySlots = 100;
                 // the local dictionary is prime on the opt-out subject, so ignore if already opted-out locally
                 if (optedOut) {
                     optedOutDate = [dict objectForKey:kOpenUDIDOOTSKey];
-                    optedOut = optedOutDate!=nil;   
+                    optedOut = optedOutDate!=nil;
                 }
             }
         }
@@ -305,7 +313,7 @@ static int const kOpenUDIDRedundancySlots = 100;
         
     // if openUDID was not retrieved from the local preferences, then let's try to get it from the frequency dictionary above
     //
-    if (openUDID==nil) {        
+    if (openUDID==nil) {
         if (mostReliableOpenUDID==nil) {
             // this is the case where this app instance is likely to be the first one to use OpenUDID on this device
             // we create the OpenUDID, legacy or semi-random (i.e. most certainly unique)
@@ -313,12 +321,12 @@ static int const kOpenUDIDRedundancySlots = 100;
             openUDID = [GJLOpenUDID _generateFreshOpenUDID];
         } else {
             // or we leverage the OpenUDID shared by other apps that have already gone through the process
-            // 
+            //
             openUDID = mostReliableOpenUDID;
         }
         // then we create a local representation
         //
-        if (localDict==nil) { 
+        if (localDict==nil) {
             localDict = [NSMutableDictionary dictionaryWithCapacity:4];
             [localDict setObject:openUDID forKey:kOpenUDIDKey];
             [localDict setObject:appUID forKey:kOpenUDIDAppUIDKey];
@@ -390,6 +398,7 @@ static int const kOpenUDIDRedundancySlots = 100;
                                      userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"OpenUDID succesfully retrieved",@"description", nil]];
     }
     kOpenUDIDSessionCache = openUDID ;
+    [GJLOpenUDID save:kUUIDKey data:openUDID];
     return kOpenUDIDSessionCache;
 }
 
@@ -414,14 +423,54 @@ static int const kOpenUDIDRedundancySlots = 100;
     else
         [dict removeObjectForKey:kOpenUDIDOOTSKey];
 
-  	// store the dictionary locally
+      // store the dictionary locally
     [defaults setObject:dict forKey:kOpenUDIDKey];
     
     OpenUDIDLog(@"Local dict after opt-out = %@",dict);
     
-    // reset memory cache 
+    // reset memory cache
     kOpenUDIDSessionCache = nil;
     
+}
+
++ (NSMutableDictionary *)getKeyChainQuery:(NSString *)service {
+    return [NSMutableDictionary dictionaryWithObjectsAndKeys:(id)kSecClassGenericPassword,(id)kSecClass,service,(id)kSecAttrService,service,(id)kSecAttrAccount,(id)kSecAttrAccessibleAfterFirstUnlock,(id)kSecAttrAccessible, nil];
+}
+
++ (id)load:(NSString *)service {
+    id ret = nil;
+    NSMutableDictionary *keychainQuery = [self getKeyChainQuery:service];
+    [keychainQuery setObject:(id)kCFBooleanTrue forKey:(id)kSecReturnData];
+    [keychainQuery setObject:(id)kSecMatchLimitOne forKey:(id)kSecMatchLimit];
+    CFDataRef keyData = NULL;
+    if (SecItemCopyMatching((CFDictionaryRef)keychainQuery, (CFTypeRef *)&keyData) == noErr) {
+        @try {
+            ret = [NSKeyedUnarchiver unarchiveObjectWithData:(__bridge NSData *)keyData];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"Unarchive of %@ failed: %@", service, exception);
+        }
+        @finally {
+            NSLog(@"finally");
+        }
+    }
+
+    if (keyData) {
+        CFRelease(keyData);
+    }
+    return ret;
+}
+
+// 将生成的UUID保存到keychain中
++ (void)save:(NSString *)service data:(id)data {
+    // Get search dictionary
+    NSMutableDictionary *keychainQuery = [self getKeyChainQuery:service];
+    // Delete old item before add new item
+    SecItemDelete((CFDictionaryRef)keychainQuery);
+    // Add new object to search dictionary(Attention:the data format)
+    [keychainQuery setObject:[NSKeyedArchiver archivedDataWithRootObject:data] forKey:(id)kSecValueData];
+    // Add item to keychain with the search dictionary
+    SecItemAdd((CFDictionaryRef)keychainQuery, NULL);
 }
 
 @end
